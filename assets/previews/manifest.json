@@ -70,6 +70,15 @@
    "page-4.jpg"
   ]
  },
+ "ai-prompts-hr-managers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
  "ai-prompts-insurance-agents": {
   "pages": [
    "page-0.jpg",
@@ -80,6 +89,15 @@
   ]
  },
  "ai-prompts-lawyers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "ai-prompts-local-candidates": {
   "pages": [
    "page-0.jpg",
    "page-1.jpg",
@@ -106,6 +124,15 @@
    "page-4.jpg"
   ]
  },
+ "ai-prompts-photographers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
  "ai-prompts-plumbers-hvac": {
   "pages": [
    "page-0.jpg",
@@ -115,7 +142,25 @@
    "page-4.jpg"
   ]
  },
+ "ai-prompts-property-managers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
  "ai-prompts-real-estate": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "ai-prompts-restaurants": {
   "pages": [
    "page-0.jpg",
    "page-1.jpg",
@@ -143,6 +188,15 @@
   ]
  },
  "ai-prompts-teachers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "ai-prompts-traders-crypto": {
   "pages": [
    "page-0.jpg",
    "page-1.jpg",
@@ -243,6 +297,15 @@
   ]
  },
  "faceless-fortune": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "fantasy-betting-education-kit": {
   "pages": [
    "page-0.jpg",
    "page-1.jpg",
@@ -424,42 +487,6 @@
   ]
  },
  "zero-dollar-startup": {
-  "pages": [
-   "page-0.jpg",
-   "page-1.jpg",
-   "page-2.jpg",
-   "page-3.jpg",
-   "page-4.jpg"
-  ]
- },
- "ai-prompts-hr-managers": {
-  "pages": [
-   "page-0.jpg",
-   "page-1.jpg",
-   "page-2.jpg",
-   "page-3.jpg",
-   "page-4.jpg"
-  ]
- },
- "ai-prompts-photographers": {
-  "pages": [
-   "page-0.jpg",
-   "page-1.jpg",
-   "page-2.jpg",
-   "page-3.jpg",
-   "page-4.jpg"
-  ]
- },
- "ai-prompts-property-managers": {
-  "pages": [
-   "page-0.jpg",
-   "page-1.jpg",
-   "page-2.jpg",
-   "page-3.jpg",
-   "page-4.jpg"
-  ]
- },
- "ai-prompts-restaurants": {
   "pages": [
    "page-0.jpg",
    "page-1.jpg",
