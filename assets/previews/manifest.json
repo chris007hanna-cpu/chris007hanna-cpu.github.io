@@ -431,5 +431,41 @@
    "page-3.jpg",
    "page-4.jpg"
   ]
+ },
+ "ai-prompts-hr-managers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "ai-prompts-photographers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "ai-prompts-property-managers": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
+ },
+ "ai-prompts-restaurants": {
+  "pages": [
+   "page-0.jpg",
+   "page-1.jpg",
+   "page-2.jpg",
+   "page-3.jpg",
+   "page-4.jpg"
+  ]
  }
 }
