@@ -5,24 +5,10 @@
  "channelHandle": "@whatwedoindarkness",
  "channelUrl": "https://www.youtube.com/@whatwedoindarkness",
  "channelSubscribeUrl": "https://www.youtube.com/@whatwedoindarkness?sub_confirmation=1",
- "version": 3,
- "updated": "2026-11-03T16:29:55Z",
- "videoCount": 59,
+ "version": 4,
+ "updated": "2026-11-03T17:11:57Z",
+ "videoCount": 55,
  "videos": [
-  {
-   "id": "M3YGIj1PFRY",
-   "title": "Long Day? Close the Laptop. Press Play. Sleep. 🌙 #shorts",
-   "url": "https://www.youtube.com/watch?v=M3YGIj1PFRY",
-   "embedUrl": "https://www.youtube-nocookie.com/embed/M3YGIj1PFRY",
-   "thumbnail": "https://i.ytimg.com/vi/M3YGIj1PFRY/hqdefault.jpg",
-   "durationSeconds": 46,
-   "duration": "46 sec",
-   "category": "Shorts & Previews",
-   "publishedAt": "2026-11-03T15:59:51Z",
-   "dateAdded": "2026-11-03",
-   "downloadUrl": null,
-   "audioUrl": null
-  },
   {
    "id": "VlAT5vIhjG4",
    "title": "Sleigh Ride Through the Snow | Sleigh Bells, Hooves in Snow & Cold Wind | 3 Hours Sleep Sounds",
@@ -472,20 +458,6 @@
    "audioUrl": null
   },
   {
-   "id": "KQ5F3YjCZdk",
-   "title": "For Those Who Served: Send Us Your Photos",
-   "url": "https://www.youtube.com/watch?v=KQ5F3YjCZdk",
-   "embedUrl": "https://www.youtube-nocookie.com/embed/KQ5F3YjCZdk",
-   "thumbnail": "https://i.ytimg.com/vi/KQ5F3YjCZdk/hqdefault.jpg",
-   "durationSeconds": 31,
-   "duration": "31 sec",
-   "category": "Shorts & Previews",
-   "publishedAt": "2026-10-19T22:38:14Z",
-   "dateAdded": "2026-10-19",
-   "downloadUrl": null,
-   "audioUrl": null
-  },
-  {
    "id": "xE10uLPSgz8",
    "title": "Trick-or-Treat Porch 🎃 3 Hours of Gothic Sleep Music | Halloween Sleep Scene",
    "url": "https://www.youtube.com/watch?v=xE10uLPSgz8",
@@ -682,20 +654,6 @@
    "audioUrl": null
   },
   {
-   "id": "0cs-DcOAHw0",
-   "title": "Haunted Hayride, Coming Soon | Halloween Sleep Scene",
-   "url": "https://www.youtube.com/watch?v=0cs-DcOAHw0",
-   "embedUrl": "https://www.youtube-nocookie.com/embed/0cs-DcOAHw0",
-   "thumbnail": "https://i.ytimg.com/vi/0cs-DcOAHw0/hqdefault.jpg",
-   "durationSeconds": 45,
-   "duration": "45 sec",
-   "category": "Shorts & Previews",
-   "publishedAt": "2026-10-16T19:27:13Z",
-   "dateAdded": "2026-10-16",
-   "downloadUrl": null,
-   "audioUrl": null
-  },
-  {
    "id": "iJxGnGFBjuY",
    "title": "Haunted Pumpkin Patch | Halloween Sleep Scene",
    "url": "https://www.youtube.com/watch?v=iJxGnGFBjuY",
@@ -720,20 +678,6 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-16T19:14:56Z",
    "dateAdded": "2026-10-16",
-   "downloadUrl": null,
-   "audioUrl": null
-  },
-  {
-   "id": "QMBF3_w-t9M",
-   "title": "5 Sounds. 10 Hours Each. Zero Interruptions. 🌙 The Sleep Channel Trailer #shorts",
-   "url": "https://www.youtube.com/watch?v=QMBF3_w-t9M",
-   "embedUrl": "https://www.youtube-nocookie.com/embed/QMBF3_w-t9M",
-   "thumbnail": "https://i.ytimg.com/vi/QMBF3_w-t9M/hqdefault.jpg",
-   "durationSeconds": 29,
-   "duration": "29 sec",
-   "category": "Shorts & Previews",
-   "publishedAt": "2026-10-11T12:33:08Z",
-   "dateAdded": "2026-10-11",
    "downloadUrl": null,
    "audioUrl": null
   },
