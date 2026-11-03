@@ -63,6 +63,16 @@
   .durbtn{padding:8px 12px; border-radius:999px; border:1px solid var(--line);
           background:var(--panel); color:var(--dim); font-size:.83rem; cursor:pointer}
   .durbtn.on{color:#0a0f24; background:var(--accent); border-color:var(--accent); font-weight:600}
+  .appbtn{display:block; margin:16px auto 0; max-width:340px; padding:14px 18px;
+          border-radius:12px; background:var(--gold); color:#231a02; font-size:1rem;
+          font-weight:700; text-align:center; text-decoration:none}
+  /* Player option bar (v5): every option one tap away, directly under
+     the player, each button showing its current state. */
+  .optbar{display:flex; gap:6px; padding:10px 10px 2px; background:var(--panel)}
+  .obtn{flex:1 1 0; min-width:0; padding:9px 3px; border-radius:10px; border:1px solid var(--line);
+        background:var(--panel2); color:var(--ink); font-size:.78rem; cursor:pointer; line-height:1.3}
+  .obtn.on{border-color:var(--accent)}
+  .oval{display:block; color:var(--gold); font-size:.72rem; font-weight:700; margin-top:2px}
   .prow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
   .pbtn{padding:9px 13px; border-radius:10px; border:1px solid var(--line);
         background:var(--panel); color:var(--ink); font-size:.86rem; cursor:pointer}
@@ -119,27 +129,38 @@
   <img class="moon" src="icons/icon-192.png" alt="Sleep Sounds moon icon">
   <h1>Sleep Sounds</h1>
   <p class="sub">What We Do In Darkness &middot; the whole sleep channel, one tap away</p>
+  <a class="appbtn" href="https://chris007hanna-cpu.github.io/sleep-app/sleep-sounds.apk" download>📱 Get the Android app</a>
 </header>
 
 <div class="newbar" id="newbar"></div>
 
 <section id="player" aria-live="polite">
   <div class="frame" id="playerFrame"></div>
+  <div class="optbar" id="optBar" role="group" aria-label="Player options">
+    <button class="obtn" id="obDuration" type="button">🕐 Duration<span class="oval" id="obDurationVal">Full length</span></button>
+    <button class="obtn" id="obTimer" type="button">⏰ Timer<span class="oval" id="obTimerVal">Off</span></button>
+    <button class="obtn" id="obBlack" type="button">⬛ Black screen<span class="oval" id="obBlackVal">Off</span></button>
+    <button class="obtn" id="obFull" type="button">🔲 Full screen</button>
+    <button class="obtn" id="obKeep" type="button">💡 Screen on<span class="oval" id="obKeepVal">On</span></button>
+  </div>
   <div class="pmeta">
     <button id="closePlayer" type="button">Close</button>
     <h2 id="playerTitle"></h2>
     <div class="notice" id="streamNotice"></div>
-    <div class="durrow" id="durRow" aria-label="How long should it play"></div>
+    <div class="durrow" id="durRow" aria-label="How long should it play" style="display:none"></div>
     <p class="runline" id="runLine" style="display:none"></p>
-    <label class="keeprow" id="keepRow">
+    <label class="keeprow" id="keepRow" style="display:none">
       <input type="checkbox" id="keepScreenOn"> Keep screen on while the video plays
     </label>
     <div class="prow">
       <button class="pbtn" id="listenBtn" type="button" style="display:none">Listen in app · plays with the screen off</button>
       <button class="pbtn" id="watchBtn" type="button" style="display:none">Watch the video</button>
-      <button class="pbtn" id="blackBtn" type="button">Black screen</button>
-      <button class="pbtn" id="fsBtn" type="button">Full screen</button>
+      <button class="pbtn" id="blackBtn" type="button" style="display:none">Black screen</button>
+      <button class="pbtn" id="fsBtn" type="button" style="display:none">Full screen</button>
     </div>
+    <p style="margin:12px 0 0">
+      <a href="https://chris007hanna-cpu.github.io/sleep-app/sleep-sounds.apk" download>📱 Get the Android app</a>
+    </p>
     <audio id="appAudio" controls preload="auto"></audio>
     <p style="margin:12px 0 0">
       <a id="playerLink" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
@@ -447,7 +468,10 @@
       b.type = "button";
       b.className = "durbtn" + (d.min === runMinutes ? " on" : "");
       b.textContent = d.label;
-      b.addEventListener("click", function(){ setRun(d.min); });
+      b.addEventListener("click", function(){
+        setRun(d.min);
+        row.style.display = "none"; /* the bar is the control now; the row was just its picker */
+      });
       row.appendChild(b);
     });
   }
@@ -474,6 +498,7 @@
       document.getElementById("runLine").style.display = "none";
     }
     renderDurRow();
+    syncOptBar();
   }
 
   function startTick(){
@@ -499,6 +524,7 @@
         " · fades out at the end";
       line.style.display = "block";
     }
+    syncOptBar();
   }
 
   function applyFade(factor){
@@ -589,6 +615,7 @@
       setTimeout(function(){ if (blackoutOn) hint.style.opacity = "0"; }, 4000);
     }
     refreshWakeLock();
+    syncOptBar();
   }
   document.getElementById("blackBtn").addEventListener("click", function(){
     setBlackout(true);
@@ -626,6 +653,7 @@
   document.getElementById("keepScreenOn").addEventListener("change", function(){
     store(LS_KEEP_ON, this.checked);
     refreshWakeLock();
+    syncOptBar();
   });
 
   function showStreamNotice(v){
@@ -656,7 +684,6 @@
     playMode = "yt";
     if (appAudio){ try{ appAudio.pause(); }catch(e){} appAudio.style.display = "none"; }
     document.getElementById("watchBtn").style.display = "none";
-    document.getElementById("fsBtn").style.display = "inline-block";
     var frame = document.getElementById("playerFrame");
     frame.style.display = "block";
     loadYtApi().then(function(){
@@ -713,6 +740,7 @@
     /* Volume may have been left faded by a previous run. */
     try{ appAudio.volume = 1; }catch(e){}
     refreshWakeLock();
+    syncOptBar();
   }
 
   function play(v){
@@ -737,11 +765,12 @@
     }
     /* Listen in app appears ONLY when this item carries our own audio. */
     document.getElementById("listenBtn").style.display = v.audioUrl ? "inline-block" : "none";
-    document.getElementById("durRow").style.display = "flex";
+    document.getElementById("durRow").style.display = "none";
     document.getElementById("runLine").style.display = "none";
     document.getElementById("keepScreenOn").checked = read(LS_KEEP_ON, true) !== false;
     showStreamNotice(v);
     renderDurRow();
+    syncOptBar();
     startYt(v);
     p.style.display = "block";
     p.scrollIntoView({behavior:"smooth", block:"start"});
@@ -753,12 +782,65 @@
   document.getElementById("watchBtn").addEventListener("click", function(){
     if (currentVideo) startYt(currentVideo);
   });
-  document.getElementById("fsBtn").addEventListener("click", function(){
+  function doFullscreen(){
+    if (playMode === "audio"){ setBlackout(true); return; }
     var p = document.getElementById("player");
     if (p.requestFullscreen) p.requestFullscreen().catch(function(){});
     else if (p.webkitRequestFullscreen) p.webkitRequestFullscreen();
-  });
+  }
+  document.getElementById("fsBtn").addEventListener("click", doFullscreen);
   document.addEventListener("fullscreenchange", refreshWakeLock);
+
+  /* ---- Player option bar (v5, Irish's order) ----
+     Every playback option on one bar directly under the player, one
+     tap each, and each button shows its current state. It drives the
+     same state as the panel it replaces: Duration and Timer open the
+     length picker (the duration row, revealed for the pick and hidden
+     again after), Black screen toggles the overlay, Full screen
+     enlarges the player (or opens the black screen in app audio mode,
+     where there is no picture), and Screen on flips the same keep
+     alive setting the wake lock reads. syncOptBar() repaints the bar
+     from that shared state whenever anything changes, including once
+     a second while the timer ticks. */
+  function shortRun(min){
+    if (!min) return "Full length";
+    if (min >= 60 && min % 60 === 0){
+      var h = min / 60;
+      return h + (h === 1 ? " hour" : " hours");
+    }
+    return min + " min";
+  }
+  function syncOptBar(){
+    var dv = document.getElementById("obDurationVal");
+    if (!dv) return;
+    dv.textContent = shortRun(runMinutes);
+    var tv = document.getElementById("obTimerVal");
+    if (timer.endAt > 0) tv.textContent = fmtClock(Math.max(0, timer.endAt - Date.now()));
+    else tv.textContent = runMinutes > 0 ? shortRun(runMinutes) : "Off";
+    document.getElementById("obBlackVal").textContent = blackoutOn ? "On" : "Off";
+    document.getElementById("obBlack").classList.toggle("on", blackoutOn);
+    var keep = document.getElementById("keepScreenOn").checked;
+    document.getElementById("obKeepVal").textContent = keep ? "On" : "Off";
+    document.getElementById("obKeep").classList.toggle("on", keep);
+    document.getElementById("obFull").style.display =
+      playMode === "audio" ? "none" : "";
+  }
+  function revealDurRow(){
+    var row = document.getElementById("durRow");
+    row.style.display = "flex";
+    row.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+  document.getElementById("obDuration").addEventListener("click", revealDurRow);
+  document.getElementById("obTimer").addEventListener("click", revealDurRow);
+  document.getElementById("obBlack").addEventListener("click", function(){
+    setBlackout(!blackoutOn);
+  });
+  document.getElementById("obFull").addEventListener("click", doFullscreen);
+  document.getElementById("obKeep").addEventListener("click", function(){
+    var box = document.getElementById("keepScreenOn");
+    box.checked = !box.checked;
+    box.dispatchEvent(new Event("change"));
+  });
 
   function closePlayerPanel(silent){
     if (blackoutOn) setBlackout(false);
