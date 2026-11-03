@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sleep Sounds — What We Do In Darkness</title>
+<meta name="description" content="Every sleep video from What We Do In Darkness in one quiet place. Tap a scene and drift off; new videos appear here as the channel grows.">
+<meta name="theme-color" content="#070b1d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<!-- iPhone / iPad home screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sleep Sounds">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+  :root{
+    --bg:#070b1d; --panel:#0d1430; --panel2:#111a3d; --ink:#cfd8ff; --dim:#8b96c4;
+    --accent:#7d9bff; --gold:#e8c47a; --line:#1d2952;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html{background:var(--bg)}
+  body{margin:0; background:var(--bg); color:var(--ink);
+       font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+       padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);}
+  header{padding:22px 18px 8px; text-align:center}
+  header img.moon{width:64px; height:64px; border-radius:16px}
+  h1{font-size:1.35rem; margin:10px 0 2px; font-weight:700; letter-spacing:.02em}
+  .sub{color:var(--dim); font-size:.9rem; margin:0}
+  .newbar{display:none; margin:14px 16px 0; padding:10px 14px; border:1px solid var(--gold);
+          border-radius:12px; color:var(--gold); background:rgba(232,196,122,.07);
+          font-size:.9rem; text-align:center}
+  .chips{display:flex; gap:8px; overflow-x:auto; padding:16px 16px 4px; scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto; padding:7px 14px; border-radius:999px; border:1px solid var(--line);
+        background:var(--panel); color:var(--dim); font-size:.85rem; cursor:pointer}
+  .chip.on{color:#0a0f24; background:var(--accent); border-color:var(--accent); font-weight:600}
+  main{padding:10px 14px 30px; max-width:760px; margin:0 auto}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  @media (max-width:430px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px;
+        overflow:hidden; cursor:pointer; text-align:left; padding:0; color:var(--ink); width:100%}
+  .card:active{background:var(--panel2)}
+  .thumb{position:relative; aspect-ratio:16/9; background:#000}
+  .thumb img{width:100%; height:100%; object-fit:cover; display:block; opacity:.92}
+  .dur{position:absolute; right:8px; bottom:8px; background:rgba(0,0,0,.72); color:#e8ecff;
+       font-size:.72rem; padding:2px 7px; border-radius:6px}
+  .badge{position:absolute; left:8px; top:8px; background:var(--gold); color:#231a02;
+         font-size:.68rem; font-weight:800; letter-spacing:.06em; padding:3px 8px; border-radius:6px}
+  .meta{padding:10px 12px 12px}
+  .meta h3{font-size:.92rem; line-height:1.35; margin:0 0 4px; font-weight:600}
+  .meta p{margin:0; color:var(--dim); font-size:.78rem}
+  #player{display:none; margin:14px 16px 0; background:var(--panel); border:1px solid var(--line);
+          border-radius:14px; overflow:hidden}
+  #player .frame{aspect-ratio:16/9; background:#000}
+  #player iframe{width:100%; height:100%; border:0; display:block}
+  #player .pmeta{padding:12px 14px}
+  #player h2{font-size:1rem; margin:0 0 6px; line-height:1.4}
+  #player a{color:var(--accent); font-size:.88rem}
+  #closePlayer{float:right; background:none; border:1px solid var(--line); color:var(--dim);
+               border-radius:8px; padding:4px 10px; cursor:pointer; font-size:.8rem}
+  footer{color:var(--dim); font-size:.78rem; text-align:center; padding:6px 20px 26px; line-height:1.6}
+  footer a{color:var(--accent)}
+  .err{color:#ff9d9d; text-align:center; padding:24px}
+  #followPopup{display:none; position:fixed; inset:0; background:rgba(3,5,14,.78);
+               z-index:50; align-items:center; justify-content:center; padding:20px}
+  #followPopup .box{background:var(--panel2); border:1px solid var(--line); border-radius:16px;
+                    max-width:340px; width:100%; padding:22px 20px; text-align:center}
+  #followPopup h2{margin:0 0 8px; font-size:1.2rem; color:var(--gold)}
+  #followPopup p{margin:0 0 18px; color:var(--ink); font-size:.95rem; line-height:1.5}
+  #followPopup a.btn, #followPopup button.btn{display:block; width:100%; padding:12px;
+                    border-radius:10px; margin:0 0 10px; font-size:.95rem; cursor:pointer;
+                    text-decoration:none; border:1px solid var(--line);
+                    background:var(--panel); color:var(--ink)}
+  #followPopup a.btn.primary{background:var(--accent); border-color:var(--accent);
+                             color:#0a0f24; font-weight:700}
+  #followPopup button.quiet{background:none; border:none; color:var(--dim); font-size:.88rem;
+                            cursor:pointer; padding:6px}
+</style>
+</head>
+<body>
+<header>
+  <img class="moon" src="icons/icon-192.png" alt="Sleep Sounds moon icon">
+  <h1>Sleep Sounds</h1>
+  <p class="sub">What We Do In Darkness &middot; the whole sleep channel, one tap away</p>
+</header>
+
+<div class="newbar" id="newbar"></div>
+
+<section id="player" aria-live="polite">
+  <div class="frame" id="playerFrame"></div>
+  <div class="pmeta">
+    <button id="closePlayer" type="button">Close</button>
+    <h2 id="playerTitle"></h2>
+    <a id="playerLink" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+    <span id="playerDownloadWrap" style="display:none"> &middot;
+      <a id="playerDownload" href="#" download>Download for offline</a>
+    </span>
+  </div>
+</section>
+
+<div id="followPopup" role="dialog" aria-modal="true" aria-labelledby="followTitle">
+  <div class="box">
+    <h2 id="followTitle">Follow us please</h2>
+    <p>Follow our channel for new sleep videos every week.</p>
+    <a class="btn primary" id="followBtn" href="https://www.youtube.com/@whatwedoindarkness?sub_confirmation=1" target="_blank" rel="noopener">Follow on YouTube</a>
+    <a class="btn" id="likeBtn" href="#" target="_blank" rel="noopener" style="display:none">Like this video</a>
+    <button class="quiet" id="notNowBtn" type="button">Not now</button>
+  </div>
+</div>
+
+<nav class="chips" id="chips" aria-label="Categories"></nav>
+<main><div class="grid" id="grid"></div><p class="err" id="err" style="display:none"></p></main>
+
+<footer>
+  Videos stream from YouTube, so every play counts toward the channel.<br>
+  Add this page to your home screen and it opens like an app.<br>
+  <a href="https://www.youtube.com/channel/UC6M4P62to1D6jMt0smdqiNQ" target="_blank" rel="noopener">What We Do In Darkness on YouTube</a>
+  &middot; <a href="https://chris007hanna-cpu.github.io/">All our links</a>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var LS_IDS = "wwdd.knownIds", LS_VER = "wwdd.catalogVersion", LS_FOLLOW = "wwdd.followPopupDay";
+  var catalog = null, activeCat = "All";
+  var currentVideo = null, playerOpen = false;
+
+  function store(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+  function read(key, dflt){ try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : dflt; }catch(e){ return dflt; } }
+
+  function isNew(v, known){
+    return known !== null && known.indexOf(v.id) === -1;
+  }
+
+  function render(){
+    var grid = document.getElementById("grid");
+    grid.innerHTML = "";
+    var known = read(LS_IDS, null);
+    catalog.videos.forEach(function(v){
+      if (activeCat !== "All" && v.category !== activeCat) return;
+      var card = document.createElement("button");
+      card.className = "card"; card.type = "button";
+      var badge = isNew(v, known) ? '<span class="badge">NEW</span>' : "";
+      card.innerHTML =
+        '<div class="thumb"><img loading="lazy" alt="" src="' + v.thumbnail + '">' +
+        badge + '<span class="dur">' + v.duration + '</span></div>' +
+        '<div class="meta"><h3></h3><p>' + v.category + ' &middot; ' + v.dateAdded + '</p></div>';
+      card.querySelector("h3").textContent = v.title;
+      card.addEventListener("click", function(){ play(v); });
+      grid.appendChild(card);
+    });
+  }
+
+  function renderChips(){
+    var cats = ["All"];
+    catalog.videos.forEach(function(v){ if (cats.indexOf(v.category) === -1) cats.push(v.category); });
+    var wrap = document.getElementById("chips");
+    wrap.innerHTML = "";
+    cats.forEach(function(c){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip" + (c === activeCat ? " on" : "");
+      b.textContent = c;
+      b.addEventListener("click", function(){ activeCat = c; renderChips(); render(); });
+      wrap.appendChild(b);
+    });
+  }
+
+  /* "Follow us please" popup: at most once per day, never while a video is
+     playing. Both action buttons send the user to the real YouTube pages,
+     because an app cannot follow or like inside YouTube on its own. */
+  function todayStr(){
+    var d = new Date();
+    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  }
+  function popupShownToday(){ return read(LS_FOLLOW, "") === todayStr(); }
+  function showFollowPopup(){
+    if (popupShownToday()) return;
+    store(LS_FOLLOW, todayStr());
+    if (catalog && catalog.channelSubscribeUrl){
+      document.getElementById("followBtn").href = catalog.channelSubscribeUrl;
+    }
+    var like = document.getElementById("likeBtn");
+    if (currentVideo){
+      like.href = currentVideo.url;
+      like.style.display = "block";
+    } else {
+      like.style.display = "none";
+    }
+    document.getElementById("followPopup").style.display = "flex";
+  }
+  function hideFollowPopup(){
+    document.getElementById("followPopup").style.display = "none";
+  }
+  document.getElementById("notNowBtn").addEventListener("click", hideFollowPopup);
+  document.getElementById("followBtn").addEventListener("click", hideFollowPopup);
+  document.getElementById("likeBtn").addEventListener("click", hideFollowPopup);
+
+  function play(v){
+    currentVideo = v;
+    playerOpen = true;
+    var p = document.getElementById("player");
+    document.getElementById("playerFrame").innerHTML =
+      '<iframe src="' + v.embedUrl + '?autoplay=1&rel=0" title="Sleep video player" ' +
+      'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    document.getElementById("playerTitle").textContent = v.title;
+    var link = document.getElementById("playerLink");
+    link.href = v.url;
+    /* Streaming is the default. A Download option appears ONLY when the
+       catalog carries a downloadUrl (our own hosted audio) for this item. */
+    var dlWrap = document.getElementById("playerDownloadWrap");
+    if (v.downloadUrl){
+      document.getElementById("playerDownload").href = v.downloadUrl;
+      dlWrap.style.display = "inline";
+    } else {
+      dlWrap.style.display = "none";
+    }
+    p.style.display = "block";
+    p.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  document.getElementById("closePlayer").addEventListener("click", function(){
+    document.getElementById("player").style.display = "none";
+    document.getElementById("playerFrame").innerHTML = "";
+    playerOpen = false;
+    /* Playback has ended, so the popup may appear now, with Like for the
+       video that was just playing. Still capped at once per day. */
+    if (currentVideo) showFollowPopup();
+  });
+
+  fetch("sleep-catalog.json", {cache:"no-cache"})
+    .then(function(r){ if(!r.ok) throw new Error("catalog " + r.status); return r.json(); })
+    .then(function(data){
+      catalog = data;
+      var known = read(LS_IDS, null);
+      var lastVer = read(LS_VER, 0);
+      if (known !== null && data.version > lastVer){
+        var fresh = data.videos.filter(function(v){ return known.indexOf(v.id) === -1; });
+        if (fresh.length){
+          var bar = document.getElementById("newbar");
+          bar.textContent = fresh.length + (fresh.length === 1 ? " new sleep video" : " new sleep videos") +
+            " since your last visit. Look for the gold NEW badge.";
+          bar.style.display = "block";
+        }
+      }
+      renderChips();
+      render();
+      /* Baseline for next visit: remember this exact catalog. */
+      store(LS_IDS, data.videos.map(function(v){ return v.id; }));
+      store(LS_VER, data.version);
+      /* Follow popup on open, once per day, and never over a playing video. */
+      setTimeout(function(){ if (!playerOpen) showFollowPopup(); }, 1200);
+    })
+    .catch(function(e){
+      var err = document.getElementById("err");
+      err.style.display = "block";
+      err.textContent = "The sleep catalog could not load. Check your connection and reopen the app.";
+    });
+
+  if ("serviceWorker" in navigator){
+    navigator.serviceWorker.register("sw.js").catch(function(){});
+  }
+})();
+</script>
+</body>
+</html>
