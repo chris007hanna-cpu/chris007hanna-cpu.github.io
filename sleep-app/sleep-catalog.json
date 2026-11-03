@@ -5,10 +5,24 @@
  "channelHandle": "@whatwedoindarkness",
  "channelUrl": "https://www.youtube.com/@whatwedoindarkness",
  "channelSubscribeUrl": "https://www.youtube.com/@whatwedoindarkness?sub_confirmation=1",
- "version": 2,
- "updated": "2026-11-03T15:46:22Z",
- "videoCount": 58,
+ "version": 3,
+ "updated": "2026-11-03T16:29:55Z",
+ "videoCount": 59,
  "videos": [
+  {
+   "id": "M3YGIj1PFRY",
+   "title": "Long Day? Close the Laptop. Press Play. Sleep. 🌙 #shorts",
+   "url": "https://www.youtube.com/watch?v=M3YGIj1PFRY",
+   "embedUrl": "https://www.youtube-nocookie.com/embed/M3YGIj1PFRY",
+   "thumbnail": "https://i.ytimg.com/vi/M3YGIj1PFRY/hqdefault.jpg",
+   "durationSeconds": 46,
+   "duration": "46 sec",
+   "category": "Shorts & Previews",
+   "publishedAt": "2026-11-03T15:59:51Z",
+   "dateAdded": "2026-11-03",
+   "downloadUrl": null,
+   "audioUrl": null
+  },
   {
    "id": "VlAT5vIhjG4",
    "title": "Sleigh Ride Through the Snow | Sleigh Bells, Hooves in Snow & Cold Wind | 3 Hours Sleep Sounds",
@@ -20,7 +34,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-11-03T02:00:38Z",
    "dateAdded": "2026-11-03",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "2yH1pUbBSz0",
@@ -33,7 +48,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-11-02T16:32:19Z",
    "dateAdded": "2026-11-02",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "PMegbg-ME6U",
@@ -46,7 +62,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-11-01T17:19:11Z",
    "dateAdded": "2026-11-01",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "5l3Q0S1W5SA",
@@ -59,7 +76,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-31T23:20:26Z",
    "dateAdded": "2026-10-31",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "roWv_8W6fZ8",
@@ -72,7 +90,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-31T19:16:29Z",
    "dateAdded": "2026-10-31",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "f0fZr1Ivl4g",
@@ -85,7 +104,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-31T05:38:27Z",
    "dateAdded": "2026-10-31",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "jUwk08NJa74",
@@ -98,7 +118,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-27T02:05:43Z",
    "dateAdded": "2026-10-27",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "--zDuIVBqBU",
@@ -111,7 +132,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-27T01:35:18Z",
    "dateAdded": "2026-10-27",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "rfxZ4V82pm0",
@@ -124,7 +146,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-27T01:19:31Z",
    "dateAdded": "2026-10-27",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "9_lE3PS0zbo",
@@ -137,7 +160,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-27T00:57:47Z",
    "dateAdded": "2026-10-27",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "rSD_kU9UerM",
@@ -150,7 +174,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-26T23:51:06Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "HeJgruMRWyw",
@@ -163,7 +188,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-26T23:49:41Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "J2tuoBx-VEI",
@@ -176,7 +202,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-26T23:45:26Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "6VHzeHu52EE",
@@ -189,7 +216,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-26T23:45:06Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "5_9NmvQfMu8",
@@ -202,7 +230,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-26T23:40:26Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "H5XdS7pwoDY",
@@ -215,7 +244,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-26T23:38:45Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "wgWNWns0xgw",
@@ -228,7 +258,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-26T01:21:44Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "jj9MBjltsdA",
@@ -241,7 +272,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-26T00:59:39Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "PJRC667XEzc",
@@ -254,7 +286,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-26T00:08:23Z",
    "dateAdded": "2026-10-26",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "IRhJA7Nm-JI",
@@ -267,7 +300,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-25T23:53:53Z",
    "dateAdded": "2026-10-25",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "BJynhWjblg4",
@@ -280,7 +314,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-25T22:10:09Z",
    "dateAdded": "2026-10-25",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "gayMinQ0kMs",
@@ -293,7 +328,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-25T18:03:32Z",
    "dateAdded": "2026-10-25",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "4HL391uzPkE",
@@ -306,7 +342,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-25T18:03:08Z",
    "dateAdded": "2026-10-25",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "d72VeZ3inD8",
@@ -319,7 +356,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-25T18:02:01Z",
    "dateAdded": "2026-10-25",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "4VhEeg4KKXA",
@@ -332,7 +370,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-25T14:56:31Z",
    "dateAdded": "2026-10-25",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "DOWhS9cJWZs",
@@ -345,7 +384,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-24T23:20:39Z",
    "dateAdded": "2026-10-24",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "S9E8rtl_URc",
@@ -358,7 +398,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-24T23:20:25Z",
    "dateAdded": "2026-10-24",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "5oa-yCSUaIY",
@@ -371,7 +412,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-24T15:40:46Z",
    "dateAdded": "2026-10-24",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "FCb5dK9Shns",
@@ -384,7 +426,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-23T14:43:46Z",
    "dateAdded": "2026-10-23",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "Xp4vO3mHGlQ",
@@ -397,7 +440,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-23T14:43:37Z",
    "dateAdded": "2026-10-23",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "HS7mOy9yAIc",
@@ -410,7 +454,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-23T14:35:10Z",
    "dateAdded": "2026-10-23",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "pzdsjT_q91A",
@@ -423,7 +468,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-23T00:32:46Z",
    "dateAdded": "2026-10-23",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "KQ5F3YjCZdk",
@@ -436,7 +482,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-19T22:38:14Z",
    "dateAdded": "2026-10-19",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "xE10uLPSgz8",
@@ -449,7 +496,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-19T14:39:11Z",
    "dateAdded": "2026-10-19",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "5VGtzteolow",
@@ -462,7 +510,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-19T12:57:49Z",
    "dateAdded": "2026-10-19",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "4QdBqMdy1Yw",
@@ -475,7 +524,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-19T11:29:08Z",
    "dateAdded": "2026-10-19",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "K758R8VBbJQ",
@@ -488,7 +538,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-19T00:37:30Z",
    "dateAdded": "2026-10-19",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "KdMHD3Nk-e0",
@@ -501,7 +552,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-18T19:42:51Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "B5GfEIjV7tw",
@@ -514,7 +566,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-18T14:33:06Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "ii4CKzvslk8",
@@ -527,7 +580,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-18T13:31:34Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "ImS3WP8zaUE",
@@ -540,7 +594,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-18T11:06:54Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "9EiGOmnRACY",
@@ -553,7 +608,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-18T04:30:18Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "CCECosWc1RU",
@@ -566,7 +622,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-18T04:25:26Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "KjLARyPTOnM",
@@ -579,7 +636,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-18T03:47:52Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "4QUDk3ZukCw",
@@ -592,7 +650,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-18T02:22:40Z",
    "dateAdded": "2026-10-18",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "1recnaZYhgM",
@@ -605,7 +664,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-17T21:41:20Z",
    "dateAdded": "2026-10-17",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "ls2wFZJ3J7M",
@@ -618,7 +678,8 @@
    "category": "Sleep Scenes",
    "publishedAt": "2026-10-17T21:27:35Z",
    "dateAdded": "2026-10-17",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "0cs-DcOAHw0",
@@ -631,7 +692,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-16T19:27:13Z",
    "dateAdded": "2026-10-16",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "iJxGnGFBjuY",
@@ -644,7 +706,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-16T19:26:48Z",
    "dateAdded": "2026-10-16",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "MacMbhtRKf4",
@@ -657,7 +720,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-16T19:14:56Z",
    "dateAdded": "2026-10-16",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "QMBF3_w-t9M",
@@ -670,7 +734,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-11T12:33:08Z",
    "dateAdded": "2026-10-11",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "fexkrTjJJJk",
@@ -683,7 +748,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-11T11:32:55Z",
    "dateAdded": "2026-10-11",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "8vwBtFRYBlc",
@@ -696,7 +762,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-11T10:33:06Z",
    "dateAdded": "2026-10-11",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "yCBWECt_6Ok",
@@ -709,7 +776,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-11T09:33:50Z",
    "dateAdded": "2026-10-11",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "Qi6ntiiiQBQ",
@@ -722,7 +790,8 @@
    "category": "Shorts & Previews",
    "publishedAt": "2026-10-11T08:32:08Z",
    "dateAdded": "2026-10-11",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "Vn3_OgkEmiU",
@@ -735,7 +804,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-09T01:00:24Z",
    "dateAdded": "2026-10-09",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "b0UVAYISW1k",
@@ -748,7 +818,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-08T01:00:11Z",
    "dateAdded": "2026-10-08",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   },
   {
    "id": "yAnDkOkFK_Q",
@@ -761,7 +832,8 @@
    "category": "Noise, Fan & Storm",
    "publishedAt": "2026-10-07T01:00:22Z",
    "dateAdded": "2026-10-07",
-   "downloadUrl": null
+   "downloadUrl": null,
+   "audioUrl": null
   }
  ]
 }

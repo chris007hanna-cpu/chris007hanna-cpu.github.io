@@ -55,6 +55,28 @@
           border-radius:14px; overflow:hidden}
   #player .frame{aspect-ratio:16/9; background:#000}
   #player iframe{width:100%; height:100%; border:0; display:block}
+  #player:fullscreen{margin:0; border:none; border-radius:0; background:#000}
+  #player:fullscreen .frame{height:100%}
+  .notice{display:none; margin:10px 0 0; padding:9px 12px; border:1px solid var(--gold);
+          border-radius:10px; color:var(--gold); background:rgba(232,196,122,.07); font-size:.85rem}
+  .durrow{display:flex; gap:7px; flex-wrap:wrap; margin:12px 0 2px}
+  .durbtn{padding:8px 12px; border-radius:999px; border:1px solid var(--line);
+          background:var(--panel); color:var(--dim); font-size:.83rem; cursor:pointer}
+  .durbtn.on{color:#0a0f24; background:var(--accent); border-color:var(--accent); font-weight:600}
+  .prow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+  .pbtn{padding:9px 13px; border-radius:10px; border:1px solid var(--line);
+        background:var(--panel); color:var(--ink); font-size:.86rem; cursor:pointer}
+  .runline{color:var(--dim); font-size:.8rem; margin:8px 0 0}
+  .keeprow{display:flex; align-items:center; gap:8px; margin-top:10px; color:var(--ink);
+           font-size:.88rem; cursor:pointer}
+  .keeprow input{width:19px; height:19px; accent-color:var(--accent)}
+  #appAudio{width:100%; margin-top:10px; display:none}
+  /* Black screen: a pure black cover over everything while playback
+     continues underneath, so watch time keeps counting on YouTube. */
+  #blackout{display:none; position:fixed; inset:0; background:#000; z-index:90;
+            align-items:center; justify-content:center; cursor:pointer}
+  #blackout .hint{color:#3d3d3d; font-size:.95rem; text-align:center; padding:0 30px;
+                  line-height:1.6; transition:opacity 1.2s ease}
   #player .pmeta{padding:12px 14px}
   #player h2{font-size:1rem; margin:0 0 6px; line-height:1.4}
   #player a{color:var(--accent); font-size:.88rem}
@@ -63,20 +85,33 @@
   footer{color:var(--dim); font-size:.78rem; text-align:center; padding:6px 20px 26px; line-height:1.6}
   footer a{color:var(--accent)}
   .err{color:#ff9d9d; text-align:center; padding:24px}
-  #followPopup{display:none; position:fixed; inset:0; background:rgba(3,5,14,.78);
+  #followPopup, #installPopup{display:none; position:fixed; inset:0; background:rgba(3,5,14,.78);
                z-index:50; align-items:center; justify-content:center; padding:20px}
-  #followPopup .box{background:var(--panel2); border:1px solid var(--line); border-radius:16px;
-                    max-width:340px; width:100%; padding:22px 20px; text-align:center}
-  #followPopup h2{margin:0 0 8px; font-size:1.2rem; color:var(--gold)}
-  #followPopup p{margin:0 0 18px; color:var(--ink); font-size:.95rem; line-height:1.5}
-  #followPopup a.btn, #followPopup button.btn{display:block; width:100%; padding:12px;
+  #installPopup{z-index:60}
+  #followPopup .box, #installPopup .box{background:var(--panel2); border:1px solid var(--line);
+                    border-radius:16px; max-width:340px; width:100%; padding:22px 20px;
+                    text-align:center}
+  #followPopup h2, #installPopup h2{margin:0 0 8px; font-size:1.2rem; color:var(--gold)}
+  #followPopup p, #installPopup p{margin:0 0 18px; color:var(--ink); font-size:.95rem;
+                    line-height:1.5}
+  #followPopup a.btn, #followPopup button.btn,
+  #installPopup a.btn, #installPopup button.btn{display:block; width:100%; padding:12px;
                     border-radius:10px; margin:0 0 10px; font-size:.95rem; cursor:pointer;
                     text-decoration:none; border:1px solid var(--line);
                     background:var(--panel); color:var(--ink)}
-  #followPopup a.btn.primary{background:var(--accent); border-color:var(--accent);
-                             color:#0a0f24; font-weight:700}
-  #followPopup button.quiet{background:none; border:none; color:var(--dim); font-size:.88rem;
-                            cursor:pointer; padding:6px}
+  #followPopup a.btn.primary, #installPopup button.btn.primary{background:var(--accent);
+                    border-color:var(--accent); color:#0a0f24; font-weight:700}
+  #followPopup button.quiet, #installPopup button.quiet{background:none; border:none;
+                    color:var(--dim); font-size:.88rem; cursor:pointer; padding:6px}
+  /* Install prompt is for folks new to phones: bigger words, bigger buttons. */
+  #installPopup .box{max-width:370px; padding:26px 22px}
+  #installPopup h2{font-size:1.35rem}
+  #installPopup p{font-size:1.05rem}
+  #installPopup button.btn{padding:17px; font-size:1.1rem; border-radius:12px}
+  #installPopup button.quiet{font-size:1rem; padding:10px}
+  #installSteps{text-align:left; margin:0 0 6px}
+  #installSteps p.step{margin:0 0 14px; font-size:1.05rem}
+  #installSteps strong{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -93,12 +128,42 @@
   <div class="pmeta">
     <button id="closePlayer" type="button">Close</button>
     <h2 id="playerTitle"></h2>
-    <a id="playerLink" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
-    <span id="playerDownloadWrap" style="display:none"> &middot;
-      <a id="playerDownload" href="#" download>Download for offline</a>
-    </span>
+    <div class="notice" id="streamNotice"></div>
+    <div class="durrow" id="durRow" aria-label="How long should it play"></div>
+    <p class="runline" id="runLine" style="display:none"></p>
+    <label class="keeprow" id="keepRow">
+      <input type="checkbox" id="keepScreenOn"> Keep screen on while the video plays
+    </label>
+    <div class="prow">
+      <button class="pbtn" id="listenBtn" type="button" style="display:none">Listen in app · plays with the screen off</button>
+      <button class="pbtn" id="watchBtn" type="button" style="display:none">Watch the video</button>
+      <button class="pbtn" id="blackBtn" type="button">Black screen</button>
+      <button class="pbtn" id="fsBtn" type="button">Full screen</button>
+    </div>
+    <audio id="appAudio" controls preload="auto"></audio>
+    <p style="margin:12px 0 0">
+      <a id="playerLink" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+      <span id="playerDownloadWrap" style="display:none"> &middot;
+        <a id="playerDownload" href="#" download>Download for offline</a>
+      </span>
+    </p>
   </div>
 </section>
+
+<div id="installPopup" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+  <div class="box">
+    <h2 id="installTitle">Put Sleep Sounds on your home screen</h2>
+    <p>One tap puts Sleep Sounds right on your home screen, like any other app. Then it is always there when it is time for sleep.</p>
+    <div id="installSteps" style="display:none">
+      <p class="step">1. Tap the <strong>Share</strong> button. It is at the bottom of the screen and looks like a square with an arrow pointing up.</p>
+      <p class="step">2. Scroll down a little and tap <strong>Add to Home Screen</strong>.</p>
+      <p class="step">3. Tap <strong>Add</strong> in the top corner. That is it, you are done.</p>
+    </div>
+    <button class="btn primary" id="installBtn" type="button" style="display:none">Add it now</button>
+    <button class="btn" id="installGotIt" type="button" style="display:none">Got it</button>
+    <button class="quiet" id="installLater" type="button">Later</button>
+  </div>
+</div>
 
 <div id="followPopup" role="dialog" aria-modal="true" aria-labelledby="followTitle">
   <div class="box">
@@ -108,6 +173,10 @@
     <a class="btn" id="likeBtn" href="#" target="_blank" rel="noopener" style="display:none">Like this video</a>
     <button class="quiet" id="notNowBtn" type="button">Not now</button>
   </div>
+</div>
+
+<div id="blackout" role="button" aria-label="Black screen. Tap to bring the picture back.">
+  <p class="hint" id="blackHint">Sound keeps playing<br>Tap anywhere to bring the picture back</p>
 </div>
 
 <nav class="chips" id="chips" aria-label="Categories"></nav>
@@ -124,8 +193,22 @@
 (function(){
   "use strict";
   var LS_IDS = "wwdd.knownIds", LS_VER = "wwdd.catalogVersion", LS_FOLLOW = "wwdd.followPopupDay";
+  var LS_INSTALLED = "wwdd.appInstalled", LS_INSTALL_DISMISSED = "wwdd.installDismissedAt";
+  var LS_LISTENED = "wwdd.hasListened";
+  /* After a "Later" tap, wait three days before the install prompt may
+     return. Once the app runs from the home screen it never returns. */
+  var INSTALL_REMIND_MS = 3 * 24 * 60 * 60 * 1000;
   var catalog = null, activeCat = "All";
   var currentVideo = null, playerOpen = false;
+  var deferredInstallPrompt = null, installPromptShownThisLoad = false;
+  var installSettledThisLoad = false;
+  /* v4 player state: embedded YouTube player (YT API), in app audio
+     element, duration selector, run timer with fade, wake lock. */
+  var ytPlayer = null, ytReady = false, ytApiPromise = null;
+  var appAudio = null, playMode = null; /* "yt" or "audio" */
+  var runMinutes = 0, naturalFade = {on:false, base:100};
+  var timer = {endAt:0, tickId:null, fadeBase:1, fading:false};
+  var wakeLock = null;
 
   function store(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
   function read(key, dflt){ try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : dflt; }catch(e){ return dflt; } }
@@ -167,16 +250,132 @@
     });
   }
 
-  /* "Follow us please" popup: at most once per day, never while a video is
-     playing. Both action buttons send the user to the real YouTube pages,
-     because an app cannot follow or like inside YouTube on its own. */
   function todayStr(){
     var d = new Date();
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   }
+
+  /* ---- Stage 1: the home screen prompt (Irish, 2026-11-03) ----
+     The FIRST popup a new visitor earns asks them to save the app to
+     their home screen, in plain words with big buttons. If the app is
+     already running from the home screen (standalone), this stage is
+     done forever and the prompt never appears. */
+  function isStandalone(){
+    if (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) return true;
+    return window.navigator.standalone === true; /* iPhone Safari */
+  }
+  function isIOS(){
+    var ua = window.navigator.userAgent || "";
+    if (/iphone|ipad|ipod/i.test(ua)) return true;
+    /* iPads on newer iOS report as Macintosh but have a touch screen. */
+    return /macintosh/i.test(ua) && window.navigator.maxTouchPoints > 1;
+  }
+  function markInstalled(){
+    store(LS_INSTALLED, true);
+    installSettledThisLoad = true;
+    hideInstallPopup();
+  }
+  /* Stage 1 counts as resolved once the app is installed, once the
+     visitor has answered the prompt (now or in the last few days), or
+     when there is no honest way to offer it in this browser. */
+  function installStageResolved(){
+    if (isStandalone() || read(LS_INSTALLED, false)) return true;
+    return read(LS_INSTALL_DISMISSED, 0) > 0;
+  }
+  function installPromptDue(){
+    if (isStandalone() || read(LS_INSTALLED, false)) return false;
+    var dismissedAt = read(LS_INSTALL_DISMISSED, 0);
+    if (!dismissedAt) return true;
+    return (Date.now() - dismissedAt) >= INSTALL_REMIND_MS;
+  }
+  /* The follow popup stays out of the way while the install prompt is
+     still owed, can actually be shown in this browser, and has not been
+     answered yet during this visit. Once the visitor answers it (or it
+     is not due), the stage counts as settled here too. */
+  function installBlocking(){
+    if (installSettledThisLoad) return false;
+    if (!installPromptDue()) return false;
+    if (installPromptShownThisLoad) return true;
+    return !!deferredInstallPrompt || isIOS();
+  }
+  function showInstallPopup(){
+    installPromptShownThisLoad = true;
+    var btn = document.getElementById("installBtn");
+    var gotIt = document.getElementById("installGotIt");
+    var steps = document.getElementById("installSteps");
+    if (deferredInstallPrompt){
+      btn.style.display = "block"; gotIt.style.display = "none"; steps.style.display = "none";
+    } else {
+      /* iPhone Safari has no install event, so walk them through it. */
+      btn.style.display = "none"; gotIt.style.display = "block"; steps.style.display = "block";
+    }
+    document.getElementById("installPopup").style.display = "flex";
+  }
+  function hideInstallPopup(){
+    document.getElementById("installPopup").style.display = "none";
+  }
+  function maybeShowInstallPopup(){
+    if (installPromptShownThisLoad) return;
+    if (isStandalone()){ markInstalled(); return; }
+    if (read(LS_INSTALLED, false)) return;
+    if (!installPromptDue()) return;
+    /* Show it only when we can truly help: the saved install event on
+       Android Chrome, or the picture steps on iPhone. Other browsers
+       resolve the stage as not applicable and never see it. */
+    if (!deferredInstallPrompt && !isIOS()) return;
+    if (!playerOpen) showInstallPopup();
+  }
+  window.addEventListener("beforeinstallprompt", function(e){
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    maybeShowInstallPopup();
+  });
+  window.addEventListener("appinstalled", markInstalled);
+  document.getElementById("installBtn").addEventListener("click", function(){
+    if (!deferredInstallPrompt){ hideInstallPopup(); return; }
+    var promptEvent = deferredInstallPrompt;
+    deferredInstallPrompt = null;
+    hideInstallPopup();
+    promptEvent.prompt();
+    if (promptEvent.userChoice){
+      promptEvent.userChoice.then(function(choice){
+        if (choice && choice.outcome === "accepted") markInstalled();
+        else { store(LS_INSTALL_DISMISSED, Date.now()); installSettledThisLoad = true; }
+      }).catch(function(){
+        store(LS_INSTALL_DISMISSED, Date.now());
+        installSettledThisLoad = true;
+      });
+    }
+  });
+  document.getElementById("installGotIt").addEventListener("click", function(){
+    /* They followed the steps (or chose not to). Either way, rest the
+       prompt for a few days; if they really installed, the next open
+       runs standalone and retires it for good. */
+    store(LS_INSTALL_DISMISSED, Date.now());
+    installSettledThisLoad = true;
+    hideInstallPopup();
+  });
+  document.getElementById("installLater").addEventListener("click", function(){
+    store(LS_INSTALL_DISMISSED, Date.now());
+    installSettledThisLoad = true;
+    hideInstallPopup();
+  });
+
+  /* ---- Stage 2: the "Follow us please" popup (Irish, 2026-11-03) ----
+     This one waits until the person is actually USING the app: after
+     their first listen ends or its player closes, or on a later visit
+     once they have listened before. Never on the first open, never
+     before the home screen stage above is settled, never while a video
+     is playing, and at most once per day. Both action buttons send the
+     user to the real YouTube pages, because an app cannot follow or
+     like inside YouTube on its own. */
   function popupShownToday(){ return read(LS_FOLLOW, "") === todayStr(); }
   function showFollowPopup(){
+    if (playerOpen) return;
     if (popupShownToday()) return;
+    if (!installStageResolved()) return;
+    if (installBlocking()) return;
+    if (!read(LS_LISTENED, false)) return;
     store(LS_FOLLOW, todayStr());
     if (catalog && catalog.channelSubscribeUrl){
       document.getElementById("followBtn").href = catalog.channelSubscribeUrl;
@@ -197,13 +396,333 @@
   document.getElementById("followBtn").addEventListener("click", hideFollowPopup);
   document.getElementById("likeBtn").addEventListener("click", hideFollowPopup);
 
+  /* ================= v4 player: embedded pane, duration selector,
+     sleep timer with fade, Listen in app, keep screen on =============
+
+     Playback truth, kept honest in the UI: a YouTube stream plays in
+     the pane below and stops when the screen turns off (YouTube's
+     rule); our own audio, where an item carries audioUrl, plays in a
+     plain audio element with the Media Session API and keeps playing
+     in the background. The default tap still streams the video. */
+
+  var LS_KEEP_ON = "wwdd.keepScreenOn", LS_NOTICE = "wwdd.streamNoticeSeen";
+  var DURATIONS = [
+    {label:"Full length", min:0},
+    {label:"Power Nap · 20 min", min:20},
+    {label:"30 min", min:30},
+    {label:"45 min", min:45},
+    {label:"1 hour", min:60},
+    {label:"2 hours", min:120},
+    {label:"4 hours", min:240},
+    {label:"8 hours", min:480},
+    {label:"10 hours", min:600}
+  ];
+  var FADE_MS = 30000;
+
+  function loadYtApi(){
+    if (window.YT && window.YT.Player) return Promise.resolve();
+    if (ytApiPromise) return ytApiPromise;
+    ytApiPromise = new Promise(function(resolve, reject){
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      tag.onerror = function(){ reject(new Error("yt api")); };
+      document.head.appendChild(tag);
+      var prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function(){
+        if (prev) prev();
+        resolve();
+      };
+      setTimeout(function(){
+        if (window.YT && window.YT.Player) resolve();
+      }, 4000);
+    });
+    return ytApiPromise;
+  }
+
+  function renderDurRow(){
+    var row = document.getElementById("durRow");
+    row.innerHTML = "";
+    DURATIONS.forEach(function(d){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "durbtn" + (d.min === runMinutes ? " on" : "");
+      b.textContent = d.label;
+      b.addEventListener("click", function(){ setRun(d.min); });
+      row.appendChild(b);
+    });
+  }
+
+  function setRun(minutes){
+    runMinutes = minutes;
+    timer.fading = false;
+    timer.fadeBase = 1;
+    naturalFade.on = false;
+    if (playMode === "audio" && appAudio){
+      try{ appAudio.volume = 1; }catch(e){}
+      appAudio.loop = minutes > 0; /* shorter piece loops until the timer ends */
+    }
+    if (playMode === "yt" && ytPlayer && ytReady){
+      try{ ytPlayer.setVolume(100); }catch(e){}
+    }
+    if (minutes > 0){
+      timer.endAt = Date.now() + minutes * 60000;
+      startTick();
+      updateRunLine();
+    } else {
+      timer.endAt = 0;
+      stopTick();
+      document.getElementById("runLine").style.display = "none";
+    }
+    renderDurRow();
+  }
+
+  function startTick(){
+    stopTick();
+    timer.tickId = setInterval(timerTick, 500);
+  }
+  function stopTick(){
+    if (timer.tickId){ clearInterval(timer.tickId); timer.tickId = null; }
+  }
+
+  function fmtClock(ms){
+    var secs = Math.ceil(ms / 1000);
+    var h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+    if (h > 0) return h + "h " + m + "m";
+    if (m > 0) return m + "m " + s + "s";
+    return s + "s";
+  }
+
+  function updateRunLine(){
+    var line = document.getElementById("runLine");
+    if (timer.endAt > 0){
+      line.textContent = "Stops in " + fmtClock(timer.endAt - Date.now()) +
+        " · fades out at the end";
+      line.style.display = "block";
+    }
+  }
+
+  function applyFade(factor){
+    if (playMode === "audio" && appAudio){
+      try{ appAudio.volume = Math.max(0, Math.min(1, timer.fadeBase * factor)); }catch(e){}
+    } else if (playMode === "yt" && ytPlayer && ytReady){
+      try{ ytPlayer.setVolume(Math.max(0, Math.round(timer.fadeBase * 100 * factor))); }catch(e){}
+    }
+  }
+
+  function timerTick(){
+    var now = Date.now();
+    /* Natural end fade: in app audio played full length (no timer)
+       fades across its own last 30 seconds. With a timer, the timer
+       fade below governs, even mid piece. */
+    if (playMode === "audio" && appAudio && !timer.endAt && !appAudio.loop
+        && appAudio.duration > 0 && !appAudio.paused){
+      var remainMs = (appAudio.duration - appAudio.currentTime) * 1000;
+      if (remainMs <= FADE_MS){
+        appAudio.volume = Math.max(0, remainMs / FADE_MS);
+      }
+      return;
+    }
+    if (playMode === "yt" && ytPlayer && ytReady && !timer.endAt){
+      /* Video nearing its own end with no timer set: fade the API
+         volume across the last 30 seconds where the API allows. */
+      try{
+        var dur = ytPlayer.getDuration() || 0, cur = ytPlayer.getCurrentTime() || 0;
+        if (dur > 0 && ytPlayer.getPlayerState() === 1){
+          var vrem = (dur - cur) * 1000;
+          if (vrem <= FADE_MS && vrem > 0){
+            if (!naturalFade.on){ naturalFade.on = true; naturalFade.base = ytPlayer.getVolume(); }
+            ytPlayer.setVolume(Math.max(0, Math.round(naturalFade.base * vrem / FADE_MS)));
+            return;
+          }
+          if (vrem > FADE_MS + 5000 && naturalFade.on){
+            ytPlayer.setVolume(naturalFade.base);
+            naturalFade.on = false;
+          }
+        }
+      }catch(e){}
+    }
+    if (!timer.endAt) return;
+    var remaining = timer.endAt - now;
+    if (remaining <= 0){ finishRun(); return; }
+    if (remaining <= FADE_MS){
+      if (!timer.fading){
+        timer.fading = true;
+        if (playMode === "audio" && appAudio) timer.fadeBase = appAudio.volume;
+        else if (playMode === "yt" && ytPlayer && ytReady){
+          try{ timer.fadeBase = ytPlayer.getVolume() / 100; }catch(e){ timer.fadeBase = 1; }
+        }
+      }
+      applyFade(remaining / FADE_MS);
+    }
+    updateRunLine();
+  }
+
+  function finishRun(){
+    stopTick();
+    timer.endAt = 0;
+    if (playMode === "audio" && appAudio){
+      try{ appAudio.pause(); appAudio.volume = 1; }catch(e){}
+    }
+    if (playMode === "yt" && ytPlayer && ytReady){
+      try{ ytPlayer.stopVideo(); }catch(e){}
+    }
+    store(LS_LISTENED, true);
+    /* No follow popup here: at timer end the listener is asleep.
+       Closing by hand is what earns the popup (see the Close handler). */
+    closePlayerPanel(true);
+  }
+
+  /* ---- Black screen overlay ----
+     Covers the picture with pure black while the video or audio keeps
+     playing underneath, untouched, so play time keeps counting. It is
+     paired with the wake lock: with black screen on, the display
+     stays awake showing black, because a truly off screen would pause
+     the stream the overlay exists to protect. Tap turns it off. */
+  var blackoutOn = false;
+  function setBlackout(on){
+    blackoutOn = on;
+    var el = document.getElementById("blackout");
+    el.style.display = on ? "flex" : "none";
+    if (on){
+      var hint = document.getElementById("blackHint");
+      hint.style.opacity = "1";
+      setTimeout(function(){ if (blackoutOn) hint.style.opacity = "0"; }, 4000);
+    }
+    refreshWakeLock();
+  }
+  document.getElementById("blackBtn").addEventListener("click", function(){
+    setBlackout(true);
+  });
+  document.getElementById("blackout").addEventListener("click", function(){
+    setBlackout(false);
+  });
+
+  /* ---- Wake lock: the keep alive toggle (Screen Wake Lock API) ---- */
+  function wantWakeLock(){
+    if (!playerOpen) return false;
+    if (blackoutOn) return true; /* display awake, showing black */
+    return playMode === "yt"
+      && document.getElementById("keepScreenOn").checked;
+  }
+  function refreshWakeLock(){
+    if (wantWakeLock()){
+      if (!wakeLock && navigator.wakeLock){
+        navigator.wakeLock.request("screen").then(function(lock){
+          wakeLock = lock;
+          lock.addEventListener("release", function(){ wakeLock = null; });
+        }).catch(function(){});
+      }
+    } else if (wakeLock){
+      try{ wakeLock.release(); }catch(e){}
+      wakeLock = null;
+    }
+  }
+  document.addEventListener("visibilitychange", function(){
+    /* The browser drops the lock when the tab hides; re-arm on return
+       if the video is still up and the toggle is on. */
+    if (document.visibilityState === "visible") refreshWakeLock();
+    if (timer.endAt) timerTick(); /* catch up after background throttling */
+  });
+  document.getElementById("keepScreenOn").addEventListener("change", function(){
+    store(LS_KEEP_ON, this.checked);
+    refreshWakeLock();
+  });
+
+  function showStreamNotice(v){
+    var n = document.getElementById("streamNotice");
+    if (read(LS_NOTICE, false)){ n.style.display = "none"; return; }
+    var text = "Video stops when your screen turns off.";
+    if (v.audioUrl) text += " Listening in the app keeps playing with the screen off.";
+    n.textContent = text;
+    n.style.display = "block";
+    store(LS_NOTICE, true);
+  }
+
+  function setupMediaSession(v){
+    if (!("mediaSession" in navigator)) return;
+    try{
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: v.title,
+        artist: "What We Do In Darkness",
+        album: "Sleep Sounds",
+        artwork: [{src: v.thumbnail, sizes: "480x360", type: "image/jpeg"}]
+      });
+      navigator.mediaSession.setActionHandler("play", function(){ if (appAudio) appAudio.play(); });
+      navigator.mediaSession.setActionHandler("pause", function(){ if (appAudio) appAudio.pause(); });
+    }catch(e){}
+  }
+
+  function startYt(v){
+    playMode = "yt";
+    if (appAudio){ try{ appAudio.pause(); }catch(e){} appAudio.style.display = "none"; }
+    document.getElementById("watchBtn").style.display = "none";
+    document.getElementById("fsBtn").style.display = "inline-block";
+    var frame = document.getElementById("playerFrame");
+    frame.style.display = "block";
+    loadYtApi().then(function(){
+      if (!playerOpen || playMode !== "yt") return;
+      if (ytPlayer && ytReady){
+        ytPlayer.loadVideoById(v.id);
+      } else {
+        frame.innerHTML = '<div id="ytMount"></div>';
+        ytPlayer = new YT.Player("ytMount", {
+          videoId: v.id,
+          playerVars: {autoplay: 1, rel: 0, playsinline: 1},
+          events: {
+            onReady: function(){
+              ytReady = true;
+              if (runMinutes > 0 && timer.endAt) { /* timer already running */ }
+            },
+            onStateChange: function(e){
+              if (e.data === YT.PlayerState.ENDED){
+                store(LS_LISTENED, true);
+                naturalFade.on = false;
+              }
+              refreshWakeLock();
+            }
+          }
+        });
+      }
+    }).catch(function(){
+      /* Player API unreachable (offline shell, blocked script): fall
+         back to the plain embed. The duration row cannot steer a
+         plain iframe, so it hides rather than promise control the
+         page does not have. */
+      frame.innerHTML =
+        '<iframe src="' + v.embedUrl + '?autoplay=1&rel=0" title="Sleep video player" ' +
+        'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      document.getElementById("durRow").style.display = "none";
+    });
+    refreshWakeLock();
+  }
+
+  function startAudio(v){
+    playMode = "audio";
+    if (ytPlayer && ytReady){ try{ ytPlayer.stopVideo(); }catch(e){} }
+    document.getElementById("playerFrame").style.display = "none";
+    document.getElementById("fsBtn").style.display = "none";
+    document.getElementById("watchBtn").style.display = "inline-block";
+    if (!appAudio) appAudio = document.getElementById("appAudio");
+    appAudio.onended = function(){ store(LS_LISTENED, true); };
+    appAudio.src = v.audioUrl;
+    appAudio.loop = runMinutes > 0;
+    appAudio.style.display = "block";
+    setupMediaSession(v);
+    var promise = appAudio.play();
+    if (promise) promise.catch(function(){});
+    /* Volume may have been left faded by a previous run. */
+    try{ appAudio.volume = 1; }catch(e){}
+    refreshWakeLock();
+  }
+
   function play(v){
     currentVideo = v;
     playerOpen = true;
+    runMinutes = 0;
+    timer.endAt = 0; timer.fading = false;
+    naturalFade.on = false;
+    stopTick();
     var p = document.getElementById("player");
-    document.getElementById("playerFrame").innerHTML =
-      '<iframe src="' + v.embedUrl + '?autoplay=1&rel=0" title="Sleep video player" ' +
-      'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
     document.getElementById("playerTitle").textContent = v.title;
     var link = document.getElementById("playerLink");
     link.href = v.url;
@@ -216,17 +735,53 @@
     } else {
       dlWrap.style.display = "none";
     }
+    /* Listen in app appears ONLY when this item carries our own audio. */
+    document.getElementById("listenBtn").style.display = v.audioUrl ? "inline-block" : "none";
+    document.getElementById("durRow").style.display = "flex";
+    document.getElementById("runLine").style.display = "none";
+    document.getElementById("keepScreenOn").checked = read(LS_KEEP_ON, true) !== false;
+    showStreamNotice(v);
+    renderDurRow();
+    startYt(v);
     p.style.display = "block";
     p.scrollIntoView({behavior:"smooth", block:"start"});
   }
 
-  document.getElementById("closePlayer").addEventListener("click", function(){
-    document.getElementById("player").style.display = "none";
+  document.getElementById("listenBtn").addEventListener("click", function(){
+    if (currentVideo && currentVideo.audioUrl) startAudio(currentVideo);
+  });
+  document.getElementById("watchBtn").addEventListener("click", function(){
+    if (currentVideo) startYt(currentVideo);
+  });
+  document.getElementById("fsBtn").addEventListener("click", function(){
+    var p = document.getElementById("player");
+    if (p.requestFullscreen) p.requestFullscreen().catch(function(){});
+    else if (p.webkitRequestFullscreen) p.webkitRequestFullscreen();
+  });
+  document.addEventListener("fullscreenchange", refreshWakeLock);
+
+  function closePlayerPanel(silent){
+    if (blackoutOn) setBlackout(false);
+    stopTick();
+    timer.endAt = 0;
+    if (ytPlayer && ytReady){ try{ ytPlayer.stopVideo(); }catch(e){} }
     document.getElementById("playerFrame").innerHTML = "";
+    ytPlayer = null; ytReady = false;
+    if (appAudio){ try{ appAudio.pause(); }catch(e){} appAudio.style.display = "none"; }
+    playMode = null;
+    document.getElementById("player").style.display = "none";
     playerOpen = false;
-    /* Playback has ended, so the popup may appear now, with Like for the
-       video that was just playing. Still capped at once per day. */
-    if (currentVideo) showFollowPopup();
+    refreshWakeLock();
+    if (!silent && currentVideo){
+      store(LS_LISTENED, true);
+      showFollowPopup();
+    }
+  }
+
+  document.getElementById("closePlayer").addEventListener("click", function(){
+    /* A listen just ended by hand. Remember it, because the follow
+       popup only belongs after real use, then offer it now. */
+    closePlayerPanel(false);
   });
 
   fetch("sleep-catalog.json", {cache:"no-cache"})
@@ -249,14 +804,27 @@
       /* Baseline for next visit: remember this exact catalog. */
       store(LS_IDS, data.videos.map(function(v){ return v.id; }));
       store(LS_VER, data.version);
-      /* Follow popup on open, once per day, and never over a playing video. */
-      setTimeout(function(){ if (!playerOpen) showFollowPopup(); }, 1200);
+      /* Stage 1 first: the home screen prompt is the first popup a new
+         visitor earns. It may also arrive later via beforeinstallprompt. */
+      setTimeout(maybeShowInstallPopup, 800);
+      /* Stage 2: the follow popup may greet a RETURNING listener who
+         settled in on an earlier visit. Its own gates keep it off the
+         first open entirely (nobody has listened yet) and out of the
+         way whenever the install prompt ran this visit. */
+      setTimeout(function(){
+        if (!installPromptShownThisLoad) showFollowPopup();
+      }, 1600);
     })
     .catch(function(e){
       var err = document.getElementById("err");
       err.style.display = "block";
       err.textContent = "The sleep catalog could not load. Check your connection and reopen the app.";
     });
+
+  /* The home screen prompt is the first popup, so it does not wait for
+     the catalog fetch below. On iPhone it can show right away; on
+     Android Chrome it shows the moment the install event lands. */
+  setTimeout(maybeShowInstallPopup, 800);
 
   if ("serviceWorker" in navigator){
     navigator.serviceWorker.register("sw.js").catch(function(){});
