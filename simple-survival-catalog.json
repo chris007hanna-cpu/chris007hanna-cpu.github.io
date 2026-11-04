@@ -5,9 +5,9 @@
  "channelHandle": "@simplesurvivalhq",
  "channelUrl": "https://www.youtube.com/@simplesurvivalhq",
  "channelSubscribeUrl": "https://www.youtube.com/@simplesurvivalhq?sub_confirmation=1",
- "version": 1,
- "updated": "2026-11-04T09:02:24Z",
- "videoCount": 11,
+ "version": 2,
+ "updated": "2026-11-04T09:50:57Z",
+ "videoCount": 10,
  "videos": [
   {
    "id": "840O9EuPKyc",
@@ -33,20 +33,6 @@
    "duration": "1 min",
    "category": "Shorts & Quick Tips",
    "publishedAt": "2026-11-03T21:00:20Z",
-   "dateAdded": "2026-11-03",
-   "downloadUrl": null,
-   "audioUrl": null
-  },
-  {
-   "id": "jVUAUPe2Ea4",
-   "title": "He Copied This Creek Water Filter Straight Off His Phone",
-   "url": "https://www.youtube.com/watch?v=jVUAUPe2Ea4",
-   "embedUrl": "https://www.youtube-nocookie.com/embed/jVUAUPe2Ea4",
-   "thumbnail": "https://i.ytimg.com/vi/jVUAUPe2Ea4/hqdefault.jpg",
-   "durationSeconds": 47,
-   "duration": "47 sec",
-   "category": "Shorts & Quick Tips",
-   "publishedAt": "2026-11-03T18:13:21Z",
    "dateAdded": "2026-11-03",
    "downloadUrl": null,
    "audioUrl": null
