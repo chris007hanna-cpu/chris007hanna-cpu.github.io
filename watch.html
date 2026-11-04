@@ -113,8 +113,11 @@ details.wyg summary:focus-visible{outline:2px solid #ffd95e;outline-offset:2px}
 .wygb ul,.wygb ol{margin:0 0 4px 19px}
 .wygb li{margin-bottom:3px}
 .wygb p{margin-bottom:4px}
-.card .t a{color:inherit;text-decoration:none}
-.card .t a:hover{color:#ffd95e;text-decoration:underline}
+.card .t{position:relative;z-index:2}
+.card .t a{color:#ffd95e;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(212,175,55,.55);position:relative;z-index:2}
+.card .t a:hover{color:#ffe98a;text-decoration-color:#ffd95e}
+a.lk{color:#ffd95e;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(212,175,55,.5)}
+a.lk:hover{color:#ffe98a;text-decoration-color:#ffd95e}
 .visitbtn{display:block;margin-top:11px;text-align:center;font-family:'Oswald',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#ffd95e;text-decoration:none;border:1px solid #d4af37;border-radius:9px;padding:10px 12px;background:linear-gradient(165deg,#1d2718,#12160f)}
 .visitbtn:hover{background:#d4af37;color:#111}</style></head><body><div class="wrap">
 <nav><a href="index.html">HOME</a><a href="books.html">BOOKS</a><a href="shop.html">SHOP</a><span class="ngrp"><a href="services.html">SERVICES</a><span class="drop"><a href="services.html">Services Overview</a><a href="realestate.html">Real Estate</a><a href="localbusiness.html">Local Business</a><a href="cardealers.html">Car Dealers</a><a href="propertymanagement.html">Property Management</a><a href="rentalhosts.html">Airbnb &amp; VRBO Hosts</a><a href="insurance.html">Insurance Agents</a><a href="hotels.html">Hotels &amp; Motels</a><a href="taxi.html">Taxi &amp; Limo Services</a><a href="restaurants.html">Restaurants &amp; Hospitality</a><a href="virtual.html">Virtual Services</a><a href="sell.html">Sell With Us</a></span></span><span class="ngrp"><a href="talent.html">TALENT</a><span class="drop"><a href="talent.html">Talent Hub</a><a href="artists.html">Artists</a><a href="models.html">Models</a><a href="glamour.html">Glamour</a><a href="djs.html">DJs</a><a href="actors.html">Actors &amp; Voice</a><a href="singers.html">Singers</a><a href="creators.html">Creators</a><a href="athletes.html">Athletes</a><a href="comedians.html">Comedians</a><a href="podcasters.html">Podcasters</a></span></span><a href="watch.html" class="on">WATCH</a><a href="sleep.html">SLEEP</a></nav>
@@ -150,6 +153,7 @@ details.wyg summary:focus-visible{outline:2px solid #ffd95e;outline-offset:2px}
 <footer><div class="fmap"><a href="index.html">Home</a> &middot; <a href="books.html">Books</a> &middot; <a href="shop.html">Shop</a> &middot; <a href="sell.html">Sell</a> &middot; <a href="sleep.html">Sleep</a> &middot; <a href="watch.html">Watch</a> &middot; <a href="services.html">Services</a> &middot; <a href="realestate.html">Real Estate</a> &middot; <a href="localbusiness.html">Local Business</a> &middot; <a href="cardealers.html">Car Dealers</a> &middot; <a href="propertymanagement.html">Property Management</a> &middot; <a href="rentalhosts.html">Airbnb &amp; VRBO</a> &middot; <a href="insurance.html">Insurance</a> &middot; <a href="hotels.html">Hotels &amp; Motels</a> &middot; <a href="taxi.html">Taxi &amp; Limo</a> &middot; <a href="restaurants.html">Restaurants</a> &middot; <a href="virtual.html">Virtual Services</a> &middot; <a href="talent.html">Talent</a> &middot; <a href="artists.html">Artists</a> &middot; <a href="models.html">Models</a> &middot; <a href="glamour.html">Glamour</a> &middot; <a href="djs.html">DJs</a> &middot; <a href="actors.html">Actors</a> &middot; <a href="singers.html">Singers</a> &middot; <a href="creators.html">Creators</a> &middot; <a href="athletes.html">Athletes</a> &middot; <a href="comedians.html">Comedians</a> &middot; <a href="podcasters.html">Podcasters</a> &middot; <a href="legal.html">Legal</a></div><a href="index.html">&larr; All our links</a><br><br>Site run by <b style="color:#d4af37">Nova &#128176;</b> &mdash; Irish's AI partner.</footer>
 </div><script>
 document.addEventListener('click',function(e){
+if(e.target.closest('a'))return;
 var f=e.target.closest('.vidfac');
 if(!f||f.dataset.on)return;
 f.dataset.on='1';
