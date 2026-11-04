@@ -1,9 +1,11 @@
 {
- "apkUrl": "https://chris007hanna-cpu.github.io/assets/downloads/simple-survival-v3.apk",
+ "apkUrl": "https://chris007hanna-cpu.github.io/assets/downloads/simple-survival-v3.1.apk",
  "app": "simple-survival",
- "notes": "The badass build: the full Simple Survival channel inside the app, newest first, new videos appearing automatically. Six new field chapters (Survival Mindset, Finding Your Way, Signaling and Rescue, Field First Aid, Food: Plants Traps and Fishing, Quick Tips) built on the US Army survival manual structure, hyperlinked contents in every chapter, tap-to-jump cross links between chapters, step by step diagrams for every visual skill including the new deadfall, snare, solar still, shelter and splint builds, and favorites for videos. Same offline guides, bookmarks and checklists carry over.",
+ "notes": "The Field Manuals build: complete public domain manuals now live inside the app, readable fully offline, with hyperlinked chapter contents. FM 21-76 (US Army, 1992) complete; AFR 64-4 Volume I (US Air Force, 1985) complete; the Ranger handbooks (SH 21-76 Chapter 14 and the full TC 3-21.76, 2017); the Navy survival library (Survival on Land and Sea, 1944, plus NAVEDTRA 14325 Chapter 15 and the water survival chapters of NETC P1552/16); and the 1911 Boy Scout Handbook complete with its original illustration plates, knots and tracks included. The bundled video catalog is refreshed and the channel ad stays out of it.",
  "package": "com.hannapress.simplesurvival",
  "published": "2026-11-04",
- "versionCode": 5,
- "versionName": "3.0"
+ "versionCode": 6,
+ "versionName": "3.1",
+ "latestVersionCode": 6,
+ "latestVersionName": "3.1"
 }
