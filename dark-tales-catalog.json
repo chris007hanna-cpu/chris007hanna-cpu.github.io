@@ -1,0 +1,49 @@
+{
+ "channelName": "Dark Tales Retold",
+ "channelUrl": "https://www.youtube.com/@DarkTalesRetoldTV",
+ "tagline": "Horror stories told for the dark. Full tellings and their chilling Shorts from Dark Tales Retold.",
+ "subscribeUrl": "https://www.youtube.com/@DarkTalesRetoldTV?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/@DarkTalesRetoldTV/videos",
+ "shortsUrl": "https://www.youtube.com/@DarkTalesRetoldTV/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "Listening After Dark",
+   "body": "The full tellings under Videos are made for lights out listening: one story, told end to end. The Shorts are single chilling moments cut from the tellings, a minute or so each, for when you only want one scare before sleep."
+  },
+  {
+   "title": "The Tell-Tale Heart, Two Ways",
+   "body": "The channel's Poe telling exists twice in this list: the full horror story, and a Short cut of its most famous moment, the beating under the floorboards. Start with whichever length fits your night; the full story is the one to hear whole."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-03",
+   "id": "CFnUaxMV4GE",
+   "kind": "Short",
+   "title": "Scary Stories to Listen to at Night Got Her Like This #shorts"
+  },
+  {
+   "date": "2026-10-31",
+   "id": "Ugq1ABS2Guk",
+   "kind": "Short",
+   "title": "He Chatted With Police Above the Body, Then Heard It Beating #shorts"
+  },
+  {
+   "date": "2026-10-10",
+   "id": "auGfy2J_RaI",
+   "kind": "Video",
+   "title": "The Tell-Tale Heart by Edgar Allan Poe — Full Horror Story"
+  },
+  {
+   "date": "2026-10-10",
+   "id": "Oy5nKsea7dM",
+   "kind": "Short",
+   "title": "The Tell-Tale Heart — He Could Hear It Beating… 🕯️"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "channelName": "The Claim vs. The Record",
+ "channelUrl": "https://www.youtube.com/@ClaimVsRecord",
+ "tagline": "The claim on one side, the record on the other. Every case video and Short, in one place.",
+ "subscribeUrl": "https://www.youtube.com/@ClaimVsRecord?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/@ClaimVsRecord/videos",
+ "shortsUrl": "https://www.youtube.com/@ClaimVsRecord/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "How Each Case Works",
+   "body": "Every case takes a claim people repeat with total confidence, puts it on one side, and puts the actual record on the other. The full video walks the evidence to a verdict. The Shorts are single claims, stated the way people state them, with the answer in the full case."
+  },
+  {
+   "title": "Case One: The NATO Driving Permit",
+   "body": "The first case on the channel: the secret NATO driving permit that supposedly lets you drive without a license. The record says it is a translation booklet. The full case and both of its Shorts are in this list."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-03",
+   "id": "jZXBoI8ioEE",
+   "kind": "Short",
+   "title": "Can You Drive Without a License? He Said Everybody Knows You Can #shorts"
+  },
+  {
+   "date": "2026-11-01",
+   "id": "1LXCpWevATA",
+   "kind": "Short",
+   "title": "The NATO Driving Permit Is a Translation Booklet."
+  },
+  {
+   "date": "2026-11-01",
+   "id": "-tlJ2j-JkuQ",
+   "kind": "Video",
+   "title": "The Secret NATO Driving Permit: Can You Really Drive Without a License?"
+  }
+ ]
+}

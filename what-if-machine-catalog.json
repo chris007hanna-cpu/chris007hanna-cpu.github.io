@@ -1,0 +1,73 @@
+{
+ "channelName": "What If Machine",
+ "channelUrl": "https://www.youtube.com/@WhatIfMachineTV",
+ "tagline": "One change to the world, followed all the way. Every scenario episode and Short from the channel, in one place.",
+ "subscribeUrl": "https://www.youtube.com/@WhatIfMachineTV?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/@WhatIfMachineTV/videos",
+ "shortsUrl": "https://www.youtube.com/@WhatIfMachineTV/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "How The Machine Works",
+   "body": "Each episode takes one change to the world and follows it honestly: the first minutes, the first day, and what life looks like after it settles. The Videos are the full scenarios. The Shorts are single moments pulled from those same scenarios, so anything that grabs you in a Short has a full episode waiting behind it."
+  },
+  {
+   "title": "Start With The Big Ones",
+   "body": "New here? Start with What If the Sun Went Out? and What If the Ocean Drained Overnight?, the two scenarios the channel keeps coming back to. Their Shorts are in this list too, marked as Shorts, if you want the one minute version first."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-03",
+   "id": "4cBzVEDv_oI",
+   "kind": "Short",
+   "title": "What If the Ocean Drained Overnight? The Couch Went Silent #shorts"
+  },
+  {
+   "date": "2026-11-02",
+   "id": "NJ8NuLnGRus",
+   "kind": "Video",
+   "title": "What Did a Roman Soldier Actually Do All Day?"
+  },
+  {
+   "date": "2026-10-31",
+   "id": "zR-K4ztRGzs",
+   "kind": "Short",
+   "title": "The Ocean Is the Engine Room of the Planet #shorts"
+  },
+  {
+   "date": "2026-10-31",
+   "id": "lX6tlEjEJo0",
+   "kind": "Short",
+   "title": "Could Anyone Survive If the Sun Went Out? #shorts"
+  },
+  {
+   "date": "2026-10-18",
+   "id": "_LKbz_Coti0",
+   "kind": "Video",
+   "title": "What If the Sun Went Out?"
+  },
+  {
+   "date": "2026-10-18",
+   "id": "-r78nFtsjvA",
+   "kind": "Short",
+   "title": "What If the Sun Went Out? The First 8 Minutes ☀️❌ #Shorts"
+  },
+  {
+   "date": "2026-10-10",
+   "id": "dLGy7qMkHbU",
+   "kind": "Short",
+   "title": "What If the Ocean Drained Overnight? 🌊"
+  },
+  {
+   "date": "2026-10-10",
+   "id": "HM6-O1FtPxc",
+   "kind": "Video",
+   "title": "What If the Ocean Drained Overnight?"
+  }
+ ]
+}

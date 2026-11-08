@@ -1,0 +1,79 @@
+{
+ "channelName": "AI Black Belt",
+ "channelUrl": "https://www.youtube.com/@AIBlackBeltHQ",
+ "tagline": "The AI lesson ladder: full lessons and their practice drills, in order, in one place.",
+ "subscribeUrl": "https://www.youtube.com/@AIBlackBeltHQ?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/@AIBlackBeltHQ/videos",
+ "shortsUrl": "https://www.youtube.com/@AIBlackBeltHQ/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "The Lesson Ladder",
+   "body": "Lessons are numbered and build in order. Lesson 1 is Prompting Basics That Actually Work. Lesson 2 is Emails and Messages That Sound Like You. Work them in order: each lesson assumes the one before it, and the channel specials sit on top of the ladder once you have the basics."
+  },
+  {
+   "title": "Drills Are The Point",
+   "body": "The Shorts are practice drills, not extras: the 60-Second Prompt Drill belongs to Lesson 1, the Voice Match Drill to Lesson 2. Do a lesson's drill right after the lesson, while it is fresh, then move up the ladder."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-03",
+   "id": "V-4trRgDOqU",
+   "kind": "Short",
+   "title": "How to Use ChatGPT for Work Emails: The Prompt Fix That Saved My Afternoon #shorts"
+  },
+  {
+   "date": "2026-11-02",
+   "id": "jvm0VHAyEyc",
+   "kind": "Video",
+   "title": "The Two AI Race: Free ChatGPT vs ChatGPT Plus | AI Black Belt Special"
+  },
+  {
+   "date": "2026-11-02",
+   "id": "LY8cE2N2vjw",
+   "kind": "Short",
+   "title": "The Free AI Told Me to Buy Saffron #shorts"
+  },
+  {
+   "date": "2026-11-01",
+   "id": "nk39n_WnVQ8",
+   "kind": "Short",
+   "title": "Same AI. One Company Wins. Here's Why. #shorts"
+  },
+  {
+   "date": "2026-10-31",
+   "id": "J1e1ojQzYDg",
+   "kind": "Short",
+   "title": "The Voice Sample: Emails That Sound Like You #shorts"
+  },
+  {
+   "date": "2026-10-27",
+   "id": "j6yVDEkhThw",
+   "kind": "Short",
+   "title": "The Voice Match Drill | AI Black Belt Lesson 2 #shorts"
+  },
+  {
+   "date": "2026-10-27",
+   "id": "cKgqQWtpDdM",
+   "kind": "Video",
+   "title": "Emails and Messages That Sound Like You | AI Black Belt Lesson 2"
+  },
+  {
+   "date": "2026-10-18",
+   "id": "jarqLBdKHKI",
+   "kind": "Short",
+   "title": "The 60-Second Prompt Drill | AI Black Belt Lesson 1 #shorts"
+  },
+  {
+   "date": "2026-10-17",
+   "id": "QhLUq3sPqU8",
+   "kind": "Video",
+   "title": "Prompting Basics That Actually Work | AI Black Belt Lesson 1"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "versionCode": 1,
+ "versionName": "1.0",
+ "latestVersionCode": 1,
+ "latestVersionName": "1.0",
+ "apkUrl": "https://chris007hanna-cpu.github.io/assets/downloads/claim-vs-record-v1.apk",
+ "notes": "First release of the Claim Vs Record companion app: the full The Claim vs. The Record catalog, refreshed from the channel feed at every launch, with search and favorites.",
+ "package": "com.hannapress.claimvsrecord"
+}

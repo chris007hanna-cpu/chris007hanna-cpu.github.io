@@ -1,0 +1,49 @@
+{
+ "channelName": "Robot Brain Workshop",
+ "channelUrl": "https://www.youtube.com/channel/UCXD_Tww1wi5pn2n3JxGhLtw",
+ "tagline": "An old phone becomes a robot brain. Every workshop episode and build Short, in one place.",
+ "subscribeUrl": "https://www.youtube.com/channel/UCXD_Tww1wi5pn2n3JxGhLtw?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/channel/UCXD_Tww1wi5pn2n3JxGhLtw/videos",
+ "shortsUrl": "https://www.youtube.com/channel/UCXD_Tww1wi5pn2n3JxGhLtw/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "The Build So Far",
+   "body": "The workshop turns an old phone into a robot brain. The first full episode gives it eyes, ears, and a brain in one sitting. The Shorts are single steps from the bench: teaching the brain to see in under a minute, training it with Teachable Machine, and why the phone in your drawer already qualifies."
+  },
+  {
+   "title": "What You Need To Follow Along",
+   "body": "An old phone you no longer use, a browser for the free Teachable Machine site, and the episode open beside you. Every step on the channel is shown on the same kind of phone, so nothing here needs new gear."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-03",
+   "id": "rxsvyWZ0dK8",
+   "kind": "Short",
+   "title": "We Taught a Robot Brain to See in Under a Minute"
+  },
+  {
+   "date": "2026-11-03",
+   "id": "c7NX5Ohdci8",
+   "kind": "Short",
+   "title": "How to Train a Robot Brain With Teachable Machine, Starting From Your Old Phone"
+  },
+  {
+   "date": "2026-11-01",
+   "id": "wwQdodGmIrE",
+   "kind": "Short",
+   "title": "Your Drawer Phone Is Already a Robot Brain"
+  },
+  {
+   "date": "2026-11-01",
+   "id": "4oFs5BywKYo",
+   "kind": "Video",
+   "title": "Your Old Phone Already Has Eyes, Ears, and a Brain. Tonight It Becomes a Robot."
+  }
+ ]
+}
