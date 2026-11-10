@@ -355,4 +355,16 @@ qsa('.book').forEach(function(card){
 renderBar();
 })();
 </script>
+<script>
+document.addEventListener('click',function(e){
+var b=e.target.closest('[data-fnav]');if(!b)return;
+var f=b.closest('.flip');if(!f)return;
+var pages=f.querySelectorAll('.fp');var cur=0;
+pages.forEach(function(p,i){if(p.classList.contains('on'))cur=i;});
+var n=cur+(b.getAttribute('data-fnav')==='next'?1:-1);
+if(n<0)n=pages.length-1;if(n>=pages.length)n=0;
+pages[cur].classList.remove('on');pages[n].classList.add('on');
+f.querySelector('.fcount').textContent=(n+1)+' / '+pages.length;
+});
+</script>
 </body></html>
