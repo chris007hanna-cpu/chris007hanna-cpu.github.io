@@ -1,9 +1,0 @@
-{
- "versionCode": 1,
- "versionName": "1.0",
- "latestVersionCode": 1,
- "latestVersionName": "1.0",
- "apkUrl": "https://chris007hanna-cpu.github.io/assets/downloads/dark-tales-songs-v1.apk",
- "notes": "First release of the Dark Tales Songs companion app: the full Dark Tales Songs catalog, refreshed from the channel feed at every launch, with search and favorites.",
- "package": "com.hannapress.darktalessongs"
-}
