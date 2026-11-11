@@ -938,6 +938,7 @@ def _fg_desc(path):
     raw = _html.unescape(re.sub(r'<[^>]+>', '', raw))
     return [p.strip() for p in raw.split('\n\n') if p.strip()]
 _FG_CHAPTERS_11 = ["What ElevenLabs Is, What It Costs, and What It Is Honestly Not For", "Your Account, Set Up Right on the Free Plan", "A Tour of the Interface, Only What You Will Actually Touch", "Your First Generation, From Text on a Page to a Voice You Can Use", "Directing the Voice, Settings, Staging, and Getting the Take You Want", "Voices, The Library, Your Shelf, and Designing a Voice of Your Own", "The Project, A Narrated Story Episode, Built Start to Finish", "Power Moves, Voice Cloning, Dubbing, and the Habits of a Daily User", "The Mistakes Chapter, What Goes Wrong, What It Sounds Like, and the Fix", "Plugging ElevenLabs Into the Rest of Your Work", "Where ElevenLabs Sits in the AI Bible, Book 08, Tools", "Next Steps, The Academy Labs and What to Build Next"]
+_FG_CHAPTERS_LOVABLE = ["What Lovable Is, What It Costs, and What It Is Honestly Not For", "Your Account, Set Up Right on the Free Plan", "A Tour of the Interface, Only What You Will Actually Touch", "Your First Prompt, From an Idea to a Working Page", "Talking to the Builder, Edits, Fixes, and Getting Unstuck", "Pages, Sections, and Style, Making It Look Like Your Business", "The Project, A Booking Page for a Local Service, Built Start to Finish", "Power Moves, Databases, Settings, and the Habits of a Daily User", "The Mistakes Chapter, What Breaks, What It Looks Like, and the Fix", "Plugging Lovable Into the Rest of Your Work", "Where Lovable Sits in the AI Bible, Book 08, Tools", "Next Steps, The Academy Labs and What to Build Next"]
 FG_BOOKS = [
  dict(dfile='book-how-to-use-lovable.html', title='How to Use Lovable',
       subtitle='Build Real Apps Without Code',
@@ -946,7 +947,7 @@ FG_BOOKS = [
       prices=[("Kindle", "$9.99"), ("Paperback", "$14.99"), ("Buy direct", "$9.99")],
       hook='build real apps without code with Lovable, the step by step field guide for beginners',
       facts='Twelve chapters. The print interior runs 106 pages. Book One of the series.',
-      desc=_fg_desc(_FG_DIR + 'book-01-lovable/kdp-kit/description-kdp-source.txt'), chapters=None),
+      desc=_fg_desc(_FG_DIR + 'book-01-lovable/kdp-kit/description-kdp-source.txt'), chapters=_FG_CHAPTERS_LOVABLE),
  dict(dfile='book-how-to-use-elevenlabs.html', title='How to Use ElevenLabs',
       subtitle='Give Your Work a Voice That Sounds Human',
       series='AI Black Belt Field Guides, Book Two', animal='The nightingale, the voice',
@@ -2516,7 +2517,7 @@ shop2 += '<div class="sec">Prefer a marketplace? Every store</div>'
 shop2 += card("https://irish007.gumroad.com","&#128717;&#65039; GUMROAD","Wallpaper mega packs, prompt packs, coloring books.")
 shop2 += card("https://whop.com/irish007/products","&#127978; WHOP STORE","Every digital product, one storefront.")
 shop2 += card("https://whatwedoindarkness.bandcamp.com","&#127911; BANDCAMP — SLEEP ALBUM","Colors of Noise: Sleep &amp; Focus, Vol. 1 — $7 or more.")
-open('shop.html','w').write(page("The Shop — Digital Products by Irish + Nova","Shop Irish + Nova digital products: AI prompt packs, the AI Memory Sync Kit, planners, coloring books, and wallpaper bundles — buy direct or on our stores.","shop.html","THE SHOP","Same products. <b>Your choice of checkout.</b>", shop2))
+open('shop.html','w').write(page("The Shop — Digital Products by Irish + Nova","Shop Irish + Nova digital products: AI prompt packs, the AI Memory Sync Kit, planners, coloring books, and wallpaper bundles — buy direct or on our stores.","shop.html","THE SHOP","Same products. <b>Your choice of checkout.</b>", shop2, FLIP_JS))
 _s = open('shop.html').read()
 _s = _s.replace('QRCASHB64', open('qr-cashapp-b64.txt').read().strip()).replace('QRCHIMEB64', open('qr-chime-b64.txt').read().strip()).replace('QRZELLEB64', open('qr-zelle-b64.txt').read().strip()).replace('QRPAYPALB64', open('qr-paypal-b64.txt').read().strip())
 open('shop.html','w').write(_s)
@@ -2537,7 +2538,11 @@ sell_body = sell_body.replace('href="#"', 'href="sell.html"')
 open('sell.html','w').write(page("Sell Your Stuff — Consignment by Irish", "Sell your stuff nationwide with Irish + Nova: send photos and your price, we list it, handle every buyer, and schedule the pickup — paid when it sells.", "sell.html", "SELL YOUR STUFF", "You set the price. <b>We do the work.</b>", sell_body))
 print('sell.html', __import__('os').path.getsize('sell.html'))
 
-# ---------- POST-FIX: course tile on shop + Black Belt card on watch ----------
+# ---------- POST-FIX: course tile on shop ----------
+# (Black Belt card REMOVED 2026-11-11, N504: the WATCH generator list at line ~1163
+# now emits the AI Black Belt card itself, so the old post-fix insert asserted
+# 'AIBlackBeltHQ' absent and always failed. Generator output is byte-identical
+# to the old post-fix card: clean_title() strips the leading emoji entity.)
 _s = open('shop.html').read()
 _rung1 = '<div class="book" style="text-align:left"><div class="bt"><a class="pvlink" href="https://www.udemy.com/course/ai-career-profiles-get-your-linkedin-indeed-resume-worki/">AI Career Profiles \u2014 Get Your LinkedIn, Indeed &amp; Resume Working for You</a></div><div class="tp" style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.25rem;margin-top:4px">FREE on Udemy</div><div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:2px">Rung 1 of the ladder: the free front door. 9 lectures \u00b7 the three-part system (profile, resume, positioning) \u00b7 section quizzes, final exam + certificate</div></div>'
 _rung3 = '<div class="book" style="text-align:left"><div class="bt"><a class="pvlink" href="https://www.udemy.com/course/ai-for-realtors-listings-leads-and-follow-up-on-autopilot/">AI for Realtors \u2014 Listings, Leads &amp; Follow-Up on Autopilot</a></div><div class="tp" style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.25rem;margin-top:4px">$89.99 on Udemy</div><div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:2px">Rung 3 of the ladder: the full realtor workflow system. 16 lectures \u00b7 8 sections \u00b7 complete template library \u00b7 fair-housing guardrails \u00b7 final exam + certificate</div></div>'
@@ -2546,12 +2551,18 @@ _course_sec = '<div class="sec">Direct \u2014 Courses &amp; Certifications \u00b
 _anchor = '<div class="sec" id="direct">Direct \u2014 eBooks'
 assert _anchor in _s and 'AI Like a Pro \u2014 The Practical' not in _s
 open('shop.html','w').write(_s.replace(_anchor, _course_sec + _anchor, 1))
-_w = open('watch.html').read()
-_bb = chancard("https://www.youtube.com/@AIBlackBeltHQ", "AI BLACK BELT", "Earn your black belt in AI — free lessons, pro systems.", "UC1os6Wse_GZEkUw10Y0WxBQ")
-_wa = '<div class="card"><div class="t"><a href="https://www.youtube.com/@BrokeSurvivalGuide"'
-assert _wa in _w and 'AIBlackBeltHQ' not in _w
-open('watch.html','w').write(_w.replace(_wa, _bb + _wa, 1))
 print('post-fix applied')
+
+# ---------- POST-FIX: Gilded Hearts theatre-masks emoji on watch + index (2026-11-11, N504) ----------
+# clean_title() strips leading emoji entities from card titles by design (Oct 12
+# "emojis out of card titles"), so the generator cannot emit the verified-live
+# theatre-masks emoji on the Gilded Hearts card (Nov 10 emoji fix, deploys #217/#218).
+# Re-apply it here so a rebuild reproduces the live pages byte-identically.
+for _f in ('watch.html', 'index.html'):
+    _g = open(_f).read()
+    assert _g.count('>GILDED HEARTS DRAMA<') == 1 and '&#127917; GILDED HEARTS DRAMA' not in _g, _f
+    open(_f, 'w').write(_g.replace('>GILDED HEARTS DRAMA<', '>&#127917; GILDED HEARTS DRAMA<', 1))
+print('gilded emoji post-fix applied')
 
 # ---------- POST-FIX: Latest Shorts wall on watch (site parity, 2026-11-07) ----------
 # Every public Short on the fleet, each tile carrying that Short's OWN thumbnail.
