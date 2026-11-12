@@ -208,6 +208,7 @@
 <main><div class="grid" id="grid"></div><p class="err" id="err" style="display:none"></p></main>
 
 <footer>
+  <span id="appVersion">Sleep Sounds v1.5 (build 6)</span><br>
   Videos stream from YouTube, so every play counts toward the channel.<br>
   Add this page to your home screen and it opens like an app.<br>
   <a href="https://www.youtube.com/channel/UC6M4P62to1D6jMt0smdqiNQ" target="_blank" rel="noopener">What We Do In Darkness on YouTube</a>
@@ -906,6 +907,19 @@
       err.style.display = "block";
       err.textContent = "The sleep catalog could not load. Check your connection and reopen the app.";
     });
+
+  /* Footer version line: show the live version from sleep-sounds-version.json
+     when it loads; the static footer text stays as the fallback. */
+  fetch("../sleep-sounds-version.json", {cache:"no-cache"})
+    .then(function(r){ if(!r.ok) throw new Error("version " + r.status); return r.json(); })
+    .then(function(v){
+      var name = v.latestVersionName || v.versionName;
+      var code = v.latestVersionCode || v.versionCode;
+      if (name && code){
+        document.getElementById("appVersion").textContent = "Sleep Sounds v" + name + " (build " + code + ")";
+      }
+    })
+    .catch(function(){});
 
   /* The home screen prompt is the first popup, so it does not wait for
      the catalog fetch below. On iPhone it can show right away; on
