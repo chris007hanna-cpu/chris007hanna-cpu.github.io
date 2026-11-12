@@ -2348,7 +2348,7 @@ idx_body += '<div class="sec">Follow</div><div class="row">'
 for url, t in [("https://www.tiktok.com/@irish00769","&#127925; TikTok"),("https://www.instagram.com/channa00007","&#128248; Instagram"),("https://x.com/Irish00007","&#120143; X"),("https://www.threads.com/@channa00007","&#129525; Threads"),("https://www.facebook.com/Irish00007","&#128216; Facebook")]:
     idx_body += '<a class="card" href="%s"><div class="t">%s</div></a>' % (url, clean_title(t))
 idx_body += '</div>'
-open('index.html','w').write(page("Irish + Nova — Books, Products, Services &amp; Talent","Irish + Nova in one place: 17 Hanna Press books, AI prompt packs, planners and digital products, sleep sounds, talent management, and done-for-you services.","index.html","IRISH","Author. Builder. <b>Everything in one place.</b>", idx_body))
+open('index.html','w').write(page("Irish + Nova — Books, Products, Services &amp; Talent","Irish + Nova in one place: 19 Hanna Press books, AI prompt packs, planners and digital products, sleep sounds, talent management, and done-for-you services.","index.html","IRISH","Author. Builder. <b>Everything in one place.</b>", idx_body))
 
 for f in ['index.html','books.html','shop.html','sleep.html','watch.html','services.html']:
     print(f, os.path.getsize(f))
@@ -3096,7 +3096,7 @@ overlay.innerHTML='<div id="in-panel">'
  +'<div class="in-coderow"><input id="in-code" type="text" placeholder="Discount code" autocomplete="off"><button type="button" class="in-btn" id="in-apply">Apply</button></div>'
  +'<div class="in-codemsg" id="in-codemsg"></div>'
  +'<p class="in-note">Codes don\'t apply to bundles \u2014 bundles are already priced down.</p>'
- +'<p class="in-note" style="margin-top:12px">Pay the TOTAL with any method below and put <b>ORDER + your email</b> in the payment note \u2014 we match it up and deliver. Then tap '+MAIL+' Send Order so we have your items in writing. Prefer a store checkout? Each product is also on Gumroad / Whop / Payhip, where codes redeem automatically. Gifts are emailed to the recipient with your note, from us.</p>'
+ +'<p class="in-note" style="margin-top:12px">Pay the TOTAL with any method below and put <b>ORDER + your email</b> in the payment note \u2014 we match it up and deliver. Then tap '+MAIL+' Send Order so we have your items in writing. Prefer a store checkout? Each product is also on <a href="https://irish007.gumroad.com" style="color:#ffd95e">Gumroad</a> / <a href="https://whop.com/irish007/products" style="color:#ffd95e">Whop</a> / <a href="https://payhip.com/irish007" style="color:#ffd95e">Payhip</a>, where codes redeem automatically. Selected products are also on <a href="https://ko-fi.com/irish45412" style="color:#ffd95e">Ko-fi</a>. Gifts are emailed to the recipient with your note, from us.</p>'
  +'<p class="in-note">Cash App <b>$Irish0007</b> \u00B7 Zelle <b>chris007hanna@gmail.com</b> \u00B7 Chime <b>$Irish007</b> \u00B7 PayPal <b>chris007hanna@gmail.com</b> <span id="in-qrwrap"></span></p>'
  +'<div class="in-btnrow"><a class="in-btn" id="in-send" style="text-decoration:none;display:inline-block" href="#">'+MAIL+' Send Order</a><button type="button" class="in-btn ghost" id="in-copy">Copy Order Summary</button><span class="in-codemsg" id="in-copymsg"></span></div>'
  +'<pre id="in-summary" style="margin-top:10px"></pre>'
