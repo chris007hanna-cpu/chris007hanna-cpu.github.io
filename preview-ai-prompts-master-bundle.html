@@ -121,6 +121,34 @@ a.lk{color:#ffd95e;text-decoration:underline;text-underline-offset:2px;text-deco
 a.lk:hover{color:#ffe98a;text-decoration-color:#ffd95e}
 .visitbtn{display:block;margin-top:11px;text-align:center;font-family:'Oswald',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#ffd95e;text-decoration:none;border:1px solid #d4af37;border-radius:9px;padding:10px 12px;background:linear-gradient(165deg,#1d2718,#12160f)}
 .visitbtn:hover{background:#d4af37;color:#111}
+.bkcard{display:block;text-decoration:none;color:#ece9e0;background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #2c352a;border-radius:14px;padding:14px 12px 13px;text-align:center;transition:transform .15s,border-color .15s,box-shadow .15s}
+.bkcard:hover{transform:translateY(-2px);border-color:#d4af37;box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.bkcard img{width:100%;max-width:170px;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.55)}
+.bkcard .bt{font-family:'Oswald',sans-serif;color:#fff;font-size:1rem;margin-top:10px;line-height:1.25}
+.bkline{color:#a3b5a4;font-size:.86rem;margin-top:5px;line-height:1.5}
+.bkline b{color:#ffd95e;font-weight:600}
+.bkview{display:inline-block;margin-top:11px;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#ffd95e;border:1px solid #37402f;border-radius:8px;padding:7px 14px;background:#0b0f0b}
+.bkcard:hover .bkview{border-color:#d4af37;background:#d4af37;color:#111}
+.bkhero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
+.bkhero .cov{flex:0 0 216px;max-width:62vw}
+.bkhero .cov img{width:100%;height:auto;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.6);border:1px solid #2c352a;display:block}
+.bkhero .cov a.pvlink{display:block}
+.bkinfo{flex:1 1 280px;min-width:250px}
+.bkinfo .bkline{font-size:.95rem}
+.bksec{display:flex;align-items:center;gap:12px;font-family:'Oswald',sans-serif;color:#8b9c8d;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;margin:28px 2px 10px}
+.bksec::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#3a4536,transparent)}
+.bkabout p{color:#dfe4d8;font-size:.97rem;line-height:1.62;margin-bottom:9px}
+.bookstack{background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #2c352a;border-radius:14px;padding:16px;text-align:left}
+.bookstack .bt{font-family:'Oswald',sans-serif;color:#fff;font-size:1.05rem;line-height:1.3}
+.buystack{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.buystack .buy{margin:0;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 15px;font-size:.95rem;border-radius:10px}
+.buy.alt{background:transparent;color:#ffd95e;border:1px solid #d4af37}
+.buy.alt:hover{background:#1d2718}
+.buy .bprice{font-family:'Oswald',sans-serif;letter-spacing:.03em;white-space:nowrap}
+.bknote{color:#8b9c8d;font-size:.84rem;line-height:1.5;margin-top:12px}
+.fgrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 15px;font-size:.95rem;border:1px solid #2c352a;border-radius:10px;color:#a3b5a4;background:#0b0f0b}
+.bkabout ul{margin:2px 0 10px 20px;line-height:1.65;color:#dfe4d8;font-size:.97rem}
+.bkabout li{margin-bottom:3px}
 .pwrap{max-width:940px;margin:0 auto;padding:26px 16px 52px}
 .pnav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
 .backlink{display:inline-block;font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:#ffd95e;border:1px solid #37402f;border-radius:8px;padding:8px 14px;background:#0b0f0b;text-decoration:none}
@@ -144,7 +172,7 @@ function pvShare(){if(navigator.share){navigator.share({title:document.title,url
 function pvCopy(){var u=location.href;var b=document.getElementById("pvcopy");var done=function(){if(b){var o="Copy Link";b.textContent="\u2713 Link Copied";setTimeout(function(){b.textContent=o;},1800);}};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done).catch(function(){pvCopyOld(u);done();});}else{pvCopyOld(u);done();}}
 function pvCopyOld(u){var ta=document.createElement("textarea");ta.value=u;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);}
 </script>
-<div class="flip bigflip"><img class="fp on" src="assets/previews/ai-prompts-master-bundle-page-0.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-1.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-2.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-3.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-4.jpg" alt="Preview page" loading="lazy"><div class="fp ftext"><div class="fb-t">What&#39;s inside</div><p style="margin-bottom:8px">Every niche pack we publish — 20 packs, 1,019 copy-paste prompts — in one download.</p><p style="margin-bottom:8px">Lawyers · Dentists · Mortgage Brokers · Real Estate Agents · Plumbers &amp; HVAC · Wedding Planners · HR Managers · Insurance Agents.</p><p style="margin-bottom:8px">Etsy Sellers · Teachers · Fitness Coaches · Freelancers · Small Business · Car Dealers · Photographers · Property Managers · Restaurants · Short-Term Rental Hosts · Traders &amp; Crypto · Local Candidates.</p><p style="margin-bottom:8px">Bought separately, the packs total $380. The bundle is $49 — own the whole shelf.</p><div style="color:#ffd95e;font-family:Oswald,sans-serif;font-size:.85rem;letter-spacing:.04em;margin-top:4px">20 PDFs &middot; Personal-use license &mdash; buy once, use forever</div></div><div class="fctl"><button type="button" class="fbtn" data-fnav="prev">&larr; Prev</button><span class="fcount">1 / 6</span><button type="button" class="fbtn" data-fnav="next">Next &rarr;</button></div></div><div class="card" style="margin-top:22px"><div class="t">LIKE WHAT YOU SEE?</div><div class="s">The full product is available in <a href="shop.html" style="color:#ffd95e">the Shop</a> and on our stores &mdash; buy direct (we keep 100%) or on Gumroad, Whop, and Payhip.</div></div>
+<div class="flip bigflip"><img class="fp on" src="assets/previews/ai-prompts-master-bundle-page-0.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-1.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-2.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-3.jpg" alt="Preview page" loading="lazy"><img class="fp" src="assets/previews/ai-prompts-master-bundle-page-4.jpg" alt="Preview page" loading="lazy"><div class="fp ftext"><div class="fb-t">What&#39;s inside</div><p style="margin-bottom:8px">20 packs, 1,019 copy-paste prompts in one download. The seasonal Holiday Marketing pack is sold separately for now and joins the bundle after Dec 26.</p><p style="margin-bottom:8px">Lawyers · Dentists · Mortgage Brokers · Real Estate Agents · Plumbers &amp; HVAC · Wedding Planners · HR Managers · Insurance Agents.</p><p style="margin-bottom:8px">Etsy Sellers · Teachers · Fitness Coaches · Freelancers · Small Business · Car Dealers · Photographers · Property Managers · Restaurants · Short-Term Rental Hosts · Traders &amp; Crypto · Local Candidates.</p><p style="margin-bottom:8px">Bought separately, the packs total $380. The bundle is $49 — own the whole shelf.</p><div style="color:#ffd95e;font-family:Oswald,sans-serif;font-size:.85rem;letter-spacing:.04em;margin-top:4px">20 PDFs &middot; Personal-use license &mdash; buy once, use forever</div></div><div class="fctl"><button type="button" class="fbtn" data-fnav="prev">&larr; Prev</button><span class="fcount">1 / 6</span><button type="button" class="fbtn" data-fnav="next">Next &rarr;</button></div></div><div class="card" style="margin-top:22px"><div class="t">LIKE WHAT YOU SEE?</div><div class="s">The full product is available in <a href="shop.html" style="color:#ffd95e">the Shop</a> and on our stores &mdash; buy direct (we keep 100%) or on Gumroad, Whop, and Payhip.</div></div>
 <div class="pnav"><a class="backlink" href="shop.html">&larr; Back to Shop</a><a class="backlink" href="index.html">&#127968; Main Page</a></div>
 <footer><a href="index.html">&larr; All our links</a> &middot; <a href="legal.html">Legal</a><br><br>Site run by <b style="color:#d4af37">Nova &#128176;</b> &mdash; Irish&#39;s AI partner.</footer>
 </div><script>
