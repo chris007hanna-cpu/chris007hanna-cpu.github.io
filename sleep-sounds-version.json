@@ -1,1 +1,11 @@
-{"app":"Sleep Sounds","package":"com.hannapress.sleepsounds","versionCode":6,"versionName":"1.5","latestVersionCode":6,"latestVersionName":"1.5","apkUrl":"https://chris007hanna-cpu.github.io/sleep-app/sleep-sounds.apk","notes":"Version 1.5: adds the launch time auto update check every other app already has, so Sleep Sounds now tells you on open when a newer version is ready. Everything else is unchanged from the previous build: the full channel catalog still refreshes on its own, background playback, duration and timer, black screen and full screen all unchanged.","published":"2026-11-04"}
+{
+  "app": "Sleep Sounds",
+  "package": "com.hannapress.sleepsounds",
+  "versionCode": 7,
+  "versionName": "1.6",
+  "latestVersionCode": 7,
+  "latestVersionName": "1.6",
+  "apkUrl": "https://chris007hanna-cpu.github.io/sleep-app/sleep-sounds.apk",
+  "notes": "Version 1.6: the built-in video catalog is refreshed to the current 64 videos, so a fresh install shows the full list even before its first online refresh. Everything else is unchanged from the previous build: the launch time update check, background playback, duration and timer, black screen and full screen all unchanged.",
+  "published": "2026-11-12"
+}
