@@ -2435,10 +2435,10 @@ shop2 = '''<a class="card hero" href="#direct">
 <b style="color:#ffd95e">2.</b> Put the <b>product name + your email</b> in the payment note<br>
 <b style="color:#ffd95e">3.</b> We email your files &mdash; usually within a few hours, always same day</div>
 <div style="display:flex;gap:14px;margin-top:14px;flex-wrap:wrap">
-<div style="flex:1;min-width:150px;text-align:center"><img src="data:image/png;base64,QRCASHB64" alt="Cash App QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">Cash App — $Irish0007</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
-<div style="flex:1;min-width:150px;text-align:center"><img src="data:image/png;base64,QRZELLEB64" alt="Zelle QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">Zelle</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
-<div style="flex:1;min-width:150px;text-align:center"><img src="data:image/png;base64,QRCHIMEB64" alt="Chime QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">Chime — $Irish007</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
-<div style="flex:1;min-width:150px;text-align:center"><img src="data:image/png;base64,QRPAYPALB64" alt="PayPal QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">PayPal</div><div style="color:#cfe3d2;font-size:.85rem">chris007hanna@gmail.com</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
+<div style="flex:1;min-width:150px;text-align:center"><img src="qr-cashapp.png" alt="Cash App QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">Cash App — $Irish0007</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
+<div style="flex:1;min-width:150px;text-align:center"><img src="qr-zelle-full.png" alt="Zelle QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">Zelle</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
+<div style="flex:1;min-width:150px;text-align:center"><img src="qr-chime.png" alt="Chime QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">Chime — $Irish007</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
+<div style="flex:1;min-width:150px;text-align:center"><img src="paypal-qr.png" alt="PayPal QR code" style="width:100%;max-width:190px;border-radius:12px;background:#fff;padding:6px"><div style="margin-top:6px;font-weight:700;color:#fff">PayPal</div><div style="color:#cfe3d2;font-size:.85rem">chris007hanna@gmail.com</div><div style="color:#9fb3a1;font-size:.85rem">Scan to pay</div></div>
 </div>
 <div style="margin-top:14px;border:1px solid rgba(255,217,94,.35);background:rgba(255,217,94,.06);border-radius:12px;padding:10px 12px;color:#cfe3d2;font-size:.9rem;line-height:1.55;text-align:left"><b style="color:#ffd95e">GOT A CODE FROM ONE OF OUR ADS?</b> On Gumroad, Whop, or Payhip, enter it at checkout. Paying direct here? Put the code in your payment note and pay the discounted price &mdash; we honor every code we publish. (Codes don't stack and don't apply to bundles, which are already priced down.)</div>
 </a>
@@ -2528,10 +2528,7 @@ shop2 += card("https://irish007.gumroad.com","&#128717;&#65039; GUMROAD","Wallpa
 shop2 += card("https://whop.com/irish007/products","&#127978; WHOP STORE","Every digital product, one storefront.")
 shop2 += card("https://whatwedoindarkness.bandcamp.com","&#127911; BANDCAMP — SLEEP ALBUM","Colors of Noise: Sleep &amp; Focus, Vol. 1 — $7 or more.")
 open('shop.html','w').write(page("AI Prompt Packs and Digital Products by Irish + Nova","Shop Irish + Nova digital products: AI prompt packs, the AI Memory Sync Kit, planners, coloring books, and wallpaper bundles — buy direct or on our stores.","shop.html","THE SHOP","Same products. <b>Your choice of checkout.</b>", shop2, FLIP_JS))
-_s = open('shop.html').read()
-_s = _s.replace('QRCASHB64', open('qr-cashapp-b64.txt').read().strip()).replace('QRCHIMEB64', open('qr-chime-b64.txt').read().strip()).replace('QRZELLEB64', open('qr-zelle-b64.txt').read().strip()).replace('QRPAYPALB64', open('qr-paypal-b64.txt').read().strip())
-open('shop.html','w').write(_s)
-print('shop.html v2 + QRs', os.path.getsize('shop.html'))
+print('shop.html v2 + QR file refs', os.path.getsize('shop.html'))
 
 
 # ---------- SELL (consignment intake) ----------
@@ -2989,33 +2986,10 @@ assert _sbp_old in _sbp
 open('preview-survival-72-hour-binder.html', 'w').write(_sbp.replace(_sbp_old, _sbp_new, 1))
 print('survival binder preview group license note applied')
 
-# ---------- POST-FIX: survival binder page images embedded as data URIs in the preview page and the shop flipper (page images not yet repo-hosted; local JPGs in assets/previews are the source) ----------
-import base64 as _b64sb
-_sb_uris = {}
-for _n in range(5):
-    _sb_uris[_n] = 'data:image/jpeg;base64,' + _b64sb.b64encode(open('assets/previews/survival-72-hour-binder-page-%d.jpg' % _n, 'rb').read()).decode()
-for _sb_file in ['preview-survival-72-hour-binder.html', 'shop.html']:
-    _sbh = open(_sb_file).read()
-    for _n in range(5):
-        _sold = 'src="assets/previews/survival-72-hour-binder-page-%d.jpg"' % _n
-        assert _sbh.count(_sold) == 1, (_sb_file, _n)
-        _sbh = _sbh.replace(_sold, 'src="' + _sb_uris[_n] + '"', 1)
-    open(_sb_file, 'w').write(_sbh)
-print('survival binder data-uri images applied (preview + shop)')
-
-# ---------- POST-FIX: Advent bundle preview images embedded as data URIs (page images not yet repo-hosted; same pattern as the survival binder fix above; added 2026-11-06) ----------
-import base64 as _b64adv
-_adv_uris = {}
-for _n in range(5):
-    _adv_uris[_n] = 'data:image/jpeg;base64,' + _b64adv.b64encode(open('assets/previews/advent-devotional-2027-tracker-page-%d.jpg' % _n, 'rb').read()).decode()
-for _adv_file in ['preview-advent-devotional-2027-tracker.html', 'shop.html']:
-    _advh = open(_adv_file).read()
-    for _n in range(5):
-        _aold = 'src="assets/previews/advent-devotional-2027-tracker-page-%d.jpg"' % _n
-        assert _aold in _advh, (_adv_file, _n)
-        _advh = _advh.replace(_aold, 'src="' + _adv_uris[_n] + '"', 1)
-    open(_adv_file, 'w').write(_advh)
-print('advent preview data-uri images applied')
+# ---------- M22 SHOP SLICE (2026-11-13): survival binder + Advent preview images now served as files ----------
+# The two post-fix blocks that embedded assets/previews/*.jpg as data URIs are DELETED:
+# the 10 JPGs are pushed to GitHub (assets/previews/) and the flipper() file refs stay.
+# A rebuild reproduces shop.html + both preview pages byte-identically with file refs.
 
 # ---------- POST-FIX: cart (client-side cart + gifts + share on shop + books) ----------
 _CART_SNIPPET = r'''
