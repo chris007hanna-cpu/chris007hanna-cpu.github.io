@@ -7,6 +7,15 @@ def b64img(path, w, q=80):
     buf = io.BytesIO(); im.save(buf, 'JPEG', quality=q)
     return base64.b64encode(buf.getvalue()).decode()
 
+def fileimg(path, w, out, q=80):
+    # M22: same resize/quality as b64img, but written to a file under assets/
+    # instead of embedded as base64. Returns the site-relative path.
+    im = Image.open(path).convert('RGB')
+    im.thumbnail((w, w*3))
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    im.save(out, 'JPEG', quality=q)
+    return out
+
 def clean_title(t):
     # Demote emojis out of card/program titles: strip a leading run of emoji
     # entities / pictographs (keeps leading digits, e.g. numbered steps).
@@ -887,14 +896,14 @@ for cover, title, status, extra in books:
     PV_BOOK_META[_bslug] = (title, _bfmt)
     _dfile = 'book-%s.html' % _bslug
     BOOK_DETAIL_FILES.append(_dfile)
-    img = '<img src="data:image/jpeg;base64,%s" alt="%s cover">' % (b64img(B + cover, 240, 76), title)
+    img = '<img src="%s" alt="%s cover">' % (fileimg(B + cover, 240, 'assets/covers/%s-240.jpg' % _bslug, 76), title)
     _fmt_txt = " &middot; ".join('%s <b>$%s</b>' % (_l.rpartition(' $')[0], _l.rpartition(' $')[2]) for _l, _u in extra)
     cards += '<a class="bkcard" href="%s">%s<div class="bt">%s</div><div class="bkline">%s</div><span class="bkview">View Book</span></a>\n' % (_dfile, img, title, _fmt_txt)
     # ----- per-book detail page -----
     _hook = _BOOK_HOOKS.get(_bslug, "a Hanna Press book")
     _ptitle = "%s — %s | Hanna Press, Irish + Nova" % (title, _hook[:1].upper() + _hook[1:])
     _pdesc = _book_meta_desc(title, _bslug)
-    _covimg = '<img src="data:image/jpeg;base64,%s" alt="%s cover">' % (b64img(B + cover, 300, 78), title)
+    _covimg = '<img src="%s" alt="%s cover">' % (fileimg(B + cover, 300, 'assets/covers/%s-300.jpg' % _bslug, 78), title)
     if pv_has(_bslug):
         _covimg = '<a class="pvlink" href="preview-%s.html" title="Look inside">%s</a>' % (_bslug, _covimg)
     _hero = ('<div class="bkhero"><div class="cov">%s</div><div class="bkinfo">'
@@ -991,12 +1000,12 @@ def _fg_panel(fg):
 fg_cards = ""
 for _fg in FG_BOOKS:
     BOOK_DETAIL_FILES.append(_fg['dfile'])
-    _fimg = '<img src="data:image/jpeg;base64,%s" alt="%s cover">' % (b64img(_fg['cover'], 240, 76), _fg['title'])
+    _fimg = '<img src="%s" alt="%s cover">' % (fileimg(_fg['cover'], 240, 'assets/covers/%s-240.jpg' % _fg['dfile'][5:-5], 76), _fg['title'])
     _fprice = " &middot; ".join('%s <b>%s</b>' % (_n, _p) for _n, _p in _fg['prices'])
     fg_cards += '<a class="bkcard" href="%s">%s<div class="bt">%s</div><div class="bkline">%s</div><span class="badge">In production</span><br><span class="bkview">View Book</span></a>\n' % (_fg['dfile'], _fimg, _fg['title'], _fprice)
     _ftitle = "%s — %s | Hanna Press, Irish + Nova" % (_fg['title'], _fg['hook'][:1].upper() + _fg['hook'][1:])
     _fdesc = _fit_desc(_fg['title'], _fg['hook'])
-    _fcov = '<img src="data:image/jpeg;base64,%s" alt="%s cover">' % (b64img(_fg['cover'], 300, 78), _fg['title'])
+    _fcov = '<img src="%s" alt="%s cover">' % (fileimg(_fg['cover'], 300, 'assets/covers/%s-300.jpg' % _fg['dfile'][5:-5], 78), _fg['title'])
     _fhero = ('<div class="bkhero"><div class="cov">%s</div><div class="bkinfo">'
               '<div class="bkline">%s &mdash; Hanna Press</div>'
               '<div class="bkline" style="margin-top:7px">%s, on the cover</div>'
@@ -2376,7 +2385,7 @@ SHOP_BLURBS = {
 "ai-prompts-wedding-planners": (["Client inquiry & booking replies, vendor coordination & timelines.", "Client communication & planning guidance that keeps couples calm.", "Social media & marketing content, reviews, referrals & reputation.", "Fill the [BRACKETS], paste into any AI chat tool \u2014 polished replies in seconds."], _PACKFOOT),
 "ai-prompts-plumbers-hvac": (["Customer calls, booking & follow-up texts, estimate follow-ups.", "Invoices & service explainers customers actually understand.", "Social media & local marketing, review replies, seasonal campaigns & maintenance plans.", "Business growth, hiring & team prompts. Fill the [BRACKETS] and paste."], _PACKFOOT),
 "ai-prompts-small-business": (["50 copy-paste prompts built for one-person and tiny-team businesses.", "Social media posts, product descriptions, customer emails.", "Review responses, marketing & ads.", "No marketing department, no agency budget \u2014 replace the [BRACKETS] and go."], "PDF pack &middot; Works with any AI chat tool"),
-"ai-prompts-master-bundle": (["Every niche pack we publish \u2014 20 packs, 1,019 copy-paste prompts \u2014 in one download.", "Lawyers \u00b7 Dentists \u00b7 Mortgage Brokers \u00b7 Real Estate Agents \u00b7 Plumbers & HVAC \u00b7 Wedding Planners \u00b7 HR Managers \u00b7 Insurance Agents.", "Etsy Sellers \u00b7 Teachers \u00b7 Fitness Coaches \u00b7 Freelancers \u00b7 Small Business \u00b7 Car Dealers \u00b7 Photographers \u00b7 Property Managers \u00b7 Restaurants \u00b7 Short-Term Rental Hosts \u00b7 Traders & Crypto \u00b7 Local Candidates.", "Bought separately, the packs total $380. The bundle is $49 \u2014 own the whole shelf."], "20 PDFs &middot; Personal-use license &mdash; buy once, use forever"),
+"ai-prompts-master-bundle": (["20 packs, 1,019 copy-paste prompts in one download. The seasonal Holiday Marketing pack is sold separately for now and joins the bundle after Dec 26.", "Lawyers \u00b7 Dentists \u00b7 Mortgage Brokers \u00b7 Real Estate Agents \u00b7 Plumbers & HVAC \u00b7 Wedding Planners \u00b7 HR Managers \u00b7 Insurance Agents.", "Etsy Sellers \u00b7 Teachers \u00b7 Fitness Coaches \u00b7 Freelancers \u00b7 Small Business \u00b7 Car Dealers \u00b7 Photographers \u00b7 Property Managers \u00b7 Restaurants \u00b7 Short-Term Rental Hosts \u00b7 Traders & Crypto \u00b7 Local Candidates.", "Bought separately, the packs total $380. The bundle is $49 \u2014 own the whole shelf."], "20 PDFs &middot; Personal-use license &mdash; buy once, use forever"),
 "repair-shop-in-a-box": (["The complete paperwork system for an independent phone-repair shop \u2014 14 printable US-Letter pages.", "Intake form with condition checklist & signed authorization, 3-minute diagnostic checklist, estimate/quote worksheet.", "Price menu template + pricing worksheet with the parts-markup and labor math, so you price for profit.", "No Fix No Fee policy, repair terms & limited warranty, receipts, pickup & sign-off form, parts tracker, daily job log \u2014 plus 6 copy-paste customer text scripts."], "Printable PDF &middot; Fill the [BRACKETS] once, photocopy forever &middot; Templates, not legal advice"),
 "website-template-pack": (["Six complete websites \u2014 each a single HTML file you can edit in Notepad and put online free in about 10 minutes.", "Link Hub (your own link-in-bio page) \u00b7 Author / Book Sales Page \u00b7 Food Truck / Restaurant One-Pager.", "Barber / Salon Page \u00b7 Handyman / Trades Page \u00b7 Coach / Consultant Page.", "Plus a beginner-friendly README: editing steps and free hosting on Netlify, Cloudflare Pages, or GitHub Pages \u2014 custom domain included. No monthly fees, ever."], "6 HTML templates + README &middot; Mobile-first &middot; You own the files"),
 "christmas-command-center": (["A 12-page printable planner that runs your whole December \u2014 from the first budget sketch to the last January return.", "Gift tracker, gift-ideas brainstorm, Christmas card list, and a budget sheet with a hard-cap reality check.", "Meal & menu planner, grocery list in eight store sections, and 25 Advent activity cards.", "Stocking-stuffer ideas, a returns & exchanges tracker, and notes for next year."], "13 PDFs \u2014 full planner + every sheet solo &middot; US Letter &middot; Buy once, use every year"),
@@ -2438,9 +2447,10 @@ shop2 = '''<a class="card hero" href="#direct">
 for n, p in [("The Phone Flip Playbook","$2.99"),("AI Coding Agents 2026","$3.99"),("Embracing the Unknown","$2.99"),("Digital Product Empire","$4.99"),("Faceless Fortune","$2.99"),("Fiverr Fast Start","$2.99"),("Free Money Handbook","$2.99"),("Instant Ramen Chef","$2.99"),("Laugh Attack","$2.99"),("Marketplace Millions","$2.99"),("Mojo 1.0","$3.99"),("Phone Repair Mastery","$2.99"),("Side Hustle Stack","$2.99"),("Solid-State EV Buyer's Guide","$3.99"),("Surviving on the Street","$2.99"),("The $0 Startup","$2.99"),("Dad Jokes","$2.99")]:
     shop2 += prow("&#128218; " + n, p, "EPUB ebook — read anywhere", pv_link(BOOK_SLUG[n]), href=pv_href(BOOK_SLUG[n]))
 shop2 += '</div><div class="sec">Direct — AI prompt packs</div><div class="grid">'
-shop2 += prow("&#128293; AI PROMPTS MASTER BUNDLE — ALL 20 PACKS", "$49", "Every niche pack in one bundle — 1,019 prompts, $380 value bought separately. Buy direct: pay, put 'Master Bundle' + your email in the note, we email the files same day", shop_pv("ai-prompts-master-bundle"), href=pv_href("ai-prompts-master-bundle"))
+shop2 += prow("&#128293; AI PROMPTS MASTER BUNDLE — ALL 20 PACKS", "$49", "20 packs in one bundle. 1,019 prompts, $380 value bought separately. Buy direct: pay, put 'Master Bundle' + your email in the note, we email the files same day", shop_pv("ai-prompts-master-bundle"), href=pv_href("ai-prompts-master-bundle"))
+_PACK_COUNTS = {"Real Estate Agents": 53, "Teachers": 48, "Fitness Coaches": 48, "Freelancers": 45, "Etsy Sellers": 53}
 for n in ["Lawyers","Dentists","Mortgage Brokers","Real Estate Agents","Teachers","Fitness Coaches","Freelancers","Etsy Sellers","HR Managers","Photographers","Property Managers","Restaurants"]:
-    shop2 += prow("&#129302; 52 AI Prompts for " + n, "$19", "Copy-paste prompts that do the busywork", shop_pv(PACK_SLUG[n]), href=pv_href(PACK_SLUG[n]))
+    shop2 += prow("&#129302; " + str(_PACK_COUNTS.get(n, 52)) + " AI Prompts for " + n, "$19", "Copy-paste prompts that do the busywork", shop_pv(PACK_SLUG[n]), href=pv_href(PACK_SLUG[n]))
 shop2 += prow("&#129302; 52 AI Prompts for Wedding Planners", "$19", "Copy-paste prompts that do the busywork", shop_pv("ai-prompts-wedding-planners"), href=pv_href("ai-prompts-wedding-planners"))
 shop2 += prow("&#129302; 52 AI Prompts for Plumbers &amp; HVAC Pros", "$19", "Copy-paste prompts that do the busywork", shop_pv("ai-prompts-plumbers-hvac"), href=pv_href("ai-prompts-plumbers-hvac"))
 shop2 += prow("&#129302; 50 AI Prompts for Small Business", "$19", "Copy-paste prompts that do the busywork", shop_pv("ai-prompts-small-business"), href=pv_href("ai-prompts-small-business"))
@@ -2517,7 +2527,7 @@ shop2 += '<div class="sec">Prefer a marketplace? Every store</div>'
 shop2 += card("https://irish007.gumroad.com","&#128717;&#65039; GUMROAD","Wallpaper mega packs, prompt packs, coloring books.")
 shop2 += card("https://whop.com/irish007/products","&#127978; WHOP STORE","Every digital product, one storefront.")
 shop2 += card("https://whatwedoindarkness.bandcamp.com","&#127911; BANDCAMP — SLEEP ALBUM","Colors of Noise: Sleep &amp; Focus, Vol. 1 — $7 or more.")
-open('shop.html','w').write(page("The Shop — Digital Products by Irish + Nova","Shop Irish + Nova digital products: AI prompt packs, the AI Memory Sync Kit, planners, coloring books, and wallpaper bundles — buy direct or on our stores.","shop.html","THE SHOP","Same products. <b>Your choice of checkout.</b>", shop2, FLIP_JS))
+open('shop.html','w').write(page("AI Prompt Packs and Digital Products by Irish + Nova","Shop Irish + Nova digital products: AI prompt packs, the AI Memory Sync Kit, planners, coloring books, and wallpaper bundles — buy direct or on our stores.","shop.html","THE SHOP","Same products. <b>Your choice of checkout.</b>", shop2, FLIP_JS))
 _s = open('shop.html').read()
 _s = _s.replace('QRCASHB64', open('qr-cashapp-b64.txt').read().strip()).replace('QRCHIMEB64', open('qr-chime-b64.txt').read().strip()).replace('QRZELLEB64', open('qr-zelle-b64.txt').read().strip()).replace('QRPAYPALB64', open('qr-paypal-b64.txt').read().strip())
 open('shop.html','w').write(_s)
@@ -2546,8 +2556,8 @@ print('sell.html', __import__('os').path.getsize('sell.html'))
 _s = open('shop.html').read()
 _rung1 = '<div class="book" style="text-align:left"><div class="bt"><a class="pvlink" href="https://www.udemy.com/course/ai-career-profiles-get-your-linkedin-indeed-resume-worki/">AI Career Profiles \u2014 Get Your LinkedIn, Indeed &amp; Resume Working for You</a></div><div class="tp" style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.25rem;margin-top:4px">FREE on Udemy</div><div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:2px">Rung 1 of the ladder: the free front door. 9 lectures \u00b7 the three-part system (profile, resume, positioning) \u00b7 section quizzes, final exam + certificate</div></div>'
 _rung3 = '<div class="book" style="text-align:left"><div class="bt"><a class="pvlink" href="https://www.udemy.com/course/ai-for-realtors-listings-leads-and-follow-up-on-autopilot/">AI for Realtors \u2014 Listings, Leads &amp; Follow-Up on Autopilot</a></div><div class="tp" style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.25rem;margin-top:4px">$89.99 on Udemy</div><div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:2px">Rung 3 of the ladder: the full realtor workflow system. 16 lectures \u00b7 8 sections \u00b7 complete template library \u00b7 fair-housing guardrails \u00b7 final exam + certificate</div></div>'
-_rung2note = '<div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:6px">Rung 2 of the ladder \u00b7 also on Udemy: <a class="pvlink" href="https://www.udemy.com/course/ai-like-a-pro-the-practical-ai-mastery-course/">AI Like a Pro on Udemy (instructor link)</a></div>'
-_course_sec = '<div class="sec">Direct \u2014 Courses &amp; Certifications \u00b7 The Udemy Ladder</div><div class="grid">' + _rung1 + '<div class="book" style="text-align:left"><div class="bt"><a class="pvlink" href="preview-ai-like-a-pro.html">AI Like a Pro \u2014 The Practical AI Mastery Course</a></div><div class="tp" style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.25rem;margin-top:4px">$29</div><div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:2px">51-page course: 7 modules, quizzes, final exam + printable certificate</div>' + shop_pv("ai-like-a-pro") + _rung2note + '</div>' + _rung3 + '</div>'
+_rung2note = '<div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:6px">Rung 2 of the ladder \u00b7 also on Udemy for $39.99: <a class="pvlink" href="https://www.udemy.com/course/ai-like-a-pro-the-practical-ai-mastery-course/">AI Like a Pro on Udemy (instructor link)</a></div>'
+_course_sec = '<div class="sec">Direct \u2014 Courses &amp; Certifications \u00b7 The Udemy Ladder</div><div class="grid">' + _rung1 + '<div class="book" style="text-align:left"><div class="bt"><a class="pvlink" href="preview-ai-like-a-pro.html">AI Like a Pro \u2014 The Practical AI Mastery Course</a></div><div class="tp" style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.25rem;margin-top:4px">$29 direct</div><div class="s" style="color:#9fb3a1;font-size:.9rem;margin-top:2px">51-page course: 7 modules, quizzes, final exam + printable certificate</div>' + shop_pv("ai-like-a-pro") + _rung2note + '</div>' + _rung3 + '</div>'
 _anchor = '<div class="sec" id="direct">Direct \u2014 eBooks'
 assert _anchor in _s and 'AI Like a Pro \u2014 The Practical' not in _s
 open('shop.html','w').write(_s.replace(_anchor, _course_sec + _anchor, 1))
@@ -2572,7 +2582,7 @@ _sh = '<div class="sec">Latest Shorts — every channel</div>'
 for _ch, _items in WATCH_SHORTS:
     _sh += '<div class="sec">%s — Shorts</div>' % _ch
     for _vid, _t in _items:
-        _sh += '<div class="card"><div class="t"><a href="https://youtube.com/shorts/%s" target="_blank" rel="noopener">%s</a></div><div class="s">%s — a Short. Plays right here on this page.</div>%s<noscript><div class="s"><a href="https://youtube.com/shorts/%s">Watch on YouTube</a></div></noscript></div>\n' % (_vid, clean_title(_t.replace('&', '&amp;')), _ch, vidfac(_vid), _vid)
+        _sh += '<div class="card"><div class="t"><a href="https://youtube.com/shorts/%s">%s</a></div><div class="s">%s — a Short. Plays right here on this page.</div>%s<noscript><div class="s"><a href="https://youtube.com/shorts/%s">Watch on YouTube</a></div></noscript></div>\n' % (_vid, clean_title(_t.replace('&', '&amp;')), _ch, vidfac(_vid), _vid)
 _tk = '<div class="sec">TikTok</div>'
 assert _tk in _w2
 open('watch.html','w').write(_w2.replace(_tk, _sh + _tk, 1))
@@ -2791,11 +2801,11 @@ _PV_SHOP_TITLES = {
     "ai-prompts-lawyers": "52 AI Prompts for Lawyers",
     "ai-prompts-dentists": "52 AI Prompts for Dentists",
     "ai-prompts-mortgage-brokers": "52 AI Prompts for Mortgage Brokers",
-    "ai-prompts-real-estate": "52 AI Prompts for Real Estate Agents",
-    "ai-prompts-teachers": "52 AI Prompts for Teachers",
-    "ai-prompts-fitness-coaches": "52 AI Prompts for Fitness Coaches",
-    "ai-prompts-freelancers": "52 AI Prompts for Freelancers",
-    "ai-prompts-etsy-sellers": "52 AI Prompts for Etsy Sellers",
+    "ai-prompts-real-estate": "53 AI Prompts for Real Estate Agents",
+    "ai-prompts-teachers": "48 AI Prompts for Teachers",
+    "ai-prompts-fitness-coaches": "48 AI Prompts for Fitness Coaches",
+    "ai-prompts-freelancers": "45 AI Prompts for Freelancers",
+    "ai-prompts-etsy-sellers": "53 AI Prompts for Etsy Sellers",
     "ai-prompts-wedding-planners": "52 AI Prompts for Wedding Planners",
     "ai-prompts-plumbers-hvac": "52 AI Prompts for Plumbers &amp; HVAC Pros",
     "ai-prompts-small-business": "50 AI Prompts for Small Business",
