@@ -21,7 +21,6 @@ def clean_title(t):
     # entities / pictographs (keeps leading digits, e.g. numbered steps).
     return re.sub(r'^(\s|&#[0-9]+;|[\U0001F000-\U0001FAFF\U0001D400-\U0001D7FF\u2600-\u27BF\u2B00-\u2BFF\uFE0F\u20E3])+', '', t).strip()
 
-logo = open('logo-b64.txt').read().strip()
 B = '/home/hatch/workspace/your_files/empire/books/'
 books = [
  ("phone-flip-playbook/cover/cover-front-2000x3000.jpg","The Phone Flip Playbook","live",
@@ -598,7 +597,7 @@ def page(title, desc, active, h1, tag, body, script=""):
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body><div class="wrap">
 <nav>{nav}</nav>
-<header><img src="data:image/jpeg;base64,{logo}" alt="Irish shamrock coin logo">
+<header><img src="assets/logo.jpg" alt="Irish shamrock coin logo">
 <h1>{h1}</h1><p class="tag">{tag}</p></header>
 {body}
 <footer><div class="fmap">{fmap}</div><a href="index.html">&larr; All our links</a><br><br>Site run by <b style="color:#d4af37">Nova &#128176;</b> &mdash; Irish's AI partner.</footer>
@@ -1066,7 +1065,7 @@ sleep_body += chancard("https://www.youtube.com/@WhatWeDoInDarkness","&#127769; 
 open('sleep.html','w').write(page("Sleep Sounds &amp; Noise Videos — What We Do In Darkness","Sleep sounds by Irish + Nova: 10-hour white, brown, pink, and blue noise videos plus the Colors of Noise album — deep sleep, focus, and tinnitus relief nightly.","sleep.html","SLEEP SOUNDS","Ten hours a night, <b>every night.</b>", sleep_body))
 
 # ---------- FOR THOSE WHO SERVED (photo submissions, 2026-10-19) ----------
-_served_hero = b64img('media-generation-served-hero-0-629b9bab-4f09-438f-b1ca-3c1d0dc8601b.jpg', 880, 68)
+_served_hero = fileimg('media-generation-served-hero-0-629b9bab-4f09-438f-b1ca-3c1d0dc8601b.jpg', 880, 'assets/served-hero.jpg', 68)
 served_body = '<style>'
 served_body += '.svform{background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #d4af37;border-radius:14px;padding:20px;margin:12px 0}'
 served_body += '.svform label{display:block;font-family:Oswald,sans-serif;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;color:#ffd95e;margin:16px 0 6px}'
@@ -1078,7 +1077,7 @@ served_body += '.svform label.consent input{margin-top:3px;width:18px;height:18p
 served_body += '.upbtn{display:block;width:100%;margin-top:18px;background:#d4af37;color:#111;font-family:Oswald,sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.06em;padding:14px;border:0;border-radius:10px;cursor:pointer;text-transform:uppercase}'
 served_body += '.upbtn:hover{background:#ffd95e}'
 served_body += '</style>'
-served_body += '<img src="data:image/jpeg;base64,' + _served_hero + '" alt="American flag flying at dawn over rows of white headstones" style="width:100%;height:auto;border-radius:14px;border:1px solid #d4af37;box-shadow:0 12px 34px rgba(0,0,0,.55);margin:0 0 6px">'
+served_body += '<img src="' + _served_hero + '" alt="American flag flying at dawn over rows of white headstones" style="width:100%;height:auto;border-radius:14px;border:1px solid #d4af37;box-shadow:0 12px 34px rgba(0,0,0,.55);margin:0 0 6px">'
 served_body += '<div class="card hero"><div class="t">A FILM BUILT FROM YOUR PHOTOS</div><div class="s">We are making a Veterans Day sleep film for our channel, What We Do In Darkness. It is called Rain on Tent Canvas, For Those Who Served: one calm night of rain on canvas, built to honor the men and women who served. We want it filled with real faces, including yours. Send us a photo of someone who served, and we will weave it into the film.</div></div>'
 served_body += '<div class="sec">What to send</div>'
 served_body += '<div class="card"><div class="t">THE PHOTO</div><div class="s">One clear photo of the person who served, or of their grave or headstone. In uniform, on duty, or a favorite portrait. Any era, any branch. Veterans and the fallen are both welcome here.</div></div>'
@@ -2292,8 +2291,8 @@ open('djs.html','w').write(page("DJs \u2014 Representation by Irish + Nova","DJ 
 print('djs.html', os.path.getsize('djs.html'))
 
 # ---------- TALENT HUB ----------
-_talent_hdr = b64img('talent-header.jpg', 1100)
-talent_body = '<img src="data:image/jpeg;base64,' + _talent_hdr + '" alt="Irish + Nova Talent Management" style="width:100%;border-radius:14px;border:1px solid #3a2f12;margin-bottom:14px">'
+_talent_hdr = fileimg('talent-header.jpg', 1100, 'assets/talent-header.jpg')
+talent_body = '<img src="' + _talent_hdr + '" alt="Irish + Nova Talent Management" style="width:100%;border-radius:14px;border:1px solid #3a2f12;margin-bottom:14px">'
 talent_body += PROOF_TALENT
 talent_body += '<p class="note" style="text-align:center;margin-bottom:16px">One management company for every kind of talent. Socials run daily, content built in-house, careers run like businesses. <b style="color:#ffd95e">Pick your lane:</b></p>'
 talent_body += card("artists.html","&#127908; ARTISTS","Full-stack representation for musicians — socials, videos, distribution, fan clubs, and the A-list push. One founding-artist slot is open, free for the founder.")
@@ -2917,7 +2916,7 @@ for _pslug in sorted(_PV_TITLES):
              '<a class="backlink" href="index.html">&#127968; Main Page</a></div>\n')
     _out = _pv_head(_pt)
     _out += _pnav
-    _out += ('<header><img src="data:image/jpeg;base64,' + logo + '" alt="Irish shamrock coin logo">\n'
+    _out += ('<header><img src="assets/logo.jpg" alt="Irish shamrock coin logo">\n'
              '<h1>' + _pt + '</h1><p class="tag">&#128214; Look Inside &mdash; <b>flip through it</b></p></header>\n')
     _out += ('<div class="sharebar"><button type="button" class="sharebtn" onclick="pvShare()">&#8599; Share This</button>'
              '<button type="button" class="sharebtn alt" id="pvcopy" onclick="pvCopy()">Copy Link</button></div>\n'
