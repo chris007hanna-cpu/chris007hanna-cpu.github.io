@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trish's Office Makeover at the CRC | Before and After Feng Shui Reveal</title>
+<meta name="description" content="Walk through Trish's CRC office before and after our feng shui makeover. Drag the sliders, tap the dots, and see how ten small pieces calmed her whole room.">
+<meta property="og:title" content="Trish's Office Makeover at the CRC | Before and After Feng Shui Reveal">
+<meta property="og:description" content="Walk through Trish's CRC office before and after our feng shui makeover. Drag the sliders, tap the dots, and see how ten small pieces calmed her whole room.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="makeover-wide.jpg">
+<style>
+  :root{
+    --cream:#faf5ec;
+    --paper:#fffdf8;
+    --ink:#2e2a24;
+    --soft:#6f6455;
+    --teal:#1f6f6b;
+    --teal-dark:#175653;
+    --terra:#c96f3b;
+    --gold:#e9a13b;
+    --line:#e7dcc8;
+    --shadow:0 10px 30px rgba(46,42,36,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px}
+  header.hero-head{
+    text-align:center;
+    padding:56px 20px 30px;
+  }
+  .kicker{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--terra);
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:clamp(36px,6vw,58px);
+    line-height:1.12;
+    font-weight:normal;
+    color:var(--teal-dark);
+  }
+  .lede{
+    max-width:680px;
+    margin:20px auto 0;
+    font-size:clamp(17px,2.4vw,20px);
+    color:var(--soft);
+  }
+  .howto{
+    max-width:680px;
+    margin:18px auto 0;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 20px;
+    font-size:16px;
+    box-shadow:var(--shadow);
+  }
+  .howto strong{color:var(--teal-dark)}
+
+  /* ---------- Before and after sliders ---------- */
+  .ba-section{margin-top:34px}
+  .ba-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    margin:0 auto;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    background:#ddd;
+    touch-action:none;
+    user-select:none;
+    --pos:50%;
+  }
+  .ba-section .ba-wrap{max-height:88vh}
+  .ba-wrap img.photo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    pointer-events:none;
+  }
+  .ba-before{
+    position:absolute;
+    inset:0;
+    clip-path:inset(0 calc(100% - var(--pos)) 0 0);
+  }
+  .ba-handle{
+    position:absolute;
+    top:0;bottom:0;
+    left:var(--pos);
+    width:3px;
+    margin-left:-1.5px;
+    background:#fff;
+    box-shadow:0 0 0 1px rgba(0,0,0,.18), 0 0 18px rgba(0,0,0,.25);
+    z-index:5;
+    pointer-events:none;
+  }
+  .ba-grip{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:52px;height:52px;
+    border-radius:50%;
+    background:#fff;
+    color:var(--teal-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:15px;font-weight:bold;
+    box-shadow:0 4px 14px rgba(0,0,0,.3);
+  }
+  .pair-card .ba-grip{width:42px;height:42px;font-size:13px}
+  .ba-tag{
+    position:absolute;
+    top:14px;
+    z-index:4;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    background:rgba(23,86,83,.82);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:999px;
+    pointer-events:none;
+  }
+  .ba-tag.before{left:14px}
+  .ba-tag.after{right:14px}
+
+  /* ---------- Photo pairs ---------- */
+  .pairs-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:26px;
+  }
+  .pair-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(46,42,36,.08);
+  }
+  .pair-card .ba-wrap{border-radius:0;box-shadow:none}
+  .pair-card figcaption{
+    padding:14px 18px 16px;
+    font-size:15.5px;
+    color:var(--soft);
+    text-align:center;
+  }
+
+  /* ---------- Hotspots ---------- */
+  .hotspot{
+    position:absolute;
+    z-index:6;
+    width:34px;height:34px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    border:2px solid #fff;
+    background:var(--terra);
+    color:#fff;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:15px;font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 0 0 rgba(201,111,59,.55);
+    animation:pulse 2.4s infinite;
+  }
+  .pair-card .hotspot{width:30px;height:30px;font-size:13px}
+  .hotspot:hover,.hotspot:focus{background:var(--teal);outline:none}
+  .hotspot.active{background:var(--teal)}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(201,111,59,.5)}
+    70%{box-shadow:0 0 0 14px rgba(201,111,59,0)}
+    100%{box-shadow:0 0 0 0 rgba(201,111,59,0)}
+  }
+
+  /* ---------- Popup card ---------- */
+  .popup{
+    position:absolute;
+    z-index:9;
+    width:min(300px,84%);
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 18px 44px rgba(46,42,36,.3);
+    padding:18px 18px 16px;
+    display:none;
+  }
+  .popup.open{display:block}
+  .popup h3{
+    font-size:19px;
+    line-height:1.3;
+    color:var(--teal-dark);
+    font-weight:normal;
+    padding-right:26px;
+  }
+  .popup .price{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--terra);
+    margin:6px 0 4px;
+  }
+  .popup .why{font-size:15px;color:var(--soft)}
+  .popup .piece-btn{
+    display:inline-block;
+    margin-top:12px;
+    background:var(--teal);
+    color:#fff;
+    text-decoration:none;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:14px;
+    font-weight:bold;
+    padding:11px 18px;
+    border-radius:999px;
+  }
+  .popup .piece-btn:hover{background:var(--teal-dark)}
+  .popup .close-btn{
+    position:absolute;
+    top:8px;right:10px;
+    border:none;background:none;
+    font-size:22px;line-height:1;
+    color:var(--soft);
+    cursor:pointer;
+  }
+
+  /* ---------- Sections ---------- */
+  section.block{margin-top:64px}
+  h2{
+    font-size:clamp(26px,4vw,36px);
+    font-weight:normal;
+    color:var(--teal-dark);
+    text-align:center;
+    margin-bottom:10px;
+  }
+  .section-lede{
+    text-align:center;
+    color:var(--soft);
+    max-width:640px;
+    margin:0 auto 30px;
+    font-size:17px;
+  }
+  .pieces-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:18px;
+  }
+  .piece-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 4px 14px rgba(46,42,36,.06);
+    display:flex;
+    flex-direction:column;
+  }
+  .piece-card .num{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--terra);
+    margin-bottom:6px;
+  }
+  .piece-card h3{font-size:18px;font-weight:normal;line-height:1.35;color:var(--ink)}
+  .piece-card .note{font-size:15px;color:var(--soft);margin-top:6px;flex:1}
+  .piece-card .row{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:14px;
+  }
+  .piece-card .price{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:19px;font-weight:bold;color:var(--teal-dark);
+  }
+  .piece-card a{
+    background:var(--terra);
+    color:#fff;
+    text-decoration:none;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:13px;font-weight:bold;
+    padding:9px 15px;
+    border-radius:999px;
+  }
+  .piece-card a:hover{background:var(--teal)}
+  .total-bar{
+    margin-top:26px;
+    background:var(--teal-dark);
+    color:#fff;
+    border-radius:16px;
+    text-align:center;
+    padding:20px;
+    font-size:19px;
+  }
+  .total-bar strong{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:24px;
+    color:var(--gold);
+  }
+  .notes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:18px;
+  }
+  .note-card{
+    background:var(--paper);
+    border-left:5px solid var(--gold);
+    border-radius:0 14px 14px 0;
+    padding:18px 20px;
+    box-shadow:0 4px 14px rgba(46,42,36,.06);
+  }
+  .note-card h3{font-size:18px;font-weight:normal;color:var(--teal-dark);margin-bottom:6px}
+  .note-card p{font-size:15.5px;color:var(--soft)}
+  .registry-note{
+    margin-top:56px;
+    text-align:center;
+    color:var(--soft);
+    font-size:15px;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .registry-note a{color:var(--teal-dark)}
+  footer{
+    margin-top:44px;
+    text-align:center;
+    color:var(--soft);
+    font-size:15px;
+    border-top:1px solid var(--line);
+    padding-top:26px;
+  }
+  footer .credit{color:var(--teal-dark);font-size:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero-head">
+    <div class="kicker">A Before and After Makeover, Made With Love</div>
+    <h1>Trish's Office Refresh</h1>
+    <p class="lede">We gave Trish's office at the CRC a feng shui makeover, and we photographed every angle before and after. The family photo wall, the client art board, and the big Highland cow stayed right where she loves them. What changed is the clutter, the cables, and the light, plus ten small pieces that turned her room into the calm place she gives everybody else.</p>
+    <div class="howto"><strong>How this page works:</strong> drag the slider on any photo to see her office before and after. Tap a glowing dot in an after photo to meet the piece that landed there, see its price, and take a closer look.</div>
+  </header>
+
+  <div class="ba-section">
+    <div class="ba-wrap" id="baWrap" aria-label="Before and after slider of Trish's refreshed office. Drag to compare.">
+      <img class="photo" src="makeover-wide.jpg" alt="Trish's office after the refresh, warm and tidy, with Trish at her desk">
+      <div class="ba-before">
+        <img class="photo" src="before.jpg" alt="Trish's office before the refresh">
+      </div>
+      <span class="ba-tag before">Before</span>
+      <span class="ba-tag after">After</span>
+      <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:19%;top:51%" aria-label="Costa Farms Golden Pothos Live House Plants, 2 Count, $19.49" data-name="Costa Farms Golden Pothos Live House Plants, 2 Count" data-price="$19.49" data-why="A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge." data-url="https://www.walmart.com/ip/494543163">1</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2>Every Angle, Before and After</h2>
+    <p class="section-lede">All eighteen photos we took of her office, each one paired with its after. Drag any slider to compare the two, and tap the glowing dots in the after photos to meet the pieces that landed there.</p>
+    <div class="pairs-grid">
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 1 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-01.jpg" alt="Trish's office after the makeover, photo 1">
+        <div class="ba-before">
+          <img class="photo" src="before-01.jpg" alt="Trish's office before the makeover, photo 1">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:94%;top:59%" aria-label="Enbrighten Flameless Flickering LED Candles, 3 Piece Set, $24.99" data-name="Enbrighten Flameless Flickering LED Candles, 3 Piece Set" data-price="$24.99" data-why="Flameless candles give the room a soft evening glow with zero fire risk in a public building." data-url="https://byjasco.com/products/enbrighten-battery-operated-color-changing-flameless-flickering-led-candles-3-piece-set">1</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>Through the open door: the cow picture, the happy place sign, and the little glass table by the entry.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 2 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-02.jpg" alt="Trish's office after the makeover, photo 2">
+        <div class="ba-before">
+          <img class="photo" src="before-02.jpg" alt="Trish's office before the makeover, photo 2">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The Highland cow wall, watching over the room like always, with the bookshelf tidied below.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 3 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-03.jpg" alt="Trish's office after the makeover, photo 3">
+        <div class="ba-before">
+          <img class="photo" src="before-03.jpg" alt="Trish's office before the makeover, photo 3">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:39%;top:72%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">1</button>
+        <button class="hotspot" type="button" style="left:48%;top:76%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">2</button>
+        <button class="hotspot" type="button" style="left:52%;top:66%" aria-label="Enbrighten Flameless Flickering LED Candles, 3 Piece Set, $24.99" data-name="Enbrighten Flameless Flickering LED Candles, 3 Piece Set" data-price="$24.99" data-why="Flameless candles give the room a soft evening glow with zero fire risk in a public building." data-url="https://byjasco.com/products/enbrighten-battery-operated-color-changing-flameless-flickering-led-candles-3-piece-set">3</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The wooden bookshelf, with the scarecrow standing tall on top and the client art board beside it.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 4 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-04.jpg" alt="Trish's office after the makeover, photo 4">
+        <div class="ba-before">
+          <img class="photo" src="before-04.jpg" alt="Trish's office before the makeover, photo 4">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The client art board in full, straightened and tidy above the little cabinet.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 5 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-05.jpg" alt="Trish's office after the makeover, photo 5">
+        <div class="ba-before">
+          <img class="photo" src="before-05.jpg" alt="Trish's office before the makeover, photo 5">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>A closer look at the board: the cross drawing, the thank you frame, and the cards clients leave her.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 6 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-06.jpg" alt="Trish's office after the makeover, photo 6">
+        <div class="ba-before">
+          <img class="photo" src="before-06.jpg" alt="Trish's office before the makeover, photo 6">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:53%;top:28%" aria-label="SONGMICS Set of 10 Picture Frames with 16 Mats, $27.99" data-name="SONGMICS Set of 10 Picture Frames with 16 Mats" data-price="$27.99" data-why="Matching frames turn the family photo wall into one gallery. Two large, four medium, and four small frames with mats cover the heart of the wall." data-url="https://www.songmics.com/products/songmics-picture-frames-with-16-mats-urpf049">1</button>
+        <button class="hotspot" type="button" style="left:72%;top:55%" aria-label="IKEA ISNÅLEN LED Work Lamp, White and Brass, $34.99" data-name="IKEA ISNÅLEN LED Work Lamp, White and Brass" data-price="$34.99" data-why="A warm lamp on the desk softens the overhead fluorescent glare, and warm light in the work corner of a desk is classic feng shui." data-url="https://www.ikea.com/us/en/p/isnalen-led-work-lamp-white-brass-color-00514373/">2</button>
+        <button class="hotspot" type="button" style="left:54%;top:70%" aria-label="Costa Farms Golden Pothos Live House Plants, 2 Count, $19.49" data-name="Costa Farms Golden Pothos Live House Plants, 2 Count" data-price="$19.49" data-why="A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge." data-url="https://www.walmart.com/ip/494543163">3</button>
+        <button class="hotspot" type="button" style="left:62%;top:74%" aria-label="Totally Bamboo Desk Organizer Set, 3 Piece, $9.99" data-name="Totally Bamboo Desk Organizer Set, 3 Piece" data-price="$9.99" data-why="A small bamboo organizer gives pens, clips, and the phone one home on the desk, so the surface stays clear." data-url="https://totallybamboo.com/products/3-piece-desk-organizer-with-paperclip-tray-sticky-note-holder-and-phone-stand">4</button>
+        <button class="hotspot" type="button" style="left:62%;top:96%" aria-label="Iron Forge Cable Management Box, 2 Pack, White, $20.99" data-name="Iron Forge Cable Management Box, 2 Pack, White" data-price="$20.99" data-why="A cable box hides the power strip and the cord tangle under the desk, and the kit inside finishes the whole cable job in one go." data-url="https://ironforgecable.com/products/cable-management-box-2-pack-white-cord-organizer-and-hider-for-wires-power-strips-surge-protectors-more-includes-cable-sleeve-hook-and-loop-keepers-zip-ties-clips">5</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The family photo wall and the desk corner, where the gallery grid and the new desk pieces land.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 7 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-07.jpg" alt="Trish's office after the makeover, photo 7">
+        <div class="ba-before">
+          <img class="photo" src="before-07.jpg" alt="Trish's office before the makeover, photo 7">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:24%;top:67%" aria-label="Costa Farms Golden Pothos Live House Plants, 2 Count, $19.49" data-name="Costa Farms Golden Pothos Live House Plants, 2 Count" data-price="$19.49" data-why="A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge." data-url="https://www.walmart.com/ip/494543163">1</button>
+        <button class="hotspot" type="button" style="left:36%;top:70%" aria-label="Totally Bamboo Desk Organizer Set, 3 Piece, $9.99" data-name="Totally Bamboo Desk Organizer Set, 3 Piece" data-price="$9.99" data-why="A small bamboo organizer gives pens, clips, and the phone one home on the desk, so the surface stays clear." data-url="https://totallybamboo.com/products/3-piece-desk-organizer-with-paperclip-tray-sticky-note-holder-and-phone-stand">2</button>
+        <button class="hotspot" type="button" style="left:61%;top:48%" aria-label="IKEA ISNÅLEN LED Work Lamp, White and Brass, $34.99" data-name="IKEA ISNÅLEN LED Work Lamp, White and Brass" data-price="$34.99" data-why="A warm lamp on the desk softens the overhead fluorescent glare, and warm light in the work corner of a desk is classic feng shui." data-url="https://www.ikea.com/us/en/p/isnalen-led-work-lamp-white-brass-color-00514373/">3</button>
+        <button class="hotspot" type="button" style="left:90%;top:66%" aria-label="Fosmon Memory Foam Ergonomic Lumbar Support Pillow, $20.99" data-name="Fosmon Memory Foam Ergonomic Lumbar Support Pillow" data-price="$20.99" data-why="A lumbar cushion supports her back through long days of listening, which is most of what happens in that chair." data-url="https://fosmon.com/products/fosmon-memory-foam-ergonomic-lumbar-support-pillow-16-1x11-in">4</button>
+        <button class="hotspot" type="button" style="left:40%;top:96%" aria-label="Safavieh Tacoma Washable Accent Rug, 3 by 5, Grey Blue, $29.99" data-name="Safavieh Tacoma Washable Accent Rug, 3 by 5, Grey Blue" data-price="$29.99" data-why="A soft rug under the desk chair grounds the work zone, quiets the room, and feels good on tired feet. Machine washable, which matters in a busy office." data-url="https://www.target.com/p/tacoma-tac814-power-loomed-machine-washable-accent-rug-grey-blue-3-x5-safavieh/-/A-89314443">5</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>Trish at her desk, phone in hand, with the photo wall and corner shelves behind her.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 8 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-08.jpg" alt="Trish's office after the makeover, photo 8">
+        <div class="ba-before">
+          <img class="photo" src="before-08.jpg" alt="Trish's office before the makeover, photo 8">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:48%;top:65%" aria-label="Totally Bamboo Desk Organizer Set, 3 Piece, $9.99" data-name="Totally Bamboo Desk Organizer Set, 3 Piece" data-price="$9.99" data-why="A small bamboo organizer gives pens, clips, and the phone one home on the desk, so the surface stays clear." data-url="https://totallybamboo.com/products/3-piece-desk-organizer-with-paperclip-tray-sticky-note-holder-and-phone-stand">1</button>
+        <button class="hotspot" type="button" style="left:79%;top:65%" aria-label="Costa Farms Golden Pothos Live House Plants, 2 Count, $19.49" data-name="Costa Farms Golden Pothos Live House Plants, 2 Count" data-price="$19.49" data-why="A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge." data-url="https://www.walmart.com/ip/494543163">2</button>
+        <button class="hotspot" type="button" style="left:36%;top:89%" aria-label="Iron Forge Cable Management Box, 2 Pack, White, $20.99" data-name="Iron Forge Cable Management Box, 2 Pack, White" data-price="$20.99" data-why="A cable box hides the power strip and the cord tangle under the desk, and the kit inside finishes the whole cable job in one go." data-url="https://ironforgecable.com/products/cable-management-box-2-pack-white-cord-organizer-and-hider-for-wires-power-strips-surge-protectors-more-includes-cable-sleeve-hook-and-loop-keepers-zip-ties-clips">3</button>
+        <button class="hotspot" type="button" style="left:50%;top:90%" aria-label="Safavieh Tacoma Washable Accent Rug, 3 by 5, Grey Blue, $29.99" data-name="Safavieh Tacoma Washable Accent Rug, 3 by 5, Grey Blue" data-price="$29.99" data-why="A soft rug under the desk chair grounds the work zone, quiets the room, and feels good on tired feet. Machine washable, which matters in a busy office." data-url="https://www.target.com/p/tacoma-tac814-power-loomed-machine-washable-accent-rug-grey-blue-3-x5-safavieh/-/A-89314443">4</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>Her desk from the front, corner shelves on one side and the little fridge on the other.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 9 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-09.jpg" alt="Trish's office after the makeover, photo 9">
+        <div class="ba-before">
+          <img class="photo" src="before-09.jpg" alt="Trish's office before the makeover, photo 9">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:61%;top:50%" aria-label="Enbrighten Flameless Flickering LED Candles, 3 Piece Set, $24.99" data-name="Enbrighten Flameless Flickering LED Candles, 3 Piece Set" data-price="$24.99" data-why="Flameless candles give the room a soft evening glow with zero fire risk in a public building." data-url="https://byjasco.com/products/enbrighten-battery-operated-color-changing-flameless-flickering-led-candles-3-piece-set">1</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The mini fridge corner and the white shelves, cleared down to the plant and one seasonal touch.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 10 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-10.jpg" alt="Trish's office after the makeover, photo 10">
+        <div class="ba-before">
+          <img class="photo" src="before-10.jpg" alt="Trish's office before the makeover, photo 10">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>Through the open door to the fridge corner. The plant and pumpkin on top were already hers, so they stayed.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 11 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-11.jpg" alt="Trish's office after the makeover, photo 11">
+        <div class="ba-before">
+          <img class="photo" src="before-11.jpg" alt="Trish's office before the makeover, photo 11">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The beach painting wall. It was already calm, so the after just warms the light and levels the frames.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 12 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-12.jpg" alt="Trish's office after the makeover, photo 12">
+        <div class="ba-before">
+          <img class="photo" src="before-12.jpg" alt="Trish's office before the makeover, photo 12">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The same wall from lower down, with the guest chair gone and the floor opened up.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 13 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-13.jpg" alt="Trish's office after the makeover, photo 13">
+        <div class="ba-before">
+          <img class="photo" src="before-13.jpg" alt="Trish's office before the makeover, photo 13">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:38%;top:39%" aria-label="SONGMICS Set of 10 Picture Frames with 16 Mats, $27.99" data-name="SONGMICS Set of 10 Picture Frames with 16 Mats" data-price="$27.99" data-why="A sunset print from the frame set fills the bare wall with warm color." data-url="https://www.songmics.com/products/songmics-picture-frames-with-16-mats-urpf049">1</button>
+        <button class="hotspot" type="button" style="left:61%;top:39%" aria-label="SONGMICS Set of 10 Picture Frames with 16 Mats, $27.99" data-name="SONGMICS Set of 10 Picture Frames with 16 Mats" data-price="$27.99" data-why="A botanical print from the same set pairs with the sunset print, two calm pictures where the wall was empty." data-url="https://www.songmics.com/products/songmics-picture-frames-with-16-mats-urpf049">2</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>A bare stretch of wall by the Music of the Soul sign, now holding a pair of framed prints.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 14 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-14.jpg" alt="Trish's office after the makeover, photo 14">
+        <div class="ba-before">
+          <img class="photo" src="before-14.jpg" alt="Trish's office before the makeover, photo 14">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer"></div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>Her office door, fall wreath and all, with the doorway floor cleared.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 15 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-15.jpg" alt="Trish's office after the makeover, photo 15">
+        <div class="ba-before">
+          <img class="photo" src="before-15.jpg" alt="Trish's office before the makeover, photo 15">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:17%;top:32%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">1</button>
+        <button class="hotspot" type="button" style="left:31%;top:32%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">2</button>
+        <button class="hotspot" type="button" style="left:45%;top:32%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">3</button>
+        <button class="hotspot" type="button" style="left:32%;top:49%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">4</button>
+        <button class="hotspot" type="button" style="left:45%;top:49%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">5</button>
+        <button class="hotspot" type="button" style="left:59%;top:49%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">6</button>
+        <button class="hotspot" type="button" style="left:71%;top:49%" aria-label="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch, $25.99" data-name="Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch" data-price="$25.99" data-why="Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork." data-url="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702">7</button>
+        <button class="hotspot" type="button" style="left:39%;top:81%" aria-label="Iron Forge Cable Management Box, 2 Pack, White, $20.99" data-name="Iron Forge Cable Management Box, 2 Pack, White" data-price="$20.99" data-why="A cable box hides the power strip and the cord tangle under the desk, and the kit inside finishes the whole cable job in one go." data-url="https://ironforgecable.com/products/cable-management-box-2-pack-white-cord-organizer-and-hider-for-wires-power-strips-surge-protectors-more-includes-cable-sleeve-hook-and-loop-keepers-zip-ties-clips">8</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The supply closet, sorted into zones: bins in calm rows up top and the tech gear down low.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 16 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-16.jpg" alt="Trish's office after the makeover, photo 16">
+        <div class="ba-before">
+          <img class="photo" src="before-16.jpg" alt="Trish's office before the makeover, photo 16">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:44%;top:43%" aria-label="Enbrighten Flameless Flickering LED Candles, 3 Piece Set, $24.99" data-name="Enbrighten Flameless Flickering LED Candles, 3 Piece Set" data-price="$24.99" data-why="Flameless candles give the room a soft evening glow with zero fire risk in a public building." data-url="https://byjasco.com/products/enbrighten-battery-operated-color-changing-flameless-flickering-led-candles-3-piece-set">1</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The drawer tower by the door, looking through into the office, with a candle glow on top.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 17 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-17.jpg" alt="Trish's office after the makeover, photo 17">
+        <div class="ba-before">
+          <img class="photo" src="before-17.jpg" alt="Trish's office before the makeover, photo 17">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:56%;top:24%" aria-label="Costa Farms Golden Pothos Live House Plants, 2 Count, $19.49" data-name="Costa Farms Golden Pothos Live House Plants, 2 Count" data-price="$19.49" data-why="A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge." data-url="https://www.walmart.com/ip/494543163">1</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>From the doorway, the side view of Trish at work in the middle of the good work.</figcaption>
+    </figure>
+    <figure class="pair-card">
+      <div class="ba-wrap" aria-label="Before and after slider, photo 18 of Trish's office. Drag to compare.">
+        <img class="photo" src="after-18.jpg" alt="Trish's office after the makeover, photo 18">
+        <div class="ba-before">
+          <img class="photo" src="before-18.jpg" alt="Trish's office before the makeover, photo 18">
+        </div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+        <div class="ba-handle"><div class="ba-grip">&#8596;</div></div>
+      <div class="hotspot-layer">
+        <button class="hotspot" type="button" style="left:19%;top:51%" aria-label="Costa Farms Golden Pothos Live House Plants, 2 Count, $19.49" data-name="Costa Farms Golden Pothos Live House Plants, 2 Count" data-price="$19.49" data-why="A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge." data-url="https://www.walmart.com/ip/494543163">1</button>
+      </div>
+      <div class="popup" role="dialog" aria-live="polite">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 class="popup-name"></h3>
+        <div class="price popup-price"></div>
+        <p class="why popup-why"></p>
+        <a class="piece-btn popup-link" href="#" target="_blank" rel="noopener">See this piece</a>
+      </div>
+      </div>
+      <figcaption>The wide view from the doorway, the whole room in one frame, photo wall behind her.</figcaption>
+    </figure>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>The Pieces in the Room</h2>
+    <p class="section-lede">Ten small pieces do all the work in these photos. Nothing costs over $35, most cost under $25, and every one of them was picked for this exact room.</p>
+    <div class="pieces-grid">
+      <div class="piece-card">
+        <div class="num">Piece 1 of 10</div>
+        <h3>Casafield Set of 6 Collapsible Fabric Storage Cube Bins, Teal, 11 inch</h3>
+        <p class="note">Matching fabric bins turn the closet shelves from a jumble into calm rows, and the teal picks up the colors in the client artwork.</p>
+        <div class="row">
+          <span class="price">$25.99</span>
+          <a href="https://www.target.com/p/casafield-set-of-6-collapsible-fabric-storage-cube-bins-teal-11-foldable-cloth-baskets-for-shelves-and-cubby-organizers/-/A-89843702" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 2 of 10</div>
+        <h3>Iron Forge Cable Management Box, 2 Pack, White</h3>
+        <p class="note">A cable box hides the power strip and the cord tangle under the desk, and the kit inside finishes the whole cable job in one go.</p>
+        <div class="row">
+          <span class="price">$20.99</span>
+          <a href="https://ironforgecable.com/products/cable-management-box-2-pack-white-cord-organizer-and-hider-for-wires-power-strips-surge-protectors-more-includes-cable-sleeve-hook-and-loop-keepers-zip-ties-clips" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 3 of 10</div>
+        <h3>IKEA ISNÅLEN LED Work Lamp, White and Brass</h3>
+        <p class="note">A warm lamp on the desk softens the overhead fluorescent glare, and warm light in the work corner of a desk is classic feng shui.</p>
+        <div class="row">
+          <span class="price">$34.99</span>
+          <a href="https://www.ikea.com/us/en/p/isnalen-led-work-lamp-white-brass-color-00514373/" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 4 of 10</div>
+        <h3>Costa Farms Golden Pothos Live House Plants, 2 Count</h3>
+        <p class="note">A living plant brings the wood element and fresh air energy to the desk. Pothos is nearly impossible to kill and trails beautifully off a shelf edge.</p>
+        <div class="row">
+          <span class="price">$19.49</span>
+          <a href="https://www.walmart.com/ip/494543163" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 5 of 10</div>
+        <h3>SONGMICS Set of 10 Picture Frames with 16 Mats</h3>
+        <p class="note">Matching frames turn the family photo wall into one gallery. Two large, four medium, and four small frames with mats cover the heart of the wall.</p>
+        <div class="row">
+          <span class="price">$27.99</span>
+          <a href="https://www.songmics.com/products/songmics-picture-frames-with-16-mats-urpf049" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 6 of 10</div>
+        <h3>Totally Bamboo Desk Organizer Set, 3 Piece</h3>
+        <p class="note">A small bamboo organizer gives pens, clips, and the phone one home on the desk, so the surface stays clear.</p>
+        <div class="row">
+          <span class="price">$9.99</span>
+          <a href="https://totallybamboo.com/products/3-piece-desk-organizer-with-paperclip-tray-sticky-note-holder-and-phone-stand" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 7 of 10</div>
+        <h3>Safavieh Tacoma Washable Accent Rug, 3 by 5, Grey Blue</h3>
+        <p class="note">A soft rug under the desk chair grounds the work zone, quiets the room, and feels good on tired feet. Machine washable, which matters in a busy office.</p>
+        <div class="row">
+          <span class="price">$29.99</span>
+          <a href="https://www.target.com/p/tacoma-tac814-power-loomed-machine-washable-accent-rug-grey-blue-3-x5-safavieh/-/A-89314443" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 8 of 10</div>
+        <h3>Fosmon Memory Foam Ergonomic Lumbar Support Pillow</h3>
+        <p class="note">A lumbar cushion supports her back through long days of listening, which is most of what happens in that chair.</p>
+        <div class="row">
+          <span class="price">$20.99</span>
+          <a href="https://fosmon.com/products/fosmon-memory-foam-ergonomic-lumbar-support-pillow-16-1x11-in" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 9 of 10</div>
+        <h3>Enbrighten Flameless Flickering LED Candles, 3 Piece Set</h3>
+        <p class="note">Flameless candles give the room a soft evening glow with zero fire risk in a public building.</p>
+        <div class="row">
+          <span class="price">$24.99</span>
+          <a href="https://byjasco.com/products/enbrighten-battery-operated-color-changing-flameless-flickering-led-candles-3-piece-set" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+      <div class="piece-card">
+        <div class="num">Piece 10 of 10</div>
+        <h3>Jokapy Tabletop Water Fountain with Soft LED Light and Pebbles</h3>
+        <p class="note">A tiny desktop fountain adds the water element, the feng shui symbol of flow and provision, plus a gentle sound that softens hard conversations.</p>
+        <div class="row">
+          <span class="price">$18.73</span>
+          <a href="https://www.walmart.com/ip/5179007446" target="_blank" rel="noopener">See this piece</a>
+        </div>
+      </div>
+    </div>
+    <div class="total-bar">The whole refresh, piece by piece: <strong>$234.14</strong></div>
+  </section>
+
+  <section class="block">
+    <h2>The Feng Shui Thinking</h2>
+    <p class="section-lede">Feng shui, in plain terms, is about flow. Energy, people, and paperwork should all move through a room without getting stuck. Here is how this little room does it.</p>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h3>The Command Seat</h3>
+        <p>Her desk already sits in the command position, facing the door area, which is the strongest seat in any office. She sees everyone who comes in, and nobody ever startles her from behind.</p>
+      </div>
+      <div class="note-card">
+        <h3>A Clear Path In</h3>
+        <p>The two guest chairs that crowded the front of her desk are gone, and the walkway from the door to the desk is completely clear. A clear path is the heart of good feng shui, and clients feel it the second they step in.</p>
+      </div>
+      <div class="note-card">
+        <h3>Only Today on the Desk</h3>
+        <p>Two paper trays only, one for today and one for this week. Everything older lives in the cabinet or the closet. A desk that holds only today work makes a mind that holds only today work.</p>
+      </div>
+      <div class="note-card">
+        <h3>Wood, Water, and Warm Light</h3>
+        <p>A living pothos brings the wood element and fresh air energy. A tiny fountain adds water, the symbol of flow and provision, plus a gentle sound that makes hard conversations softer. A warm lamp softens the overhead glare in the work corner of the desk.</p>
+      </div>
+      <div class="note-card">
+        <h3>One Quiet Shelf</h3>
+        <p>Books stand straight on most of the bookshelf, and one shelf holds just a small plant, a flameless candle, and one framed photo. Resting space for the eyes is a real feng shui tool, and this room earns it.</p>
+      </div>
+      <div class="note-card">
+        <h3>The Family Wall, Gallery Style</h3>
+        <p>The photos on her wall are the soul of this room. Lining their edges into a loose grid with matching frames turns a sweet scatter into a gallery, and it costs nothing but ten minutes and a little care.</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="registry-note">And if anyone asks Trish what she wants for Christmas, she can send them <a href="https://www.myregistry.com/wishlist/chris-hanna-hot-springs-ar/5748262/giftlist" target="_blank" rel="noopener">her Christmas list</a>: every piece on this page, saved in one place.</p>
+
+  <footer>
+    <p class="credit">Refresh designed by Irish + Nova</p>
+    <p>Made for Trish, for all she does.</p>
+  </footer>
+
+</div>
+
+<script>
+  /* ----- Before and after sliders, hotspots and popups (one init per wrap) ----- */
+  function closePopup(wrap){
+    var popup = wrap.querySelector('.popup');
+    if (popup) popup.classList.remove('open');
+    wrap.querySelectorAll('.hotspot.active').forEach(function(b){ b.classList.remove('active'); });
+  }
+  function openPopup(wrap, btn){
+    var popup = wrap.querySelector('.popup');
+    popup.querySelector('.popup-name').textContent = btn.getAttribute('data-name');
+    popup.querySelector('.popup-price').textContent = btn.getAttribute('data-price');
+    popup.querySelector('.popup-why').textContent = btn.getAttribute('data-why');
+    popup.querySelector('.popup-link').href = btn.getAttribute('data-url');
+    wrap.querySelectorAll('.hotspot.active').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    popup.classList.add('open');
+    var x = parseFloat(btn.style.left);
+    var y = parseFloat(btn.style.top);
+    var leftPct = x > 55 ? x - 34 : x + 4;
+    if (leftPct < 2) leftPct = 2;
+    if (leftPct > 66) leftPct = 66;
+    popup.style.left = leftPct + '%';
+    if (y > 60) {
+      popup.style.top = 'auto';
+      popup.style.bottom = (100 - y + 4) + '%';
+    } else {
+      popup.style.bottom = 'auto';
+      popup.style.top = (y + 4) + '%';
+    }
+  }
+  document.querySelectorAll('.ba-wrap').forEach(function(wrap){
+    var dragging = false;
+    function setPos(clientX){
+      var r = wrap.getBoundingClientRect();
+      var pct = (clientX - r.left) / r.width * 100;
+      if (pct < 2) pct = 2;
+      if (pct > 98) pct = 98;
+      wrap.style.setProperty('--pos', pct + '%');
+    }
+    wrap.addEventListener('pointerdown', function(e){
+      if (e.target.closest('.hotspot') || e.target.closest('.popup')) return;
+      dragging = true;
+      wrap.setPointerCapture(e.pointerId);
+      setPos(e.clientX);
+    });
+    wrap.addEventListener('pointermove', function(e){
+      if (dragging) setPos(e.clientX);
+    });
+    wrap.addEventListener('pointerup', function(){ dragging = false; });
+    wrap.addEventListener('pointercancel', function(){ dragging = false; });
+    wrap.querySelectorAll('.hotspot').forEach(function(btn){
+      btn.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        openPopup(wrap, btn);
+      });
+    });
+    var closeBtn = wrap.querySelector('.close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', function(){ closePopup(wrap); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.ba-wrap').forEach(closePopup);
+    }
+  });
+</script>
+</body>
+</html>
