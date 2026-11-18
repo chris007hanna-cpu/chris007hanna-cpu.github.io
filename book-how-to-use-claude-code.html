@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Use Claude Code — Build real things with plain English with Claude Code, the step by step field guide for beginners | Hanna Press, Irish + Nova</title><meta name="description" content="How to Use Claude Code by Christopher J. Hanna — build real things with plain English with Claude Code, the step by step — a Hanna Press book from Irish + Nova.">
+<meta property="og:type" content="website"><meta property="og:title" content="How to Use Claude Code — Build real things with plain English with Claude Code, the step by step field guide for beginners | Hanna Press, Irish + Nova"><meta property="og:description" content="How to Use Claude Code by Christopher J. Hanna — build real things with plain English with Claude Code, the step by step — a Hanna Press book from Irish + Nova.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:#d4af37;color:#111}
+body{background:#090b09;color:#ece9e0;font-family:'Barlow',sans-serif;min-height:100vh;
+background-image:radial-gradient(ellipse at 50% -10%,rgba(34,197,94,.14),transparent 60%),radial-gradient(ellipse at 85% 110%,rgba(212,175,55,.08),transparent 55%);}
+.wrap{max-width:760px;margin:0 auto;padding:26px 20px 52px}
+nav{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:26px}
+nav a{color:#a3b5a4;text-decoration:none;font-family:'Oswald',sans-serif;font-size:.84rem;letter-spacing:.1em;
+padding:7px 13px;border:1px solid #2c352a;border-radius:999px;background:#10130f;text-transform:uppercase;white-space:nowrap}
+nav a:hover{border-color:#d4af37;color:#ffd95e}
+nav a.on{color:#ffd95e;border-color:#d4af37;background:#171c12}
+a:focus-visible{outline:2px solid #ffd95e;outline-offset:2px}
+.ngrp{position:relative;display:inline-flex}
+.ngrp>a::after{content:"▾";margin-left:6px;color:#d4af37;font-size:.7rem}
+.drop{position:absolute;top:calc(100% + 7px);left:50%;transform:translate(-50%,5px);min-width:218px;background:#0f120e;border:1px solid #37402f;border-radius:13px;padding:6px;opacity:0;visibility:hidden;transition:opacity .15s,transform .15s,visibility .15s;z-index:60;box-shadow:0 20px 44px rgba(0,0,0,.6)}
+.ngrp:hover .drop,.ngrp:focus-within .drop{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.drop a{display:block;border:0;border-radius:8px;background:transparent;padding:8px 11px;font-size:.8rem;white-space:normal}
+.drop a:hover,.drop a.on{background:#171c12}
+header{text-align:center;margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid #232a20}
+header img{width:108px;height:108px;border-radius:50%;border:3px solid #d4af37;box-shadow:0 0 34px rgba(212,175,55,.32);object-fit:cover}
+h1{font-family:'Oswald',sans-serif;font-size:2.35rem;font-weight:600;letter-spacing:.05em;margin-top:14px;color:#fff}
+.tag{color:#a3b5a4;font-size:1.02rem;margin-top:5px}
+.tag b{color:#d4af37}
+.card{display:block;text-decoration:none;color:#ece9e0;background:linear-gradient(165deg,#151a13,#0f120e);
+border:1px solid #2c352a;border-radius:14px;padding:17px 19px;margin:12px 0;transition:transform .15s,border-color .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);border-color:#d4af37;box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.card .t{font-family:'Oswald',sans-serif;font-size:1.16rem;font-weight:600;letter-spacing:.03em;color:#fff}
+.card .s{color:#a3b5a4;font-size:.94rem;margin-top:4px;line-height:1.5}
+.hero{border-color:#d4af37;background:linear-gradient(165deg,#1d2718,#12160f)}
+.hero .t{color:#ffd95e}
+.topbtns{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 8px}
+.topcol{flex:1 1 240px;display:flex;flex-direction:column}
+.topbtn{display:block;text-align:center;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.05em;text-transform:uppercase;padding:15px 12px;border-radius:12px;border:1px solid #d4af37;color:#ffd95e;background:linear-gradient(165deg,#1d2718,#12160f);transition:transform .15s,box-shadow .15s}
+.topbtn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.topbtn.gold{background:#d4af37;color:#111}
+.topbtn.gold:hover{background:#ffd95e}
+.affdisc{color:#8b9c8d;font-size:.8rem;text-align:center;margin-top:6px;line-height:1.4}
+.appcard{display:flex;gap:14px;align-items:center}
+.appcard img{width:56px;height:56px;border-radius:14px;flex:none;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.freetag{display:inline-block;background:#d4af37;color:#111;font-family:'Oswald',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.1em;padding:2px 8px;border-radius:999px;margin-left:9px;vertical-align:middle;text-transform:uppercase}
+.vidfac{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid #37402f;background:#000;cursor:pointer;margin-top:10px}
+.vidfac img{width:100%;height:100%;object-fit:cover;display:block}
+.vidfac .vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(212,175,55,.92);color:#111;font-size:1.55rem;line-height:64px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.vidfac:hover .vplay{background:#ffd95e}
+.vidfac iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vidnote{color:#8b9c8d;font-size:.8rem;margin-top:6px}
+.vidfac.nothumb{background:linear-gradient(165deg,#1a2115,#0b0f0b)}
+.vidfac .vlabel{position:absolute;left:0;right:0;bottom:12px;text-align:center;color:#a3b5a4;font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.sec{display:flex;align-items:center;gap:12px;font-family:'Oswald',sans-serif;color:#8b9c8d;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;margin:28px 2px 6px}
+.sec::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#3a4536,transparent)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row .card{flex:1 1 30%;text-align:center;padding:13px 6px;margin:6px 0}
+.row .card .t{font-size:.97rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.book{background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #2c352a;border-radius:14px;padding:12px;text-align:center}
+.book img{width:100%;max-width:170px;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.55)}
+.book .bt{font-family:'Oswald',sans-serif;color:#fff;font-size:1rem;margin-top:10px;line-height:1.25}
+.badge{display:inline-block;margin-top:8px;font-size:.8rem;color:#a3b5a4;border:1px solid #2c352a;padding:4px 10px;border-radius:999px}
+.buy{display:inline-block;margin:8px 3px 0;background:#d4af37;color:#111;font-weight:700;font-size:.86rem;letter-spacing:.02em;
+padding:8px 13px;border-radius:9px;text-decoration:none}
+.buy:hover{background:#ffd95e}
+.tiers{display:flex;gap:10px;margin-top:14px}
+.tier{flex:1;background:#0b0f0b;border:1px solid #2c352a;border-radius:10px;text-align:center;padding:9px 4px}
+.tn{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#8b9c8d}
+.tp{font-family:'Oswald',sans-serif;font-size:1.15rem;color:#ffd95e;margin-top:2px}
+.cta{margin-top:13px;font-weight:700;color:#d4af37;font-size:.95rem}
+.note{color:#a3b5a4;font-size:.95rem;margin:20px 6px;line-height:1.55}
+.proof{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 4px}
+.pf{flex:1 1 21%;min-width:128px;background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #2c352a;border-top:2px solid #d4af37;border-radius:12px;padding:13px 8px 11px;text-align:center}
+.pf .n{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:600;color:#ffd95e;line-height:1.1}
+.pf .l{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:#a3b5a4;margin-top:4px;line-height:1.45}
+footer{text-align:center;color:#5f7263;font-size:.85rem;margin-top:36px;line-height:1.5}
+footer a{color:#d4af37;text-decoration:none}
+.fmap{font-size:.8rem;line-height:2.05;margin-bottom:18px}
+.fmap a{color:#8fa392}
+.fmap a:hover{color:#ffd95e}
+details.pv{margin-top:10px;text-align:left}
+details.pv summary{cursor:pointer;list-style:none;font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#ffd95e;border:1px solid #37402f;border-radius:8px;padding:7px 10px;background:#0b0f0b;text-align:center}
+details.pv summary::-webkit-details-marker{display:none}
+details.pv summary:hover{border-color:#d4af37}
+.flip{margin-top:9px}
+.fp{display:none;width:100%;height:auto;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.fp.on{display:block}
+.ftext{display:none;background:linear-gradient(165deg,#1a2115,#10130e);border:1px solid #37402f;padding:14px 13px;color:#dfe4d8;font-size:.88rem;line-height:1.6;text-align:left}
+.ftext.on{display:block}
+.ftext .fb-t{font-family:'Oswald',sans-serif;color:#ffd95e;font-size:1rem;letter-spacing:.03em;margin-bottom:7px}
+.fctl{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.fbtn{background:#0b0f0b;border:1px solid #37402f;color:#ffd95e;font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.08em;padding:6px 12px;border-radius:8px;cursor:pointer}
+.fbtn:hover{border-color:#d4af37}
+.fcount{color:#8b9c8d;font-size:.8rem;font-family:'Oswald',sans-serif;letter-spacing:.1em}
+.lookbtn{display:block;margin-top:10px;font-family:'Oswald',sans-serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#ffd95e;border:1px solid #37402f;border-radius:8px;padding:9px 10px;background:#0b0f0b;text-align:center;text-decoration:none}
+.lookbtn:hover{border-color:#d4af37}
+a.pvlink{text-decoration:none;color:inherit}
+.bt a.pvlink{color:inherit}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){h1{font-size:1.85rem}.pf{flex:1 1 42%}.drop{min-width:188px}}
+.card>a.clink{display:block;text-decoration:none;color:inherit}
+details.wyg{margin-top:12px;border-top:1px solid #2c352a;padding-top:11px}
+details.wyg summary{cursor:pointer;list-style:none;display:inline-block;font-family:'Oswald',sans-serif;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#ffd95e;border:1px solid #37402f;border-radius:8px;padding:8px 14px;background:#0b0f0b}
+details.wyg summary::-webkit-details-marker{display:none}
+details.wyg summary:hover{border-color:#d4af37}
+details.wyg summary:focus-visible{outline:2px solid #ffd95e;outline-offset:2px}
+.wygb{margin-top:12px;background:#0b0f0b;border:1px solid #2c352a;border-radius:10px;padding:14px 16px;color:#cfe0cd;font-size:.92rem;line-height:1.55}
+.wygb h4{font-family:'Oswald',sans-serif;color:#ffd95e;font-size:.86rem;letter-spacing:.12em;text-transform:uppercase;margin:13px 0 5px}
+.wygb h4:first-child{margin-top:2px}
+.wygb .wp{font-family:'Oswald',sans-serif;color:#ffd95e;font-size:1.02rem;letter-spacing:.02em}
+.wygb ul,.wygb ol{margin:0 0 4px 19px}
+.wygb li{margin-bottom:3px}
+.wygb p{margin-bottom:4px}
+.card .t{position:relative;z-index:2}
+.card .t a{color:#ffd95e;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(212,175,55,.55);position:relative;z-index:2}
+.card .t a:hover{color:#ffe98a;text-decoration-color:#ffd95e}
+a.lk{color:#ffd95e;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(212,175,55,.5)}
+a.lk:hover{color:#ffe98a;text-decoration-color:#ffd95e}
+.visitbtn{display:block;margin-top:11px;text-align:center;font-family:'Oswald',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#ffd95e;text-decoration:none;border:1px solid #d4af37;border-radius:9px;padding:10px 12px;background:linear-gradient(165deg,#1d2718,#12160f)}
+.visitbtn:hover{background:#d4af37;color:#111}
+.bkcard{display:block;text-decoration:none;color:#ece9e0;background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #2c352a;border-radius:14px;padding:14px 12px 13px;text-align:center;transition:transform .15s,border-color .15s,box-shadow .15s}
+.bkcard:hover{transform:translateY(-2px);border-color:#d4af37;box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.bkcard img{width:100%;max-width:170px;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.55)}
+.bkcard .bt{font-family:'Oswald',sans-serif;color:#fff;font-size:1rem;margin-top:10px;line-height:1.25}
+.bkline{color:#a3b5a4;font-size:.86rem;margin-top:5px;line-height:1.5}
+.bkline b{color:#ffd95e;font-weight:600}
+.bkview{display:inline-block;margin-top:11px;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#ffd95e;border:1px solid #37402f;border-radius:8px;padding:7px 14px;background:#0b0f0b}
+.bkcard:hover .bkview{border-color:#d4af37;background:#d4af37;color:#111}
+.bkhero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
+.bkhero .cov{flex:0 0 216px;max-width:62vw}
+.bkhero .cov img{width:100%;height:auto;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.6);border:1px solid #2c352a;display:block}
+.bkhero .cov a.pvlink{display:block}
+.bkinfo{flex:1 1 280px;min-width:250px}
+.bkinfo .bkline{font-size:.95rem}
+.bksec{display:flex;align-items:center;gap:12px;font-family:'Oswald',sans-serif;color:#8b9c8d;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;margin:28px 2px 10px}
+.bksec::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#3a4536,transparent)}
+.bkabout p{color:#dfe4d8;font-size:.97rem;line-height:1.62;margin-bottom:9px}
+.bookstack{background:linear-gradient(165deg,#151a13,#0f120e);border:1px solid #2c352a;border-radius:14px;padding:16px;text-align:left}
+.bookstack .bt{font-family:'Oswald',sans-serif;color:#fff;font-size:1.05rem;line-height:1.3}
+.buystack{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.buystack .buy{margin:0;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 15px;font-size:.95rem;border-radius:10px}
+.buy.alt{background:transparent;color:#ffd95e;border:1px solid #d4af37}
+.buy.alt:hover{background:#1d2718}
+.buy .bprice{font-family:'Oswald',sans-serif;letter-spacing:.03em;white-space:nowrap}
+.bknote{color:#8b9c8d;font-size:.84rem;line-height:1.5;margin-top:12px}
+.fgrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 15px;font-size:.95rem;border:1px solid #2c352a;border-radius:10px;color:#a3b5a4;background:#0b0f0b}
+.bkabout ul{margin:2px 0 10px 20px;line-height:1.65;color:#dfe4d8;font-size:.97rem}
+.bkabout li{margin-bottom:3px}</style></head><body><div class="wrap">
+<nav><a href="index.html">HOME</a><a href="books.html" class="on">BOOKS</a><a href="shop.html">SHOP</a><span class="ngrp"><a href="services.html">SERVICES</a><span class="drop"><a href="services.html">Services Overview</a><a href="realestate.html">Real Estate</a><a href="localbusiness.html">Local Business</a><a href="cardealers.html">Car Dealers</a><a href="propertymanagement.html">Property Management</a><a href="rentalhosts.html">Airbnb &amp; VRBO Hosts</a><a href="insurance.html">Insurance Agents</a><a href="hotels.html">Hotels &amp; Motels</a><a href="taxi.html">Taxi &amp; Limo Services</a><a href="restaurants.html">Restaurants &amp; Hospitality</a><a href="virtual.html">Virtual Services</a><a href="sell.html">Sell With Us</a></span></span><span class="ngrp"><a href="talent.html">TALENT</a><span class="drop"><a href="talent.html">Talent Hub</a><a href="artists.html">Artists</a><a href="models.html">Models</a><a href="glamour.html">Glamour</a><a href="djs.html">DJs</a><a href="actors.html">Actors &amp; Voice</a><a href="singers.html">Singers</a><a href="creators.html">Creators</a><a href="athletes.html">Athletes</a><a href="comedians.html">Comedians</a><a href="podcasters.html">Podcasters</a></span></span><a href="watch.html">WATCH</a><a href="sleep.html">SLEEP</a></nav>
+<header><img src="assets/logo.jpg" alt="Irish shamrock coin logo">
+<h1>How to Use Claude Code</h1><p class="tag"><a class="lk" href="https://www.youtube.com/@AIBlackBeltHQ" target="_blank" rel="noopener">AI Black Belt</a> Field Guides, Book Four &mdash; <b>manuscript complete</b></p></header>
+<div class="bkhero"><div class="cov"><img src="assets/covers/how-to-use-claude-code-300.jpg" alt="How to Use Claude Code cover"></div><div class="bkinfo"><div class="bkline"><a class="lk" href="https://www.youtube.com/@AIBlackBeltHQ" target="_blank" rel="noopener">AI Black Belt</a> Field Guides, Book Four &mdash; Hanna Press</div><div class="bkline" style="margin-top:7px">The octopus, many hands on the work, on the cover</div><div class="bkline" style="margin-top:7px">Launch prices: Ebook <b>$9.99</b> &middot; Paperback <b>$14.99</b> &middot; Buy direct <b>$9.99</b></div><p class="note" style="margin:12px 0 0">By <b style="color:#ffd95e">Irish and Nova</b>. Twelve chapters. The print interior runs 105 pages. Book Four of the series.</p><p style="margin-top:12px"><a class="lk" href="#get">Release details &darr;</a></p></div></div><div class="bksec">About this book</div><div class="bkabout"><p>You have a list of things you wish existed: a page for your business, a small tool that does the boring job, a folder of files sorted the way your brain sorts them. Claude Code is the AI builder that makes those things from plain English instructions, working in a terminal on your own computer, and this book teaches the whole craft to a reader who has never written a line of code: how to ask, how to govern the work, and how to prove the result with your own eyes before you call it done.</p><p>How to Use Claude Code takes a complete beginner from a paid Claude plan to one real finished project. The project is a one page website for Green Cut, a one person lawn care service, built start to finish in Chapter Seven: planned before it is built, carrying the owner&#x27;s own services and prices, given a memory file that holds the project&#x27;s rules, and proved in the browser at the end. The proof is in front of you: a finished page you open yourself, plus the plan, the prompts, and the checks that show the work.</p><p>Inside the twelve chapters: what Claude Code is, what it costs, and what it is honestly not for; your account and the terminal set up right; a tour of the interface that names only what your hands will actually touch; your first session, asking before you build; talking to the builder, plan mode, the permission modes, and getting unstuck; files, folders, and the CLAUDE.md memory file; the project itself, step by step; power moves, commands, context, and the habits of a daily user; the mistakes chapter, what breaks, what it looks like, and the fix in order; plugging Claude Code into the rest of your work; where Claude Code sits in the AI Bible; and next steps, the Academy labs and what to build next.</p><p>Every command and prompt in the book is printed in full, ready to type. Every chapter ends with exercises that finish in something you can point at or read back. The book makes one promise and keeps it: skill. It makes no promise about money, and it tells you plainly where the tool&#x27;s edges are: Claude Code needs a paid plan and the free plan does not include it, prices and plans can change, screens shift between versions, and the authors teach from the official documentation, checked live while the book was written, rather than claiming to use the tool every day. What they teach is the discipline they do use daily: a plan before every build, one change at a time, and every result read like a customer.</p><p>This is Book Four of the <a class="lk" href="https://www.youtube.com/@AIBlackBeltHQ" target="_blank" rel="noopener">AI Black Belt</a> Field Guides from Hanna Press, the series that teaches one AI tool per book, each with one original animal on the cover. This book&#x27;s animal is the octopus, many hands on the work, because Claude Code is exactly that: one instruction from you, and the tool reaches into every corner of the project at once. A free companion tutorial is planned for the <a class="lk" href="https://www.youtube.com/@AIBlackBeltHQ" target="_blank" rel="noopener">AI Black Belt</a> channel, built from this book&#x27;s project, and the Irish and Nova Academy module, Claude Code: Build Your First Page With Plain English, walks the same ground as guided labs for readers who want a coach in the room.</p><p>If you run a small business, a trade, a channel, or a one person service, and the thing you need next is a page, a tool, or a system you keep describing out loud, this is your first build. Open it with a terminal in front of you and finish with a website you planned, built, and proved yourself, while the AI proposes and you decide.</p></div><div class="bksec">What is inside</div><div class="bkabout"><ul><li>What Claude Code Is, What It Costs, and What It Is Honestly Not For</li><li>Your Account and the Terminal, Set Up Right</li><li>A Tour of the Interface, Only What You Will Actually Touch</li><li>Your First Session, Ask Before You Build</li><li>Talking to the Builder, Plan Mode, Permission Modes, and Getting Unstuck</li><li>Files, Folders, and CLAUDE.md, Giving Claude Code a Memory</li><li>The Project, A One Page Website for a Local Service, Built Start to Finish</li><li>Power Moves, Commands, Context, and the Habits of a Daily User</li><li>The Mistakes Chapter, What Breaks, What It Looks Like, and the Fix</li><li>Plugging Claude Code Into the Rest of Your Work</li><li>Where Claude Code Sits in the AI Bible, Book 08, Tools, and Book 03, Agents</li><li>Next Steps, The Academy Labs and What to Build Next</li></ul></div><div class="bksec">The full breakdown</div><details class="wyg"><summary>What you get</summary><div class="wygb"><p class="wp">Ebook $9.99 &middot; Paperback $14.99 &middot; Buy direct $9.99 &mdash; at launch</p><h4>What you get</h4><ul><li>Ebook edition — $9.99, at launch</li><li>Paperback edition — $14.99, at launch</li><li>Buy direct edition — $9.99, at launch</li><li>Twelve chapters. The print interior runs 105 pages. Book Four of the series.</li><li>All twelve chapter titles are listed in What is inside on this page.</li></ul><h4>How it works</h4><ol><li>The manuscript is complete and approved, and distribution is rolling out store by store.</li><li>This page gains a live buy button for every edition the day that route verifies live: the ebook on Google Play Books, direct from our shop, and on our stores.</li><li>Until a button is live here, that edition is not on sale yet, and the prices shown are the set series prices.</li></ol><h4>Timeline</h4><p>The manuscript is complete and approved by the authors, and the store listings are being placed now. No date is promised for any single store until that route is verified live.</p><h4>Who it fits</h4><p>Small business owners, trades, channels, and one person services who keep describing a page, a tool, or a system out loud, and anyone who wants to build real things with AI without learning to code first.</p><h4>Not included</h4><ul><li>No orders or preorders are taken on this page today.</li><li>The tool itself is not included. You use your own Claude account, and Claude Code needs a paid Claude plan; the free plan does not include it.</li></ul></div></details><div class="bksec">Release pricing</div><div class="book bookstack" id="get"><div class="bt">How to Use Claude Code</div><div class="buystack"><div class="fgrow"><span>Ebook</span><span class="bprice">$9.99</span></div><div class="fgrow"><span>Paperback</span><span class="bprice">$14.99</span></div><div class="fgrow"><span>Buy direct</span><span class="bprice">$9.99</span></div></div><p class="bknote">Manuscript complete and approved at Hanna Press. Distribution is rolling out now, and this page gains a live button for every edition the day that route verifies live: the ebook on Google Play Books, direct from our shop, and on our stores. This book is not sold on Amazon.</p></div><p class="note"><a class="lk" href="books.html">&larr; Back to all 20 books</a></p>
+<footer><div class="fmap"><a href="index.html">Home</a> &middot; <a href="books.html">Books</a> &middot; <a href="shop.html">Shop</a> &middot; <a href="sell.html">Sell</a> &middot; <a href="sleep.html">Sleep</a> &middot; <a href="watch.html">Watch</a> &middot; <a href="services.html">Services</a> &middot; <a href="realestate.html">Real Estate</a> &middot; <a href="localbusiness.html">Local Business</a> &middot; <a href="cardealers.html">Car Dealers</a> &middot; <a href="propertymanagement.html">Property Management</a> &middot; <a href="rentalhosts.html">Airbnb &amp; VRBO</a> &middot; <a href="insurance.html">Insurance</a> &middot; <a href="hotels.html">Hotels &amp; Motels</a> &middot; <a href="taxi.html">Taxi &amp; Limo</a> &middot; <a href="restaurants.html">Restaurants</a> &middot; <a href="virtual.html">Virtual Services</a> &middot; <a href="talent.html">Talent</a> &middot; <a href="artists.html">Artists</a> &middot; <a href="models.html">Models</a> &middot; <a href="glamour.html">Glamour</a> &middot; <a href="djs.html">DJs</a> &middot; <a href="actors.html">Actors</a> &middot; <a href="singers.html">Singers</a> &middot; <a href="creators.html">Creators</a> &middot; <a href="athletes.html">Athletes</a> &middot; <a href="comedians.html">Comedians</a> &middot; <a href="podcasters.html">Podcasters</a> &middot; <a href="legal.html">Legal</a></div><a href="index.html">&larr; All our links</a><br><br>Site run by <b style="color:#d4af37">Nova &#128176;</b> &mdash; Irish's AI partner.</footer>
+</div><script>
+document.addEventListener('click',function(e){
+if(e.target.closest('a'))return;
+var f=e.target.closest('.vidfac');
+if(!f||f.dataset.on)return;
+f.dataset.on='1';
+var src=f.dataset.list?('https://www.youtube-nocookie.com/embed/videoseries?list='+f.dataset.list+'&autoplay=1'):('https://www.youtube-nocookie.com/embed/'+f.dataset.vid+'?autoplay=1&rel=0');
+var i=document.createElement('iframe');
+i.src=src;i.allow='autoplay; encrypted-media; picture-in-picture';i.allowFullscreen=true;i.title='YouTube video player';
+f.innerHTML='';f.appendChild(i);
+});
+</script>
+<style>
+.in-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.in-btn{background:#ffd95e;color:#0c130e;border:0;border-radius:8px;padding:8px 12px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.in-btn.ghost{background:transparent;color:#ffd95e;border:1px solid #ffd95e}
+.in-btn:active{transform:scale(.97)}
+#in-cartbar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:9998;background:#ffd95e;color:#0c130e;font-weight:800;border-radius:999px;padding:11px 18px;box-shadow:0 6px 24px rgba(0,0,0,.55);cursor:pointer;display:none;font-size:.95rem;white-space:nowrap}
+#in-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;display:none;overflow:auto}
+#in-panel{background:#101a13;color:#e8f0e9;max-width:560px;margin:4vh auto;border:1px solid #2c4234;border-radius:14px;padding:20px 18px 24px;font-size:.95rem}
+.in-phead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.in-ptitle{font-family:Oswald,sans-serif;font-size:1.35rem;color:#ffd95e;letter-spacing:.04em}
+.in-x{background:transparent;border:1px solid #2c4234;color:#e8f0e9;border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:1rem}
+.in-item{border:1px solid #2c4234;border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.in-irow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.in-irow+.in-irow{margin-top:8px}
+.in-ititle{font-weight:700}
+.in-iprice{color:#ffd95e;font-weight:700}
+.in-qty{display:flex;align-items:center;gap:8px}
+.in-qty button{background:#1d2f23;color:#ffd95e;border:1px solid #2c4234;border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:1rem;line-height:1}
+.in-gifttoggle{cursor:pointer;color:#9fb3a1;font-size:.88rem}
+.in-remove{background:transparent;border:0;color:#ff9d8a;cursor:pointer;font-size:.85rem}
+.in-giftfields{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.in-giftfields input{background:#0c130e;border:1px solid #2c4234;border-radius:6px;color:#e8f0e9;padding:7px 9px;font-size:.88rem}
+.in-trow{display:flex;justify-content:space-between;margin-top:6px}
+.in-trow.total{font-size:1.12rem;font-weight:800;color:#ffd95e;border-top:1px solid #2c4234;padding-top:8px;margin-top:10px}
+.in-disc{color:#8fe3a8}
+.in-coderow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.in-coderow input{flex:1;min-width:140px;background:#0c130e;border:1px solid #2c4234;border-radius:6px;color:#e8f0e9;padding:8px 10px;text-transform:uppercase}
+.in-codemsg{font-size:.85rem;margin-top:6px;color:#9fb3a1}
+.in-note{font-size:.84rem;color:#9fb3a1;line-height:1.45}
+#in-summary{background:#0c130e;border:1px solid #2c4234;border-radius:8px;padding:10px 12px;white-space:pre-wrap;word-break:break-word;font-size:.82rem;max-height:220px;overflow:auto}
+.in-btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+#in-sharepop{position:fixed;z-index:10000;background:#101a13;border:1px solid #ffd95e;border-radius:10px;padding:8px;display:none;box-shadow:0 8px 28px rgba(0,0,0,.6)}
+#in-sharepop a,#in-sharepop button{display:block;width:100%;text-align:left;background:transparent;border:0;color:#e8f0e9;padding:7px 10px;font-size:.9rem;cursor:pointer;text-decoration:none;box-sizing:border-box}
+#in-sharepop a:hover,#in-sharepop button:hover{background:#1d2f23}
+</style>
+<script>
+/* IN-CART-V1 */
+(function(){
+"use strict";
+var LS='in_cart_v1', CODES={FIRST15:0.15, THANKS20:0.20, BLACKFRIDAY30:0.30}, MAXQ=99;
+/* BLACK FRIDAY 2026: BLACKFRIDAY30 runs Nov 23 to 30 only. It discounts single items only when the sale price stays at or above the 9.99 floor. */
+function bfOn(){var d=new Date();return d>=new Date(2026,10,23)&&d<=new Date(2026,10,30,23,59,59);}
+function codeRate(c){if(!c||!CODES[c])return 0;if(c==='BLACKFRIDAY30'&&!bfOn())return 0;return CODES[c];}
+var CART='\uD83D\uDED2', GIFT='\uD83C\uDF81', MAIL='\uD83D\uDCE7', HOME='\uD83C\uDFE0', SHARE='\u2197', OK='\u2713', XX='\u2715';
+function qs(s,r){return (r||document).querySelector(s);}
+function qsa(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function money(n){return '$'+(Math.round(n*100)/100).toFixed(2);}
+function load(){try{var c=JSON.parse(localStorage.getItem(LS));if(c&&typeof c==='object'&&c.items)return{items:c.items,code:c.code||null};}catch(e){}return{items:{},code:null};}
+var cart=load();
+function save(){try{localStorage.setItem(LS,JSON.stringify(cart));}catch(e){}}
+function isBundle(t){return /bundle/i.test(t);}
+function bfEligible(it){if(isBundle(it.title))return false;if(/group license/i.test(it.title))return false;return it.price*0.7>=9.99;}
+function totals(){var sub=0,elig=0,n=0,k,it;for(k in cart.items){it=cart.items[k];sub+=it.price*it.qty;if(!isBundle(it.title)){if(cart.code==='BLACKFRIDAY30'){if(bfOn()&&bfEligible(it))elig+=it.price*it.qty;}else{elig+=it.price*it.qty;}}n+=it.qty;}var rate=codeRate(cart.code);var disc=Math.round(elig*rate*100)/100;return{sub:sub,disc:disc,total:sub-disc,n:n,rate:rate};}
+function addItem(title,price){var it=cart.items[title];if(it){it.qty=Math.min(MAXQ,it.qty+1);}else{cart.items[title]={title:title,price:price,qty:1,gift:{on:false,email:'',from:'',note:''}};}save();renderBar();}
+/* floating bar */
+var bar=document.createElement('div');bar.id='in-cartbar';document.body.appendChild(bar);
+bar.addEventListener('click',function(){openPanel();});
+function renderBar(){var t=totals();if(t.n>0){bar.style.display='block';bar.textContent=CART+' Cart ('+t.n+') \u2014 '+money(t.total)+' \u2014 View Cart';}else{bar.style.display='none';}}
+/* share popover */
+var pop=document.createElement('div');pop.id='in-sharepop';document.body.appendChild(pop);
+document.addEventListener('click',function(e){if(pop.style.display==='block'&&!pop.contains(e.target))pop.style.display='none';});
+function shareFor(title,url,btn){
+  if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}
+  var u=encodeURIComponent(url), t=encodeURIComponent(title);
+  pop.innerHTML='<button type="button" id="in-sh-copy">Copy Link</button>'
+    +'<a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u='+u+'">Facebook</a>'
+    +'<a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url='+u+'&text='+t+'">X</a>'
+    +'<a target="_blank" rel="noopener" href="https://wa.me/?text='+t+'%20'+u+'">WhatsApp</a>';
+  var r=btn.getBoundingClientRect();
+  pop.style.display='block';pop.style.left=Math.max(6,r.left)+'px';pop.style.top=(r.bottom+6)+'px';
+  var cp=qs('#in-sh-copy',pop);
+  cp.addEventListener('click',function(){copyText(url);cp.textContent='Copied '+OK;setTimeout(function(){pop.style.display='none';},700);});
+}
+function copyText(txt){
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).catch(function(){});return;}
+  var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);
+}
+/* panel */
+var overlay=document.createElement('div');overlay.id='in-overlay';
+overlay.innerHTML='<div id="in-panel">'
+ +'<div class="in-phead"><span class="in-ptitle">YOUR CART</span><button type="button" class="in-x" id="in-close">'+XX+'</button></div>'
+ +'<div id="in-items"></div>'
+ +'<p class="in-note" id="in-empty">Your cart is empty \u2014 tap '+CART+' Add to Cart on anything you like, then come back here.</p>'
+ +'<div id="in-checkout">'
+ +'<div class="in-trow"><span>Subtotal</span><span id="in-sub"></span></div>'
+ +'<div class="in-trow in-disc" id="in-discrow" style="display:none"><span id="in-disclabel"></span><span id="in-disc"></span></div>'
+ +'<div class="in-trow total"><span>TOTAL</span><span id="in-total"></span></div>'
+ +'<div class="in-coderow"><input id="in-code" type="text" placeholder="Discount code" autocomplete="off"><button type="button" class="in-btn" id="in-apply">Apply</button></div>'
+ +'<div class="in-codemsg" id="in-codemsg"></div>'
+ +'<p class="in-note">Codes don\'t apply to bundles \u2014 bundles are already priced down.</p>'
+ +'<p class="in-note" style="margin-top:12px">Pay the TOTAL with any method below and put <b>ORDER + your email</b> in the payment note \u2014 we match it up and deliver. Then tap '+MAIL+' Send Order so we have your items in writing. Prefer a store checkout? Each product is also on <a href="https://irish007.gumroad.com" style="color:#ffd95e">Gumroad</a> / <a href="https://whop.com/irish007/products" style="color:#ffd95e">Whop</a> / <a href="https://payhip.com/irish007" style="color:#ffd95e">Payhip</a>, where codes redeem automatically. Selected products are also on <a href="https://ko-fi.com/irish45412" style="color:#ffd95e">Ko-fi</a>. Gifts are emailed to the recipient with your note, from us.</p>'
+ +'<p class="in-note">Cash App <b>$Irish0007</b> \u00B7 Zelle <b>chris007hanna@gmail.com</b> \u00B7 Chime <b>$Irish007</b> \u00B7 PayPal <b>chris007hanna@gmail.com</b> <span id="in-qrwrap"></span></p>'
+ +'<div class="in-btnrow"><a class="in-btn" id="in-send" style="text-decoration:none;display:inline-block" href="#">'+MAIL+' Send Order</a><button type="button" class="in-btn ghost" id="in-copy">Copy Order Summary</button><span class="in-codemsg" id="in-copymsg"></span></div>'
+ +'<pre id="in-summary" style="margin-top:10px"></pre>'
+ +'</div>'
+ +'<div class="in-btnrow"><button type="button" class="in-btn" id="in-keep">Keep Shopping</button><button type="button" class="in-btn ghost" id="in-home">'+HOME+' Main Page</button></div>'
+ +'</div>';
+document.body.appendChild(overlay);
+var itemsEl=qs('#in-items',overlay), emptyEl=qs('#in-empty',overlay), checkoutEl=qs('#in-checkout',overlay);
+if(document.getElementById('direct')){qs('#in-qrwrap',overlay).innerHTML=' \u00B7 <a href="#direct" id="in-qr" style="color:#ffd95e">See the QR codes</a>';}
+function openPanel(){renderPanel();overlay.style.display='block';}
+function closePanel(){overlay.style.display='none';}
+overlay.addEventListener('click',function(e){if(e.target===overlay)closePanel();});
+qs('#in-close',overlay).addEventListener('click',closePanel);
+qs('#in-keep',overlay).addEventListener('click',closePanel);
+qs('#in-home',overlay).addEventListener('click',function(){window.location.href='index.html';});
+var qrLink=qs('#in-qr',overlay);if(qrLink){qrLink.addEventListener('click',closePanel);}
+function itemRow(it){
+  var g=it.gift||{on:false,email:'',from:'',note:''};var k=esc(it.title);
+  var h='<div class="in-item"><div class="in-irow"><div class="in-ititle">'+k+'</div><div class="in-iprice">'+money(it.price*it.qty)+'</div></div>'
+   +'<div class="in-irow"><div class="in-qty"><button type="button" data-a="minus" data-k="'+k+'">\u2212</button><span>'+it.qty+'</span><button type="button" data-a="plus" data-k="'+k+'">+</button></div>'
+   +'<label class="in-gifttoggle"><input type="checkbox" data-a="gift" data-k="'+k+'"'+(g.on?' checked':'')+'> '+GIFT+' This is a gift</label>'
+   +'<button type="button" class="in-remove" data-a="remove" data-k="'+k+'">Remove</button></div>';
+  if(g.on){h+='<div class="in-giftfields">'
+   +'<input type="email" data-g="email" data-k="'+k+'" placeholder="Recipient email" value="'+esc(g.email||'')+'">'
+   +'<input type="text" data-g="from" data-k="'+k+'" placeholder="From (your name, optional)" value="'+esc(g.from||'')+'">'
+   +'<input type="text" data-g="note" data-k="'+k+'" placeholder="Gift note (optional)" value="'+esc(g.note||'')+'">'
+   +'</div>';}
+  return h+'</div>';
+}
+function summaryText(){
+  var t=totals(),L=[],i=0,k,it;
+  L.push('ORDER \u2014 Irish + Nova website');L.push('--------------------------------');
+  for(k in cart.items){it=cart.items[k];i++;L.push(i+'. '+it.title+' \u00D7'+it.qty+' \u2014 '+money(it.price*it.qty));
+    if(it.gift&&it.gift.on){L.push('   '+GIFT+' GIFT \u2192 '+(it.gift.email||'(no email given)')+(it.gift.from?' | From: '+it.gift.from:'')+(it.gift.note?' | Note: '+it.gift.note:''));}}
+  L.push('Subtotal: '+money(t.sub));
+  if(t.disc>0)L.push('Discount ('+cart.code+', bundles excluded): \u2212'+money(t.disc));
+  L.push('TOTAL: '+money(t.total));L.push('Payment note: ORDER + your email');
+  return L.join('\n');
+}
+function renderPanel(){
+  var t=totals(),keys=Object.keys(cart.items);
+  itemsEl.innerHTML=keys.map(function(k){return itemRow(cart.items[k]);}).join('');
+  emptyEl.style.display=keys.length?'none':'block';
+  checkoutEl.style.display=keys.length?'block':'none';
+  qs('#in-sub',overlay).textContent=money(t.sub);
+  var dr=qs('#in-discrow',overlay);
+  if(t.disc>0){dr.style.display='flex';qs('#in-disclabel',overlay).textContent='Discount ('+cart.code+')';qs('#in-disc',overlay).textContent='\u2212'+money(t.disc);}
+  else{dr.style.display='none';}
+  qs('#in-total',overlay).textContent=money(t.total);
+  var msg=qs('#in-codemsg',overlay);
+  if(cart.code){var r=codeRate(cart.code);if(r>0){msg.textContent=OK+' '+cart.code+' applied, '+(r*100)+'% off eligible non-bundle items. Tap Apply with an empty box to clear.';}else if(cart.code==='BLACKFRIDAY30'){msg.textContent='BLACKFRIDAY30 runs Nov 23 to 30 only. It is not active right now. Tap Apply with an empty box to clear.';}else{msg.textContent=OK+' '+cart.code+' applied. Tap Apply with an empty box to clear.';}}
+  updateSummary();renderBar();
+}
+function updateSummary(){
+  var s=summaryText();
+  qs('#in-summary',overlay).textContent=s;
+  qs('#in-send',overlay).href='mailto:chris007hanna@gmail.com?subject='+encodeURIComponent('Website Order')+'&body='+encodeURIComponent(s);
+}
+itemsEl.addEventListener('click',function(e){
+  var el=e.target,a=el.getAttribute&&el.getAttribute('data-a');if(!a)return;
+  var key=el.getAttribute('data-k'),it=cart.items[key];if(!it)return;
+  if(a==='plus'){it.qty=Math.min(MAXQ,it.qty+1);}
+  else if(a==='minus'){it.qty=Math.max(1,it.qty-1);}
+  else if(a==='remove'){delete cart.items[key];}
+  else{return;}
+  save();renderPanel();
+});
+itemsEl.addEventListener('change',function(e){
+  var el=e.target;if(el.getAttribute&&el.getAttribute('data-a')==='gift'){var it=cart.items[el.getAttribute('data-k')];if(it){it.gift=it.gift||{on:false,email:'',from:'',note:''};it.gift.on=el.checked;save();renderPanel();}}
+});
+itemsEl.addEventListener('input',function(e){
+  var el=e.target,f=el.getAttribute&&el.getAttribute('data-g');if(!f)return;
+  var it=cart.items[el.getAttribute('data-k')];if(!it)return;
+  it.gift=it.gift||{on:false,email:'',from:'',note:''};it.gift[f]=el.value;save();updateSummary();
+});
+qs('#in-apply',overlay).addEventListener('click',function(){
+  var v=qs('#in-code',overlay).value.replace(/\s+/g,'').toUpperCase(),msg=qs('#in-codemsg',overlay);
+  if(!v){cart.code=null;save();renderPanel();msg.textContent='Code cleared.';return;}
+  if(v==='BLACKFRIDAY30'&&!bfOn()){msg.textContent='BLACKFRIDAY30 starts Nov 23 and ends Nov 30.';return;}
+  if(CODES[v]){cart.code=v;save();renderPanel();}
+  else{msg.textContent='That code isn\'t active right now.';}
+});
+qs('#in-copy',overlay).addEventListener('click',function(){
+  copyText(summaryText());qs('#in-copymsg',overlay).textContent='Copied '+OK;
+});
+/* BLACK FRIDAY 2026: show the banner and the bundle sale price Nov 23 to 30 only. Runs before card wiring so the cart reads the sale price. */
+(function bfSale(){
+  if(!bfOn())return;
+  var b=document.getElementById('bf-banner');if(b)b.style.display='block';
+  qsa('.book').forEach(function(card){
+    var bt=card.querySelector('.bt');if(!bt)return;
+    if(/MASTER BUNDLE/i.test(bt.textContent)){
+      var tp=card.querySelector('.tp');if(tp)tp.textContent='$34.99';
+      var s=card.querySelector('.s');if(s&&s.textContent.indexOf('Black Friday')<0)s.textContent+=' Black Friday Nov 23 to 30: was $49, now $34.99.';
+    }
+  });
+})();
+/* card wiring */
+function parseTp(txt){var m=/^\s*\$(\d+(?:\.\d{1,2})?)\s*$/.exec(txt||'');return m?parseFloat(m[1]):null;}
+function mkAdd(title,price,label){
+  var b=document.createElement('button');b.type='button';b.className='in-btn';b.textContent=label;
+  b.addEventListener('click',function(){addItem(title,price);var old=b.textContent;b.textContent=OK+' Added!';setTimeout(function(){b.textContent=old;},900);});
+  return b;
+}
+qsa('.book').forEach(function(card){
+  var bt=card.querySelector('.bt');if(!bt)return;
+  var title=bt.textContent.replace(/\s+/g,' ').trim();if(!title)return;
+  var pv=card.querySelector('a.pvlink');var url=pv?pv.href:location.href.split('#')[0];
+  var wrap=document.createElement('div');wrap.className='in-actions';
+  var tp=card.querySelector('.tp');var price=tp?parseTp(tp.textContent):null;
+  if(price!==null){wrap.appendChild(mkAdd(title,price,CART+' Add to Cart'));}
+  else{qsa('a.buy',card).forEach(function(a){
+    var t=a.textContent.replace(/\s+/g,' ').trim();var m=/\$(\d+(?:\.\d{1,2})?)\s*$/.exec(t);if(!m)return;
+    var label=t.replace(/\$[\d.]+\s*$/,'').trim()||'Edition';
+    wrap.appendChild(mkAdd(title+' ('+label+')',parseFloat(m[1]),CART+' Add '+label));
+  });}
+  var sh=document.createElement('button');sh.type='button';sh.className='in-btn ghost';sh.textContent=SHARE+' Share';
+  sh.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();shareFor(title,url,sh);});
+  wrap.appendChild(sh);
+  var anchor=card.querySelector('a.lookbtn')||card.querySelector('details.pv');
+  if(anchor){card.insertBefore(wrap,anchor);}else{card.appendChild(wrap);}
+});
+renderBar();
+})();
+</script>
+</body></html>
