@@ -152,6 +152,7 @@ a.lk:hover{color:#ffe98a;text-decoration-color:#ffd95e}
 <header><img src="assets/logo.jpg" alt="Irish shamrock coin logo">
 <h1>THE SHOP</h1><p class="tag">Same products. <b>Your choice of checkout.</b></p></header>
 <div id="bf-banner" style="display:none;margin:0 0 14px;border:2px solid #ffd95e;background:#1a2a1e;border-radius:12px;padding:14px 16px;text-align:center"><div style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.3rem;letter-spacing:.06em">BLACK FRIDAY SALE, NOV 23 TO 30</div><div style="color:#e8f0e9;margin-top:6px;line-height:1.5">30% off single items, courses included, with code <b style="color:#ffd95e">BLACKFRIDAY30</b>. Master Bundle <b style="color:#ffd95e">$34.99</b> this week only, was $49. Shop direct here or on <a href="https://whop.com/irish007/products" style="color:#ffd95e">Whop</a>.</div></div>
+<div id="thanks-banner" style="display:none;margin:0 0 14px;border:2px solid #ffd95e;background:#1a2a1e;border-radius:12px;padding:14px 16px;text-align:center"><div style="font-family:Oswald,sans-serif;color:#ffd95e;font-size:1.3rem;letter-spacing:.06em">THANKSGIVING SALE, THROUGH NOV 22</div><div style="color:#e8f0e9;margin-top:6px;line-height:1.5">20% off single items with code <b style="color:#ffd95e">THANKS20</b>. Bundles excluded. Enter it at checkout on <a href="https://irish007.gumroad.com" style="color:#ffd95e">Gumroad</a>, <a href="https://whop.com/irish007/products" style="color:#ffd95e">Whop</a>, or <a href="https://payhip.com/irish007" style="color:#ffd95e">Payhip</a>, or put it in your payment note when you buy direct here.</div></div>
 <a class="card hero" href="#direct">
 <div class="t">BUY DIRECT = WE KEEP 100%</div>
 <div class="s">Every marketplace takes a cut &mdash; Amazon up to 70%. Buy straight from us and the price is the same, but Irish keeps it all. Here's how:</div>
@@ -237,6 +238,7 @@ f.innerHTML='';f.appendChild(i);
 var LS='in_cart_v1', CODES={FIRST15:0.15, THANKS20:0.20, BLACKFRIDAY30:0.30}, MAXQ=99;
 /* BLACK FRIDAY 2026: BLACKFRIDAY30 runs Nov 23 to 30 only. It discounts single items only when the sale price stays at or above the 9.99 floor. */
 function bfOn(){var d=new Date();return d>=new Date(2026,10,23)&&d<=new Date(2026,10,30,23,59,59);}
+function thanksOn(){var d=new Date();return d>=new Date(2026,10,10)&&d<=new Date(2026,10,22,23,59,59);}
 function codeRate(c){if(!c||!CODES[c])return 0;if(c==='BLACKFRIDAY30'&&!bfOn())return 0;return CODES[c];}
 var CART='\uD83D\uDED2', GIFT='\uD83C\uDF81', MAIL='\uD83D\uDCE7', HOME='\uD83C\uDFE0', SHARE='\u2197', OK='\u2713', XX='\u2715';
 function qs(s,r){return (r||document).querySelector(s);}
@@ -374,6 +376,7 @@ qs('#in-copy',overlay).addEventListener('click',function(){
 });
 /* BLACK FRIDAY 2026: show the banner and the bundle sale price Nov 23 to 30 only. Runs before card wiring so the cart reads the sale price. */
 (function bfSale(){
+  if(thanksOn()){var t=document.getElementById('thanks-banner');if(t)t.style.display='block';}
   if(!bfOn())return;
   var b=document.getElementById('bf-banner');if(b)b.style.display='block';
   qsa('.book').forEach(function(card){
