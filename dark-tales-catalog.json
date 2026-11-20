@@ -22,6 +22,36 @@
  ],
  "videos": [
   {
+   "date": "2026-11-18",
+   "id": "tjPBpTvnJeo",
+   "kind": "Video",
+   "title": "Snow White, Retold. The Mirror Cannot Lie"
+  },
+  {
+   "date": "2026-11-18",
+   "id": "_fr33Ap35eA",
+   "kind": "Video",
+   "title": "Fitcher's Bird, Retold. The Egg She Put Aside"
+  },
+  {
+   "date": "2026-11-18",
+   "id": "D9T6rCdM8LY",
+   "kind": "Video",
+   "title": "Cinderella, Retold. The Bird in the Hazel Tree"
+  },
+  {
+   "date": "2026-11-15",
+   "id": "ubng3ImaV_c",
+   "kind": "Short",
+   "title": "He Wished His Son Back. Then Something Knocked. #shorts"
+  },
+  {
+   "date": "2026-11-13",
+   "id": "WD1AbGAyMOc",
+   "kind": "Video",
+   "title": "The Monkey's Paw by W.W. Jacobs — Full Horror Story"
+  },
+  {
    "date": "2026-11-03",
    "id": "CFnUaxMV4GE",
    "kind": "Short",
@@ -45,5 +75,7 @@
    "kind": "Short",
    "title": "The Tell-Tale Heart — He Could Hear It Beating… 🕯️"
   }
- ]
+ ],
+ "version": 1,
+ "updated": "2026-11-20T00:35:50Z"
 }
