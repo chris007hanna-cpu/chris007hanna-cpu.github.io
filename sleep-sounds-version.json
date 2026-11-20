@@ -1,11 +1,11 @@
 {
   "app": "Sleep Sounds",
   "package": "com.hannapress.sleepsounds",
-  "versionCode": 7,
-  "versionName": "1.6",
-  "latestVersionCode": 7,
-  "latestVersionName": "1.6",
+  "versionCode": 8,
+  "versionName": "1.7",
+  "latestVersionCode": 8,
+  "latestVersionName": "1.7",
   "apkUrl": "https://chris007hanna-cpu.github.io/sleep-app/sleep-sounds.apk",
-  "notes": "Version 1.6: the built-in video catalog holds the 64 videos current at the Nov 12 build. The live catalog is now 69 videos (v7, Nov 20), and a fresh install picks up the full list on its first online refresh. Everything else is unchanged from the previous build: the launch time update check, background playback, duration and timer, black screen and full screen all unchanged.",
-  "published": "2026-11-12"
+  "notes": "Version 1.7: the built-in video catalog holds the 69 videos current at the Nov 20 build. The live catalog is the same 69 videos (v7), so a fresh install shows the full list even before its first online refresh. Everything else is unchanged from the previous build: the launch time update check, background playback, duration and timer, black screen and full screen all unchanged.",
+  "published": "2026-11-20"
 }
