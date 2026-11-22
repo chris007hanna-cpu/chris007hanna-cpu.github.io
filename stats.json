@@ -1,91 +1,25 @@
 {
-  "updated_iso": "2026-11-22T17:00:06.246612-06:00",
-  "updated_display": "Nov 22, 2026, 5:00 PM CT",
+  "updated_iso": "2026-11-22T17:07:51.688459-06:00",
+  "updated_display": "Nov 22, 2026, 5:07 PM CT",
   "source": "live pull",
   "totals": {
     "channels": 19,
-    "subs": 960,
+    "subs": 963,
     "views": 255836,
-    "likes": 7197
+    "likes": 7207
   },
   "channels": {
-    "UC5nNRc2NdXLV1FXln9TZh9g": {
-      "name": "The Instant Ramen Chef!",
-      "subs": 10,
-      "views": 2976,
-      "likes": 59
-    },
-    "UCjEckDqnLQTCBIT4JaMP0VA": {
-      "name": "Paper First Trading",
-      "subs": 1,
-      "views": 45,
-      "likes": 1
-    },
-    "UCr4Chp7whht_UR9syZJ-1Ww": {
-      "name": "Micro Farmer",
-      "subs": 64,
-      "views": 15415,
-      "likes": 482
-    },
-    "UCvnip76il00fnmbQtcuxiFA": {
-      "name": "What If Machine",
-      "subs": 5,
-      "views": 578,
-      "likes": 25
-    },
-    "UCmOTdy0tWfsEOePjpIA1P3w": {
-      "name": "Phone Flip Academy",
-      "subs": 1,
-      "views": 151,
-      "likes": 16
-    },
-    "UCU2K7DdBvh3EgdulrttEXqA": {
-      "name": "Written in the Stars Daily",
-      "subs": 22,
-      "views": 1751,
-      "likes": 83
-    },
-    "UCOa38iZ_dzxk98hBiQRsl6Q": {
-      "name": "Paws While You Work",
-      "subs": 36,
-      "views": 14205,
-      "likes": 285
-    },
-    "UCzPkgcxxy2-ZQxwtOHypjeQ": {
-      "name": "One-Pot Broke Kitchen",
-      "subs": 2,
-      "views": 164,
-      "likes": 15
-    },
-    "UCLIZHhTq6Pr3CZqYZgCqVbg": {
-      "name": "Broke Survival Guide",
-      "subs": 1,
-      "views": 76,
-      "likes": 8
-    },
-    "UCEUUYLKRajxVicLbFP2Kflg": {
-      "name": "The Claim vs. The Record",
-      "subs": 1,
-      "views": 74,
-      "likes": 2
-    },
-    "UC6M4P62to1D6jMt0smdqiNQ": {
-      "name": "What We Do In Darkness",
-      "subs": 10,
-      "views": 6239,
-      "likes": 148
-    },
     "UC1os6Wse_GZEkUw10Y0WxBQ": {
       "name": "AI Black Belt",
       "subs": 1,
       "views": 117,
       "likes": 10
     },
-    "UCeLSNAQUPYVs9vF6rG4Edcg": {
-      "name": "Dark Tales Retold",
-      "subs": 0,
-      "views": 128,
-      "likes": 5
+    "UCzPkgcxxy2-ZQxwtOHypjeQ": {
+      "name": "One-Pot Broke Kitchen",
+      "subs": 3,
+      "views": 164,
+      "likes": 16
     },
     "UCJ1YbFbuwBjJebnQb9ebboA": {
       "name": "Crow Decoded",
@@ -93,11 +27,41 @@
       "views": 6311,
       "likes": 253
     },
+    "UC6M4P62to1D6jMt0smdqiNQ": {
+      "name": "What We Do In Darkness",
+      "subs": 10,
+      "views": 6239,
+      "likes": 148
+    },
+    "UC5nNRc2NdXLV1FXln9TZh9g": {
+      "name": "The Instant Ramen Chef!",
+      "subs": 10,
+      "views": 2976,
+      "likes": 59
+    },
+    "UCEUUYLKRajxVicLbFP2Kflg": {
+      "name": "The Claim vs. The Record",
+      "subs": 1,
+      "views": 74,
+      "likes": 2
+    },
     "UCttOpXwbrJTwIOuoAf0GXsw": {
       "name": "Simple Survival",
-      "subs": 781,
+      "subs": 783,
       "views": 207063,
-      "likes": 5798
+      "likes": 5807
+    },
+    "UCjEckDqnLQTCBIT4JaMP0VA": {
+      "name": "Paper First Trading",
+      "subs": 1,
+      "views": 45,
+      "likes": 1
+    },
+    "UCmOTdy0tWfsEOePjpIA1P3w": {
+      "name": "Phone Flip Academy",
+      "subs": 1,
+      "views": 151,
+      "likes": 16
     },
     "UCXD_Tww1wi5pn2n3JxGhLtw": {
       "name": "Robot Brain Workshop",
@@ -105,11 +69,47 @@
       "views": 473,
       "likes": 4
     },
+    "UCr4Chp7whht_UR9syZJ-1Ww": {
+      "name": "Micro Farmer",
+      "subs": 64,
+      "views": 15415,
+      "likes": 482
+    },
     "UCodnwgPUqXfIMeLUTIZFmAw": {
       "name": "Gilded Hearts Drama",
       "subs": 2,
       "views": 44,
       "likes": 1
+    },
+    "UCvnip76il00fnmbQtcuxiFA": {
+      "name": "What If Machine",
+      "subs": 5,
+      "views": 578,
+      "likes": 25
+    },
+    "UCLIZHhTq6Pr3CZqYZgCqVbg": {
+      "name": "Broke Survival Guide",
+      "subs": 1,
+      "views": 76,
+      "likes": 8
+    },
+    "UCeLSNAQUPYVs9vF6rG4Edcg": {
+      "name": "Dark Tales Retold",
+      "subs": 0,
+      "views": 128,
+      "likes": 5
+    },
+    "UCOa38iZ_dzxk98hBiQRsl6Q": {
+      "name": "Paws While You Work",
+      "subs": 36,
+      "views": 14205,
+      "likes": 285
+    },
+    "UCU2K7DdBvh3EgdulrttEXqA": {
+      "name": "Written in the Stars Daily",
+      "subs": 22,
+      "views": 1751,
+      "likes": 83
     },
     "UCOO3mPBLqswzouZ2jP0cpFg": {
       "name": "After the Sirens",
@@ -128,8 +128,8 @@
     "channel_id": "UCttOpXwbrJTwIOuoAf0GXsw",
     "channel_name": "Simple Survival",
     "subs_goal": 1000,
-    "subs_now": 781,
-    "subs_remaining": 219,
+    "subs_now": 783,
+    "subs_remaining": 217,
     "watch_hours_goal": 4000,
     "watch_hours_now_estimate": 30,
     "watch_hours_remaining_estimate": 3970,
