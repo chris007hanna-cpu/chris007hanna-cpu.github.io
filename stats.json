@@ -1,43 +1,25 @@
 {
-  "updated_iso": "2026-11-21T19:53:59.698029-06:00",
-  "updated_display": "Nov 21, 2026, 7:53 PM CT",
+  "updated_iso": "2026-11-21T19:56:20.506400-06:00",
+  "updated_display": "Nov 21, 2026, 7:56 PM CT",
   "source": "live pull",
   "totals": {
-    "channels": 18,
-    "subs": 809,
-    "views": 226704,
-    "likes": 6069
+    "channels": 19,
+    "subs": 811,
+    "views": 226724,
+    "likes": 6071
   },
   "channels": {
-    "UCzPkgcxxy2-ZQxwtOHypjeQ": {
-      "name": "One-Pot Broke Kitchen",
-      "subs": 0,
-      "views": 164,
-      "likes": 7
-    },
-    "UCU2K7DdBvh3EgdulrttEXqA": {
-      "name": "Written in the Stars Daily",
-      "subs": 22,
-      "views": 1728,
-      "likes": 83
+    "UCmOTdy0tWfsEOePjpIA1P3w": {
+      "name": "Phone Flip Academy",
+      "subs": 1,
+      "views": 151,
+      "likes": 16
     },
     "UCttOpXwbrJTwIOuoAf0GXsw": {
       "name": "Simple Survival",
       "subs": 636,
       "views": 179134,
-      "likes": 4703
-    },
-    "UCvnip76il00fnmbQtcuxiFA": {
-      "name": "What If Machine",
-      "subs": 5,
-      "views": 577,
-      "likes": 25
-    },
-    "UCodnwgPUqXfIMeLUTIZFmAw": {
-      "name": "Gilded Hearts Drama",
-      "subs": 2,
-      "views": 39,
-      "likes": 1
+      "likes": 4705
     },
     "UCjEckDqnLQTCBIT4JaMP0VA": {
       "name": "Paper First Trading",
@@ -45,41 +27,23 @@
       "views": 45,
       "likes": 1
     },
-    "UC5nNRc2NdXLV1FXln9TZh9g": {
-      "name": "The Instant Ramen Chef!",
-      "subs": 9,
-      "views": 2967,
-      "likes": 46
-    },
-    "UCOa38iZ_dzxk98hBiQRsl6Q": {
-      "name": "Paws While You Work",
-      "subs": 36,
-      "views": 14144,
-      "likes": 285
-    },
-    "UCXD_Tww1wi5pn2n3JxGhLtw": {
-      "name": "Robot Brain Workshop",
-      "subs": 1,
-      "views": 471,
-      "likes": 4
-    },
-    "UCr4Chp7whht_UR9syZJ-1Ww": {
-      "name": "Micro Farmer",
-      "subs": 64,
-      "views": 14409,
-      "likes": 480
-    },
     "UCeLSNAQUPYVs9vF6rG4Edcg": {
       "name": "Dark Tales Retold",
       "subs": 0,
       "views": 123,
       "likes": 5
     },
-    "UCLIZHhTq6Pr3CZqYZgCqVbg": {
-      "name": "Broke Survival Guide",
-      "subs": 1,
-      "views": 75,
-      "likes": 8
+    "UCU2K7DdBvh3EgdulrttEXqA": {
+      "name": "Written in the Stars Daily",
+      "subs": 22,
+      "views": 1728,
+      "likes": 83
+    },
+    "UCzPkgcxxy2-ZQxwtOHypjeQ": {
+      "name": "One-Pot Broke Kitchen",
+      "subs": 0,
+      "views": 164,
+      "likes": 7
     },
     "UCEUUYLKRajxVicLbFP2Kflg": {
       "name": "The Claim vs. The Record",
@@ -87,17 +51,17 @@
       "views": 71,
       "likes": 2
     },
-    "UCJ1YbFbuwBjJebnQb9ebboA": {
-      "name": "Crow Decoded",
-      "subs": 19,
-      "views": 6299,
-      "likes": 253
+    "UCr4Chp7whht_UR9syZJ-1Ww": {
+      "name": "Micro Farmer",
+      "subs": 64,
+      "views": 14409,
+      "likes": 480
     },
-    "UCmOTdy0tWfsEOePjpIA1P3w": {
-      "name": "Phone Flip Academy",
-      "subs": 1,
-      "views": 151,
-      "likes": 16
+    "UC5nNRc2NdXLV1FXln9TZh9g": {
+      "name": "The Instant Ramen Chef!",
+      "subs": 9,
+      "views": 2967,
+      "likes": 46
     },
     "UC1os6Wse_GZEkUw10Y0WxBQ": {
       "name": "AI Black Belt",
@@ -105,16 +69,58 @@
       "views": 118,
       "likes": 10
     },
+    "UCodnwgPUqXfIMeLUTIZFmAw": {
+      "name": "Gilded Hearts Drama",
+      "subs": 2,
+      "views": 39,
+      "likes": 1
+    },
+    "UCOa38iZ_dzxk98hBiQRsl6Q": {
+      "name": "Paws While You Work",
+      "subs": 36,
+      "views": 14144,
+      "likes": 285
+    },
+    "UCLIZHhTq6Pr3CZqYZgCqVbg": {
+      "name": "Broke Survival Guide",
+      "subs": 1,
+      "views": 75,
+      "likes": 8
+    },
     "UC6M4P62to1D6jMt0smdqiNQ": {
       "name": "What We Do In Darkness",
       "subs": 9,
       "views": 6189,
       "likes": 140
     },
+    "UCXD_Tww1wi5pn2n3JxGhLtw": {
+      "name": "Robot Brain Workshop",
+      "subs": 1,
+      "views": 471,
+      "likes": 4
+    },
+    "UCJ1YbFbuwBjJebnQb9ebboA": {
+      "name": "Crow Decoded",
+      "subs": 19,
+      "views": 6299,
+      "likes": 253
+    },
+    "UCvnip76il00fnmbQtcuxiFA": {
+      "name": "What If Machine",
+      "subs": 5,
+      "views": 577,
+      "likes": 25
+    },
     "UCOO3mPBLqswzouZ2jP0cpFg": {
       "name": "After the Sirens",
       "subs": 1,
       "views": 0,
+      "likes": 0
+    },
+    "UCpmDZ5H_c0hkqYlrYKO6tjw": {
+      "name": "The AI Boardroom",
+      "subs": 2,
+      "views": 20,
       "likes": 0
     }
   },
