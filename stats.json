@@ -1,12 +1,12 @@
 {
-  "updated_iso": "2026-11-21T23:52:05.761086-06:00",
-  "updated_display": "Nov 21, 2026, 11:52 PM CT",
+  "updated_iso": "2026-11-22T00:52:14.792039-06:00",
+  "updated_display": "Nov 22, 2026, 12:52 AM CT",
   "source": "live pull",
   "totals": {
     "channels": 19,
-    "subs": 844,
-    "views": 237337,
-    "likes": 6283
+    "subs": 854,
+    "views": 237400,
+    "likes": 6364
   },
   "channels": {
     "UCXD_Tww1wi5pn2n3JxGhLtw": {
@@ -29,9 +29,9 @@
     },
     "UCttOpXwbrJTwIOuoAf0GXsw": {
       "name": "Simple Survival",
-      "subs": 669,
+      "subs": 678,
       "views": 189743,
-      "likes": 4915
+      "likes": 4985
     },
     "UCvnip76il00fnmbQtcuxiFA": {
       "name": "What If Machine",
@@ -48,7 +48,7 @@
     "UCodnwgPUqXfIMeLUTIZFmAw": {
       "name": "Gilded Hearts Drama",
       "subs": 2,
-      "views": 42,
+      "views": 39,
       "likes": 1
     },
     "UCU2K7DdBvh3EgdulrttEXqA": {
@@ -60,14 +60,14 @@
     "UCr4Chp7whht_UR9syZJ-1Ww": {
       "name": "Micro Farmer",
       "subs": 64,
-      "views": 14409,
+      "views": 14458,
       "likes": 480
     },
     "UC5nNRc2NdXLV1FXln9TZh9g": {
       "name": "The Instant Ramen Chef!",
-      "subs": 9,
-      "views": 2967,
-      "likes": 48
+      "subs": 10,
+      "views": 2971,
+      "likes": 51
     },
     "UCJ1YbFbuwBjJebnQb9ebboA": {
       "name": "Crow Decoded",
@@ -84,14 +84,14 @@
     "UCLIZHhTq6Pr3CZqYZgCqVbg": {
       "name": "Broke Survival Guide",
       "subs": 1,
-      "views": 76,
+      "views": 75,
       "likes": 8
     },
     "UC6M4P62to1D6jMt0smdqiNQ": {
       "name": "What We Do In Darkness",
-      "subs": 9,
-      "views": 6189,
-      "likes": 140
+      "subs": 10,
+      "views": 6203,
+      "likes": 148
     },
     "UCmOTdy0tWfsEOePjpIA1P3w": {
       "name": "Phone Flip Academy",
@@ -113,7 +113,7 @@
     },
     "UCOO3mPBLqswzouZ2jP0cpFg": {
       "name": "After the Sirens",
-      "subs": 1,
+      "subs": 0,
       "views": 0,
       "likes": 0
     },
@@ -128,8 +128,8 @@
     "channel_id": "UCttOpXwbrJTwIOuoAf0GXsw",
     "channel_name": "Simple Survival",
     "subs_goal": 1000,
-    "subs_now": 669,
-    "subs_remaining": 331,
+    "subs_now": 678,
+    "subs_remaining": 322,
     "watch_hours_goal": 4000,
     "watch_hours_now_estimate": 30,
     "watch_hours_remaining_estimate": 3970,
