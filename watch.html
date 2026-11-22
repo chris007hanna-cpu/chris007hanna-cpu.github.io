@@ -308,12 +308,12 @@ function fmt(n){return n.toLocaleString('en-US')}
 document.querySelectorAll('[data-chan]').forEach(function(el){
 var c=d.channels[el.getAttribute('data-chan')];
 if(!c)return;
-var txt=fmt(c.subs)+' subscribers &middot; '+fmt(c.views)+' views';
-if(c.likes!==null&&c.likes!==undefined)txt+=' &middot; '+fmt(c.likes)+' likes';
+var txt=fmt(c.subs)+' subscribers · '+fmt(c.views)+' views';
+if(c.likes!==null&&c.likes!==undefined)txt+=' · '+fmt(c.likes)+' likes';
 el.innerHTML=txt;
 });
 var ft=document.getElementById('fleettotals');
-if(ft&&d.totals){var t=d.totals;var ttxt=fmt(t.channels)+' channels &middot; '+fmt(t.subs)+' subscribers &middot; '+fmt(t.views)+' views';if(t.likes!==null&&t.likes!==undefined)ttxt+=' &middot; '+fmt(t.likes)+' likes';ft.textContent=ttxt;}
+if(ft&&d.totals){var t=d.totals;var ttxt=fmt(t.channels)+' channels · '+fmt(t.subs)+' subscribers · '+fmt(t.views)+' views';if(t.likes!==null&&t.likes!==undefined)ttxt+=' · '+fmt(t.likes)+' likes';ft.textContent=ttxt;}
 var m=d.monetization;
 if(m){
 var cs=document.getElementById('cdsubs');
