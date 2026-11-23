@@ -1,0 +1,61 @@
+{
+ "channelName": "Crow Decoded",
+ "channelUrl": "https://www.youtube.com/@TheCrowDecoded",
+ "tagline": "Reading the crow. Behavior, calls, and intelligence decoded episode by episode, with every Short from the channel.",
+ "subscribeUrl": "https://www.youtube.com/@TheCrowDecoded?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/@TheCrowDecoded/videos",
+ "shortsUrl": "https://www.youtube.com/@TheCrowDecoded/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "What This Channel Decodes",
+   "body": "Crows are among the smartest animals on earth, and most people walk past them every day without reading a thing. This channel breaks down crow behavior, calls, memory, and problem solving, one observation at a time, so you start seeing what they are actually doing."
+  },
+  {
+   "title": "Watch In Order",
+   "body": "The episodes build on each other: start with the earliest Video and work forward, then catch the Shorts for single behaviors in a minute or less. Search by a behavior, like gift or alarm, to jump straight to the episodes about it."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-14",
+   "id": "-_vUFJL4MWw",
+   "kind": "Short",
+   "title": "This Raven Kept a Tool for Tomorrow #shorts"
+  },
+  {
+   "date": "2026-11-13",
+   "id": "miA3CMAJXkY",
+   "kind": "Short",
+   "title": "Why This Jay Moved Its Treasure After Being Watched #shorts"
+  },
+  {
+   "date": "2026-11-13",
+   "id": "YYz5Wbnaa5g",
+   "kind": "Video",
+   "title": "A Thief Knows a Thief: Why This Jay Moved Its Treasure | Crow, Decoded Ep17"
+  },
+  {
+   "date": "2026-11-13",
+   "id": "55LxiVQyZD0",
+   "kind": "Video",
+   "title": "Plans for Tomorrow: The Raven That Kept a Tool for a Box That Wasn't There | Crow, Decoded Ep18"
+  },
+  {
+   "date": "2026-11-10",
+   "id": "saoo9zdggtU",
+   "kind": "Short",
+   "title": "Can You Befriend a Wild Crow? How Crows Learn to Trust #shorts"
+  },
+  {
+   "date": "2026-11-10",
+   "id": "nphMmIbVlxo",
+   "kind": "Short",
+   "title": "Why Do Crows Rub Live Ants Into Their Feathers? Anting, Decoded #shorts"
+  }
+ ]
+}

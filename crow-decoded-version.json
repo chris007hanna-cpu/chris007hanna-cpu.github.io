@@ -1,0 +1,9 @@
+{
+ "versionCode": 1,
+ "versionName": "1.0",
+ "latestVersionCode": 1,
+ "latestVersionName": "1.0",
+ "apkUrl": "https://chris007hanna-cpu.github.io/assets/downloads/crow-decoded-v1.apk",
+ "notes": "First release of the Crow Decoded companion app: the full Crow Decoded catalog, refreshed from the channel feed at every launch, with search and favorites.",
+ "package": "com.hannapress.crowdecoded"
+}

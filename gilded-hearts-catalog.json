@@ -1,0 +1,43 @@
+{
+ "channelName": "Gilded Hearts Drama",
+ "channelUrl": "https://www.youtube.com/@GildedHeartsDramaOfficial",
+ "tagline": "Gilded Hearts, the drama serial. Every episode part in order, so you never lose the story.",
+ "subscribeUrl": "https://www.youtube.com/@GildedHeartsDramaOfficial?sub_confirmation=1",
+ "videosUrl": "https://www.youtube.com/@GildedHeartsDramaOfficial/videos",
+ "shortsUrl": "https://www.youtube.com/@GildedHeartsDramaOfficial/shorts",
+ "playlists": [],
+ "guides": [
+  {
+   "title": "How The Serial Runs",
+   "body": "Gilded Hearts is one continuing drama told in episodes. Because full episodes run long, each one is published in parts, in story order. This app lists every part in order, so you can follow the whole story without hunting through the channel."
+  },
+  {
+   "title": "Start At Episode 1",
+   "body": "This is a serial, not a set of stand alone stories. Start with Episode 1, Part 1 and watch the parts in order. Star the part you stopped on and it stays in your favorites, so you can pick the story back up exactly where you left it."
+  },
+  {
+   "title": "How To Use This App",
+   "body": "Every video on the channel is listed here, newest first. Search by a word in the title. Tap any video to watch it on YouTube, and tap the star to save a favorite. The list refreshes itself from the channel feed when you open the app, so new videos appear here with no app update."
+  }
+ ],
+ "videos": [
+  {
+   "date": "2026-11-18",
+   "id": "vKVxCQCMtAU",
+   "kind": "Video",
+   "title": "Secret Identity Revealed: The Janitor Walked In as the Owner | Romance Drama Finale Part 3"
+  },
+  {
+   "date": "2026-11-18",
+   "id": "sZqQ02_dK8I",
+   "kind": "Video",
+   "title": "The Only Kind Woman Was Fired by the Cruel Boss | Boss Romance Story, Love Story Drama Part 2"
+  },
+  {
+   "date": "2026-11-18",
+   "id": "ONTKXVr8fcc",
+   "kind": "Video",
+   "title": "Secret Billionaire Story: They Laughed at the Janitor, Not Knowing He Owned the Entire Hotel"
+  }
+ ]
+}
