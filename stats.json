@@ -1,25 +1,19 @@
 {
-  "updated_iso": "2026-11-24T02:17:43.946423-06:00",
-  "updated_display": "Nov 24, 2026, 2:17 AM CT",
+  "updated_iso": "2026-11-24T06:09:41.450749-06:00",
+  "updated_display": "Nov 24, 2026, 6:09 AM CT",
   "source": "live pull",
   "totals": {
     "channels": 19,
-    "subs": 1176,
+    "subs": 1185,
     "views": 341832,
-    "likes": 8827
+    "likes": 8900
   },
   "channels": {
-    "UC6M4P62to1D6jMt0smdqiNQ": {
-      "name": "What We Do In Darkness",
-      "subs": 10,
-      "views": 6290,
-      "likes": 148
-    },
-    "UCvnip76il00fnmbQtcuxiFA": {
-      "name": "What If Machine",
-      "subs": 5,
-      "views": 579,
-      "likes": 25
+    "UCzPkgcxxy2-ZQxwtOHypjeQ": {
+      "name": "One-Pot Broke Kitchen",
+      "subs": 9,
+      "views": 493,
+      "likes": 38
     },
     "UCU2K7DdBvh3EgdulrttEXqA": {
       "name": "Written in the Stars Daily",
@@ -29,21 +23,15 @@
     },
     "UCttOpXwbrJTwIOuoAf0GXsw": {
       "name": "Simple Survival",
-      "subs": 989,
+      "subs": 998,
       "views": 291738,
-      "likes": 7401
+      "likes": 7473
     },
-    "UC5nNRc2NdXLV1FXln9TZh9g": {
-      "name": "The Instant Ramen Chef!",
-      "subs": 10,
-      "views": 3599,
-      "likes": 60
-    },
-    "UC1os6Wse_GZEkUw10Y0WxBQ": {
-      "name": "AI Black Belt",
-      "subs": 1,
-      "views": 119,
-      "likes": 10
+    "UCvnip76il00fnmbQtcuxiFA": {
+      "name": "What If Machine",
+      "subs": 5,
+      "views": 579,
+      "likes": 25
     },
     "UCodnwgPUqXfIMeLUTIZFmAw": {
       "name": "Gilded Hearts Drama",
@@ -51,11 +39,23 @@
       "views": 48,
       "likes": 1
     },
-    "UCJ1YbFbuwBjJebnQb9ebboA": {
-      "name": "Crow Decoded",
-      "subs": 19,
-      "views": 6323,
-      "likes": 253
+    "UCjEckDqnLQTCBIT4JaMP0VA": {
+      "name": "Paper First Trading",
+      "subs": 1,
+      "views": 45,
+      "likes": 1
+    },
+    "UC5nNRc2NdXLV1FXln9TZh9g": {
+      "name": "The Instant Ramen Chef!",
+      "subs": 10,
+      "views": 3599,
+      "likes": 60
+    },
+    "UCOa38iZ_dzxk98hBiQRsl6Q": {
+      "name": "Paws While You Work",
+      "subs": 36,
+      "views": 14248,
+      "likes": 285
     },
     "UCXD_Tww1wi5pn2n3JxGhLtw": {
       "name": "Robot Brain Workshop",
@@ -63,17 +63,11 @@
       "views": 473,
       "likes": 4
     },
-    "UCLIZHhTq6Pr3CZqYZgCqVbg": {
-      "name": "Broke Survival Guide",
-      "subs": 1,
-      "views": 76,
-      "likes": 8
-    },
-    "UCzPkgcxxy2-ZQxwtOHypjeQ": {
-      "name": "One-Pot Broke Kitchen",
-      "subs": 9,
-      "views": 493,
-      "likes": 37
+    "UCr4Chp7whht_UR9syZJ-1Ww": {
+      "name": "Micro Farmer",
+      "subs": 65,
+      "views": 15601,
+      "likes": 484
     },
     "UCEUUYLKRajxVicLbFP2Kflg": {
       "name": "The Claim vs. The Record",
@@ -81,11 +75,17 @@
       "views": 75,
       "likes": 2
     },
-    "UCr4Chp7whht_UR9syZJ-1Ww": {
-      "name": "Micro Farmer",
-      "subs": 65,
-      "views": 15601,
-      "likes": 484
+    "UCJ1YbFbuwBjJebnQb9ebboA": {
+      "name": "Crow Decoded",
+      "subs": 19,
+      "views": 6323,
+      "likes": 253
+    },
+    "UCLIZHhTq6Pr3CZqYZgCqVbg": {
+      "name": "Broke Survival Guide",
+      "subs": 1,
+      "views": 76,
+      "likes": 8
     },
     "UCeLSNAQUPYVs9vF6rG4Edcg": {
       "name": "Dark Tales Retold",
@@ -99,17 +99,17 @@
       "views": 154,
       "likes": 16
     },
-    "UCOa38iZ_dzxk98hBiQRsl6Q": {
-      "name": "Paws While You Work",
-      "subs": 36,
-      "views": 14248,
-      "likes": 285
-    },
-    "UCjEckDqnLQTCBIT4JaMP0VA": {
-      "name": "Paper First Trading",
+    "UC1os6Wse_GZEkUw10Y0WxBQ": {
+      "name": "AI Black Belt",
       "subs": 1,
-      "views": 45,
-      "likes": 1
+      "views": 119,
+      "likes": 10
+    },
+    "UC6M4P62to1D6jMt0smdqiNQ": {
+      "name": "What We Do In Darkness",
+      "subs": 10,
+      "views": 6290,
+      "likes": 148
     },
     "UCOO3mPBLqswzouZ2jP0cpFg": {
       "name": "After the Sirens",
@@ -128,8 +128,8 @@
     "channel_id": "UCttOpXwbrJTwIOuoAf0GXsw",
     "channel_name": "Simple Survival",
     "subs_goal": 1000,
-    "subs_now": 989,
-    "subs_remaining": 11,
+    "subs_now": 998,
+    "subs_remaining": 2,
     "watch_hours_goal": 4000,
     "watch_hours_now_estimate": 30,
     "watch_hours_remaining_estimate": 3970,
